@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-07-14T03:09:45.130Z</updated>
+  <updated>2021-07-14T07:33:23.149Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,21 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SQL常用函数</title>
-    <link href="http://example.com/SQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/"/>
-    <id>http://example.com/SQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</id>
-    <published>2021-07-14T03:07:25.000Z</published>
-    <updated>2021-07-14T03:09:45.130Z</updated>
+    <title>SQL学习资料</title>
+    <link href="http://example.com/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>http://example.com/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</id>
+    <published>2021-07-14T07:32:58.000Z</published>
+    <updated>2021-07-14T07:33:23.149Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="表连接-join"><a href="#表连接-join" class="headerlink" title="表连接 join"></a>表连接 join</h1><p>join: 以字段（列）为单位进行多表连接。</p><table><thead><tr><th>连接类型</th><th>介绍</th></tr></thead><tbody><tr><td>Inner join&nbsp; &nbsp; &nbsp;</td><td>只保留两个表中同时存在的记录。</td></tr><tr><td>Left join&nbsp; &nbsp; &nbsp;</td><td>保留左表所有的记录，无论其是否能够在右表中匹配到对应的记录。若无匹配记录，则需要用NULL填补。</td></tr><tr><td>Right join&nbsp; &nbsp; &nbsp;</td><td>保留右表所有的记录，无论其是否能够在左表中匹配到对应的记录。若无匹配记录，则需要用NULL填补。</td></tr><tr><td>Full join&nbsp; &nbsp; &nbsp;</td><td>左表和右表所有的记录都会保留，没有匹配记录的用NULL填补。</td></tr></tbody></table><h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><table><thead><tr><th>常用聚合函数</th><th>介绍</th></tr></thead><tbody><tr><td><code>sum()</code></td><td>返回分组后组内所有记录的和</td></tr><tr><td><code>avg()</code></td><td>返回分组后组内所有记录的均值</td></tr><tr><td><code>count()</code></td><td>返回分组后组内所有记录的计数</td></tr><tr><td><code>max()/min()</code></td><td>返回分组后组内所有记录的最大值、最小值</td></tr></tbody></table><h1 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h1><p>窗口函数对记录分组之后进行聚合计算，为分组中的每条记录返回特定值。</p><p>窗口函数的基本结构是：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span>() <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>col1, col2<span class="operator">&gt;</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>col3 <span class="keyword">desc</span><span class="operator">/</span><span class="keyword">asc</span>, col4 <span class="keyword">asc</span><span class="operator">/</span><span class="keyword">desc</span><span class="operator">&gt;</span>)</span><br></pre></td></tr></table></figure><table><thead><tr><th>窗口函数</th><th>介绍</th></tr></thead><tbody><tr><td><code>rank() over()</code></td><td>返回记录在同一分组内的排序，如果有并列名次的行，会占用下一名次的位置</td></tr><tr><td><code>dense_rank() over()</code></td><td>返回记录在同一分组内的排序，如果有并列名次的行，不占用下一名次的位置</td></tr><tr><td><code>row_number() over()</code></td><td>返回记录在同一分组内的排序，不考虑并列名次的情况</td></tr><tr><td><code>percent_rank() over()</code></td><td>返回记录在同一分组内排序的分位数，为0~1</td></tr><tr><td><code>sum(col) over()</code></td><td>返回同一分组内所有记录col值的和，同一分组内记录的返回值相同</td></tr><tr><td><code>avg(col) over()</code></td><td>返回同一分组内所有记录col值的平均值，同一分组内记录的返回值相同</td></tr><tr><td><code>max/min(col) over()</code></td><td>返回同一分组内所有记录col值的最大值/最小值，同一分组内记录的返回值相同</td></tr></tbody></table><p>聚合函数在窗口函数中，是对自身记录、及位于自身记录以上的数据进行运算的结果。聚合函数作为窗口函数，可以在每一行的数据里直观的看到，截止到本行数据，统计数据是多少（最大值、最小值等）。同时可以看出每一行数据，对整体统计数据的影响。</p><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引用来排序数据以加快搜索和排序操作的速度。可以在一个或多个列上定义索引，使DBMS保存其内容的一个排过序的列表。在定义了索引后，DBMS以使用书的索引类似的方法使用它。DBMS 搜索排过序的索引，找出匹配的位置，然后检索这些行。</p><p>索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。</p><p>索引用CREATE INDEX 语句创建（不同DBMS创建索引的语句变化很大）。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1]通俗易懂的学会：SQL窗口函数 <a href="https://zhuanlan.zhihu.com/p/92654574">https://zhuanlan.zhihu.com/p/92654574</a><br>[2]《拿下Offer:数据分析师求职面试指南》 <a href="https://item.jd.com/12686131.html">https://item.jd.com/12686131.html</a><br>[3]《SQL必知必会》 <a href="https://book.douban.com/subject/24250054/">https://book.douban.com/subject/24250054/</a><br>[4]廖雪峰的官方网站-SQL教程 <a href="https://www.liaoxuefeng.com/wiki/1177760294764384">https://www.liaoxuefeng.com/wiki/1177760294764384</a></p>]]></content>
+    <content type="html"><![CDATA[<p>&lt;&lt;SQL必知必会&gt;&gt;</p><p>SQLZOO</p><p>牛客网-SQL</p><p>LeetCode-SQL</p><p>b站：datafrog</p><p>SQL经典50题</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;表连接-join&quot;&gt;&lt;a href=&quot;#表连接-join&quot; class=&quot;headerlink&quot; title=&quot;表连接 join&quot;&gt;&lt;/a&gt;表连接 join&lt;/h1&gt;&lt;p&gt;join: 以字段（列）为单位进行多表连接。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr</summary>
+    <summary type="html">&lt;p&gt;&amp;lt;&amp;lt;SQL必知必会&amp;gt;&amp;gt;&lt;/p&gt;
+&lt;p&gt;SQLZOO&lt;/p&gt;
+&lt;p&gt;牛客网-SQL&lt;/p&gt;
+&lt;p&gt;LeetCode-SQL&lt;/p&gt;
+&lt;p&gt;b站：datafrog&lt;/p&gt;
+&lt;p&gt;SQL经典50题&lt;/p&gt;
+</summary>
       
     
     
@@ -64,26 +67,6 @@
     
     
     <category term="统计" scheme="http://example.com/tags/%E7%BB%9F%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/hello-world/"/>
-    <id>http://example.com/hello-world/</id>
-    <published>2021-04-29T17:59:07.000Z</published>
-    <updated>2021-04-29T17:59:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
