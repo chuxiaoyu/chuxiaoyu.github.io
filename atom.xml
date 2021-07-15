@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-07-14T07:33:23.149Z</updated>
+  <updated>2021-07-15T18:43:44.537Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,24 +17,74 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>校准对世界的预期</title>
+    <link href="http://example.com/%E6%A0%A1%E5%87%86%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E9%A2%84%E6%9C%9F/"/>
+    <id>http://example.com/%E6%A0%A1%E5%87%86%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E9%A2%84%E6%9C%9F/</id>
+    <published>2021-07-15T09:34:54.000Z</published>
+    <updated>2021-07-15T18:43:44.537Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>校准对世界的预期，这个题目出自于播客里听到的一段话：</p><blockquote><p>从学校步入职场，要做的第一件事是重新校准你对世界的预期。这世界就是很糟糕的（或者说，这世界是 okay 的，但是你对它有不切实际的预期）。</p></blockquote><p>很早的时候我经常怀疑，老师讲的东西有什么用？总有那么些课程，既不能直接用到工作中，又不能锻炼思维和逻辑能力。最后不得不承认一个危险的真相：上课太耽误学习了。而自己之所以为此感到痛苦，是因为抱有不合理的假设和预期。比如，当我产生怀疑的时候，其实我的假设就是老师教的就应该是有用的。可是凭什么呢？明明是我一厢情愿的这样认为，然后发现事实与预期不符，于是就不断痛苦。这样的假设还包括：</p><h2 id="H1-学校教的是对工作有用的-×"><a href="#H1-学校教的是对工作有用的-×" class="headerlink" title="H1. 学校教的是对工作有用的(×)"></a>H1. 学校教的是对工作有用的(×)</h2><p>学校是用来筛选的。学校有一套自己的游戏规则，按照这个规则走，就会得到老师和同学的赞赏、拿奖学金、保研、发论文、获得一系列荣誉奖项等——最终筛选出一个乖巧、听话、能干活、而且学习能力不错的人（或者至少愿意伪装成这样的人）。但把这个规则玩好，并不等同于拥有了工作需要的实力和能力，因为工作是另一套规则和玩法。由于从小一直灌输的是学校的规则，所以很难意识到游戏已经切换了，这就是常说的学生思维吧。</p><p>同时，这个世界上有无数个行业和领域，就有无数游戏和规则。诚然底层的东西是可以迁移，例如努力、负责等品质在哪里都是被认可的，但仍然要保持开放的心态，不能做出一个选择就否定其他选择，比如，一些马上想到但是不可描述的例子。这种心态的形成至少有3个因素：1.人的心理天然倾向于找各种理由支持自己的选择，而忽略对自己选择不利的方面。2.即使知道自己的选择有不好的一面，但出于虚荣坚决不能承认。3.即使知道自己的选择有不好的一面，但忽悠更多人进来才方便找人接盘。</p><p>最终通过身边的现象来看，乖乖听老师话的找不到工作只能考公（不是说公务员不好，而是说这种情况下并没有选择权），早早翘课去实习的拿到了令人羡慕的offer。用朋友圈里看到的一段话概括就是：主修LeetCode，辅修bilibili，旁听cs公开课，最后混一下学位必修课以达到毕业要求。这才是找到好工作的正确姿势。</p><h2 id="H2-世界是公平的-×"><a href="#H2-世界是公平的-×" class="headerlink" title="H2. 世界是公平的(×)"></a>H2. 世界是公平的(×)</h2><p>世界本来是不公平的，也不天然应该是公平的，因为人类文明的出现于是变好了一点点。所以那些声称只能接受这个糟糕的世界的说法也不对，这简直是在否定人类文明，没有什么是理所当然的。</p><h2 id="尝试放下所有假设和预期"><a href="#尝试放下所有假设和预期" class="headerlink" title="尝试放下所有假设和预期"></a>尝试放下所有假设和预期</h2><p>我们对于很多东西的判断是来自于书籍、电视、网络、和他人的只言片语、自己的经验。通过经验学习当然很有效，但问题是这些经验不都是客观理性的，如果我们放下这些先验知识，感受事物本身，通过自己的独立思考得到自己的结论，那么被忽悠的概率会大大降低吧。</p><h2 id="参考播客"><a href="#参考播客" class="headerlink" title="参考播客"></a>参考播客</h2><ul><li>BYM 职场12: 生活就是不公平的，你打算怎么办 <a href="https://www.xiaoyuzhoufm.com/episode/5e280fac418a84a0461fb16a?s=eyJ1IjogIjVlZWJiNWJkOTJkNzAyMzc2NzhkMDRkZSJ9">收听链接</a></li><li>BYM 职场14: 认清世界之残酷，你才可能成为那 5% 拥有自己事业的人 <a href="https://www.xiaoyuzhoufm.com/episode/5e280fac418a84a0461fb166?s=eyJ1IjogIjVlZWJiNWJkOTJkNzAyMzc2NzhkMDRkZSJ9">收听链接</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;校准对世界的预期，这个题目出自于播客里听到的一段话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;从学校步入职场，要做的第一件事是重新校准你对世</summary>
+      
+    
+    
+    
+    <category term="怀疑人生" scheme="http://example.com/categories/%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F/"/>
+    
+    
+    <category term="怀疑人生" scheme="http://example.com/tags/%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些好用的中英文LaTeX简历模板</title>
+    <link href="http://example.com/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87LaTeX%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF/"/>
+    <id>http://example.com/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87LaTeX%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF/</id>
+    <published>2021-07-15T08:23:20.000Z</published>
+    <updated>2021-07-15T09:19:24.502Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>简历的结构主要包括：</p><ul><li>标题 Heading（姓名、联系方式等）</li><li>教育背景 Education</li><li>经历 Experience<ul><li>实习 Work</li><li>科研/论文 Publications</li><li>项目 Projects</li></ul></li><li>个人技能 Skills</li></ul><h2 id="GitHub模板"><a href="#GitHub模板" class="headerlink" title="GitHub模板"></a>GitHub模板</h2><h3 id="英文简历-https-github-com-sb2nov-resume"><a href="#英文简历-https-github-com-sb2nov-resume" class="headerlink" title="英文简历 https://github.com/sb2nov/resume"></a>英文简历 <a href="https://github.com/sb2nov/resume">https://github.com/sb2nov/resume</a></h3><img src="/images/resume_01.png" width = "600" alt="rusume_01" align="center" /><h3 id="中文简历-https-github-com-hijiangtao-resume"><a href="#中文简历-https-github-com-hijiangtao-resume" class="headerlink" title="中文简历 https://github.com/hijiangtao/resume"></a>中文简历 <a href="https://github.com/hijiangtao/resume">https://github.com/hijiangtao/resume</a></h3><img src="/images/resume_02.png" width = "600" alt="rusume_02" align="center" /><h3 id="中英文兼容的简历-https-github-com-billryan-resume-tree-zh-CN"><a href="#中英文兼容的简历-https-github-com-billryan-resume-tree-zh-CN" class="headerlink" title="中英文兼容的简历 https://github.com/billryan/resume/tree/zh_CN"></a>中英文兼容的简历 <a href="https://github.com/billryan/resume/tree/zh_CN">https://github.com/billryan/resume/tree/zh_CN</a></h3><img src="/images/resume_03.png" width = "600" alt="rusume_03" align="center" /><img src="/images/resume_04.png" width = "600" alt="rusume_04" align="center" /><h2 id="怎么写简历的参考文章"><a href="#怎么写简历的参考文章" class="headerlink" title="怎么写简历的参考文章"></a>怎么写简历的参考文章</h2><h3 id="师妹看了都说好的简历长啥样"><a href="#师妹看了都说好的简历长啥样" class="headerlink" title="师妹看了都说好的简历长啥样"></a>师妹看了都说好的简历长啥样</h3><p><a href="https://mp.weixin.qq.com/s/ea2Pq3ZbJ30lTV3etaECoQ">https://mp.weixin.qq.com/s/ea2Pq3ZbJ30lTV3etaECoQ</a></p><h3 id="一个简洁优雅的-XeLaTeX-简历模板"><a href="#一个简洁优雅的-XeLaTeX-简历模板" class="headerlink" title="一个简洁优雅的 XeLaTeX 简历模板"></a>一个简洁优雅的 XeLaTeX 简历模板</h3><p><a href="https://tiankuizhang.github.io/files/00CV_CN/README/">https://tiankuizhang.github.io/files/00CV_CN/README/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;简历的结构主要包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标题 Heading（姓名、联系方式等）&lt;/li&gt;
+&lt;li&gt;教育背景 Education&lt;/</summary>
+      
+    
+    
+    
+    <category term="工具箱" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E7%AE%B1/"/>
+    
+    
+    <category term="laTeX" scheme="http://example.com/tags/laTeX/"/>
+    
+    <category term="简历" scheme="http://example.com/tags/%E7%AE%80%E5%8E%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SQL学习资料</title>
     <link href="http://example.com/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
     <id>http://example.com/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</id>
     <published>2021-07-14T07:32:58.000Z</published>
-    <updated>2021-07-14T07:33:23.149Z</updated>
+    <updated>2021-07-15T11:17:18.997Z</updated>
     
-    <content type="html"><![CDATA[<p>&lt;&lt;SQL必知必会&gt;&gt;</p><p>SQLZOO</p><p>牛客网-SQL</p><p>LeetCode-SQL</p><p>b站：datafrog</p><p>SQL经典50题</p>]]></content>
+    <content type="html"><![CDATA[<p>&lt;&lt;SQL必知必会&gt;&gt; <a href="https://book.douban.com/subject/35167240/">https://book.douban.com/subject/35167240/</a></p><p>SQLZOO <a href="https://sqlzoo.net/">https://sqlzoo.net/</a></p><p>牛客网-SQL <a href="https://www.nowcoder.com/activity/oj?tab=1">https://www.nowcoder.com/activity/oj?tab=1</a></p><p>LeetCode-SQL <a href="https://leetcode-cn.com/problemset/database/">https://leetcode-cn.com/problemset/database/</a></p><p>b站：datafrog <a href="https://space.bilibili.com/359939497?from=search&seid=12126159306328388316">https://space.bilibili.com/359939497?from=search&amp;seid=12126159306328388316</a></p><p>SQL经典50题 - 网上随便搜</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&amp;lt;&amp;lt;SQL必知必会&amp;gt;&amp;gt;&lt;/p&gt;
-&lt;p&gt;SQLZOO&lt;/p&gt;
-&lt;p&gt;牛客网-SQL&lt;/p&gt;
-&lt;p&gt;LeetCode-SQL&lt;/p&gt;
-&lt;p&gt;b站：datafrog&lt;/p&gt;
-&lt;p&gt;SQL经典50题&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;p&gt;&amp;lt;&amp;lt;SQL必知必会&amp;gt;&amp;gt; &lt;a href=&quot;https://book.douban.com/subject/35167240/&quot;&gt;https://book.douban.com/subject/35167240/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SQLZOO &lt;</summary>
       
     
     
