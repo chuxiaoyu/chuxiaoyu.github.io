@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-07-26T19:47:00.920Z</updated>
+  <updated>2021-07-28T07:46:14.389Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS61A Week1 Comupter_Science, Functions</title>
+    <link href="http://example.com/cs61a-week1/"/>
+    <id>http://example.com/cs61a-week1/</id>
+    <published>2021-07-27T08:46:52.000Z</published>
+    <updated>2021-07-28T07:46:14.389Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>CS61A作为61系列基础课程的第一门课程，是一门计算机入门导论课程，伯克利大一新生的第一门计算机课程。该课程主要使用Python语言，简要介绍了计算机的各种概念，范围广而涉猎不深，包括高阶函数，抽象，递归和树，OOP，简单的SQL语句，Scheme语法和解释器等概念。</p><p>目前推荐的课程是20年秋季学期(fa20)的课程。</p><p>——名校公开课程评价网 <a href="https://conanhujinming.github.io/comments-for-awesome-courses/UC%20BerkeleyCS61A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/">名校公开课程评价网-cs61a</a></p></blockquote><h2 id="文档组织"><a href="#文档组织" class="headerlink" title="文档组织"></a>文档组织</h2><p>对应不同教学内容，文档组织如下：</p><img src="/images/cs61a/01/zuzhi.jpg" width = "200" alt="" align="center" /><ul><li>0_课件：lecture</li><li>1_代码：lecture代码</li><li>2_笔记：学习笔记<ul><li>使用markdown</li><li>内容包括：Weekx内容(x=week number), Lecture Notes, Lab Notes, Homework Notes</li></ul></li><li>3_实验：lab</li><li>4_作业：homework</li><li>5_项目：project</li></ul><h2 id="Week1内容"><a href="#Week1内容" class="headerlink" title="Week1内容"></a>Week1内容</h2><img src="/images/cs61a/01/00.jpg" alt="" align="center" /><p>Week1主要内容：</p><ul><li><p>Lecture: Computer Science, Functions 介绍计算机科学和函数基础知识</p></li><li><p>Lab00: 安装Python3，终端的使用，常用命令行，文档测试（doctest）的使用，测试和提交使用OK系统</p><img src="/images/cs61a/01/02.jpg" width = "500" alt="" align="center" /></li><li><p>HW01: 掌握函数特性</p></li></ul><h2 id="Lecture-Notes"><a href="#Lecture-Notes" class="headerlink" title="Lecture Notes"></a>Lecture Notes</h2><h3 id="What-is-Computer-Science"><a href="#What-is-Computer-Science" class="headerlink" title="What is Computer Science"></a>What is Computer Science</h3><img src="/images/cs61a/01/01.jpg" alt="" width = "700" align="center" /><p>计算机科学是一门定义和解决计算问题的方法和技术的学科。它的分支结构参考CSRanking的分类方式（ <a href="http://csrankings.org/#/index?all&world">http://csrankings.org/#/index?all&amp;world</a>），大概可以分为人工智能（计算机视觉、机器学习、自然语言处理、信息检索…）、系统（计算机结构、网络、安全、数据库、操作系统、分布式…）、理论（算法和复杂度、formal method…）、交叉（计算生物/生物计算、人机交互、机器人…）等方向。</p><h3 id="Anatomy-of-a-Call-Expression-Operator-Operand"><a href="#Anatomy-of-a-Call-Expression-Operator-Operand" class="headerlink" title="Anatomy of a Call Expression: Operator, Operand"></a>Anatomy of a Call Expression: Operator, Operand</h3><img src="/images/cs61a/01/03.jpg" width = "700" alt="" align="center" /><blockquote><p>在程式語言中, 指示程式進行運算(計算、比較或連結) 的符號, 稱為operators (運算子), 被運算的資料稱為operands (運算元), 一句中有operators 及operands 就稱為expression。</p></blockquote><h3 id="Environment-Diagrams"><a href="#Environment-Diagrams" class="headerlink" title="Environment Diagrams"></a>Environment Diagrams</h3><img src="/images/cs61a/01/04.jpg" width = "700" alt="" align="center" /><p>Environment Diagrams Tools: <a href="http://pythontutor.com/composingprograms.html#mode=edit">http://pythontutor.com/composingprograms.html#mode=edit</a></p><h3 id="Defining-Functions"><a href="#Defining-Functions" class="headerlink" title="Defining Functions"></a>Defining Functions</h3><img src="/images/cs61a/01/05.jpg" alt="" width = "700" align="center" /><img src="/images/cs61a/01/06.jpg" alt="" width = "700" align="center" /><img src="/images/cs61a/01/07.jpg" alt="" width = "700" align="center" /><p>这里涉及到全局变量（Global Variable）和局部变量（Local Variable）的问题，全局变量是整个程序都可访问的变量，生存期从程序开始到程序结束；局部变量存在于模块中(比如某个函数)，只有在模块中才可以访问，生存期从模块开始到模块结束。简单的说，</p><ul><li>全局变量：在模块内、在所有函数的外面、在class外面</li><li>局部变量：在函数内、在class的方法内</li></ul><h2 id="Lab-Notes"><a href="#Lab-Notes" class="headerlink" title="Lab Notes"></a>Lab Notes</h2><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls: lists all files in the current directory</span><br><span class="line">cd &lt;path to directory&gt;: change into the specified directory</span><br><span class="line">mkdir &lt;directory name&gt;: make a new directory with the given name</span><br><span class="line">mv &lt;source path&gt; &lt;destination path&gt;: move the file at the given source to the given destination</span><br></pre></td></tr></table></figure><h2 id="Homework-Notes"><a href="#Homework-Notes" class="headerlink" title="Homework Notes"></a>Homework Notes</h2><h3 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h3><p><code>TypeError: &#39;int&#39; object is not callable</code></p><p>修改程序名就可以了。</p><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Q5: If Function vs Statement</p><img src="/images/cs61a/01/hwp01.jpg" alt="" align="center" /><p>while…<br><img src="/images/cs61a/01/hwp02.jpg" alt=""  width="200" align="left" /><br><br><br><br></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>cs61a 20fall 官网 <a href="https://inst.eecs.berkeley.edu/~cs61a/fa20/">https://inst.eecs.berkeley.edu/~cs61a/fa20/</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;CS61A作为61系列基础课程的第一门课程，是一门计算机入门导论课程，伯克利大一新生的第一门计算机课程。该课程主要</summary>
+      
+    
+    
+    
+    <category term="计算机基础" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="CS61A 计算机程序的构造与解释" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/CS61A-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/"/>
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="CS公开课" scheme="http://example.com/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+    <category term="function" scheme="http://example.com/tags/function/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL表连接&amp;聚合函数&amp;窗口函数</title>
@@ -105,7 +138,7 @@
     <link href="http://example.com/%E5%A4%A7%E7%90%86/"/>
     <id>http://example.com/%E5%A4%A7%E7%90%86/</id>
     <published>2021-07-21T14:49:49.000Z</published>
-    <updated>2021-07-23T13:06:57.832Z</updated>
+    <updated>2021-07-27T10:12:31.484Z</updated>
     
     <content type="html"><![CDATA[<p>生活就是换个地方打工。</p><p>然而田园的生活也不是那么美好的，有很多想象不到的问题。比如，随时随地出现的各种蚊虫、大蜘蛛、蛇，花花草草都要每天浇水和定时剪枝，下雨天泳池会有很多脏东西需要处理，垃圾必须每天清空不然会有老鼠光顾，厨房排水做不好的话会倒流没法用（怪不得要专业疏通下水道），还有电路也时不时的出点毛病。</p><p>由于每天都在处理这种琐碎的事情，这段时间最常去的地方就是仓库了。仓库就像哆啦A梦的口袋一样，变出我以前不知道的各种工具来，有些我即使认识也不知道名字，但是这些小玩意儿在生活中如此有用，比如玻璃胶、磨砂纸、扎带种种。有一次，洗衣机旁的电源开关的接触不好，电工来修，把电线直接接到了一个插排上，虽然我对这个做法的安全性和易用性保持怀疑，但足够让物理一向不好的我很是佩服——毕竟我连火线零线都分不清，高中物理连接小灯泡的题也得想半天。</p><p>后来，就匆匆离开了。就像Harry说的，It is not better or worse than any place else - just different. </p><img src="/images/dali/1.JPG" width="300" alt="" align="left" /><img src="/images/dali/2.JPG" width="300" alt="" align="left" /><img src="/images/dali/3.JPG" width="300" alt="" align="left" /><img src="/images/dali/4.JPG" width="300" alt="" align="left" /><img src="/images/dali/5.JPG" width="300" alt="" align="left" /><img src="/images/dali/8.JPG" width="300" alt="" align="left" /><img src="/images/dali/6.jpeg" width="300" alt="" align="left" /><img src="/images/dali/7.jpeg" width="300" alt="" align="left" /><img src="/images/dali/9.jpeg" width="300" alt="" align="left" />]]></content>
     
@@ -118,7 +151,7 @@
     
     
     
-    <category term="奔行世间" scheme="http://example.com/categories/%E5%A5%94%E8%A1%8C%E4%B8%96%E9%97%B4/"/>
+    <category term="沉思录" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
     
     
     <category term="大理" scheme="http://example.com/tags/%E5%A4%A7%E7%90%86/"/>

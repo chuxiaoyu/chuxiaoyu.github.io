@@ -203,15 +203,6 @@
                         <a href="#" data-role="directory">
                             <i class="fa fa-folder-open"></i>
                             &nbsp;
-                            奔行世间
-                        </a>
-                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/%E5%A4%A7%E7%90%86/">大理|在民宿打工的日子</a></li>  </ul> 
-                    </li> 
-                    
-                    <li class="directory">
-                        <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
-                            &nbsp;
                             工具箱
                         </a>
                          <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87LaTeX%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF/">一些好用的中英文LaTeX简历模板</a></li>  <li class="file"><a href="/git/">5h打通Git全套教程</a></li>  </ul> 
@@ -223,7 +214,25 @@
                             &nbsp;
                             沉思录
                         </a>
-                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/%E6%A0%A1%E5%87%86%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E9%A2%84%E6%9C%9F/">校准对世界的预期</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/%E6%A0%A1%E5%87%86%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E9%A2%84%E6%9C%9F/">校准对世界的预期</a></li>  <li class="file"><a href="/%E5%A4%A7%E7%90%86/">大理|在民宿打工的日子</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            计算机基础
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            CS61A 计算机程序的构造与解释
+                        </a>
+                         <ul class="unstyled" id="tree" style="display: block;">  <li class="file"><a href="/cs61a-week1/">CS61A Week1 Comupter_Science, Functions</a></li>  </ul> 
+                    </li> 
+                     </ul> 
                     </li> 
                      </ul> 
     </div>
@@ -297,6 +306,100 @@
 </aside>
             
             <section id="main">
+        <article id="post-cs61a-week1" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/CS61A-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/">CS61A 计算机程序的构造与解释</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/" rel="tag">CS公开课</a>, <a class="tag-link-link" href="/tags/function/" rel="tag">function</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/cs61a-week1/">
+            <time datetime="2021-07-27T08:46:52.000Z" itemprop="datePublished">2021-07-27</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/cs61a-week1/">CS61A Week1 Comupter_Science, Functions</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>CS61A作为61系列基础课程的第一门课程，是一门计算机入门导论课程，伯克利大一新生的第一门计算机课程。该课程主要使用Python语言，简要介绍了计算机的各种概念，范围广而涉猎不深，包括高阶函数，抽象，递归和树，OOP，简单的SQL语句，Scheme语法和解释器等概念。</p>
+<p>目前推荐的课程是20年秋季学期(fa20)的课程。</p>
+<p>——名校公开课程评价网 <a target="_blank" rel="noopener" href="https://conanhujinming.github.io/comments-for-awesome-courses/UC%20BerkeleyCS61A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/">名校公开课程评价网-cs61a</a></p>
+</blockquote>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/cs61a-week1/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-SQL重点" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -589,7 +692,7 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%A5%94%E8%A1%8C%E4%B8%96%E9%97%B4/">奔行世间</a>
+        <a class="article-category-link" href="/categories/%E6%B2%89%E6%80%9D%E5%BD%95/">沉思录</a>
     </div>
 
                         
