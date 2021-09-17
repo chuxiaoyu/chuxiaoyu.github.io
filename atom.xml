@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-17T01:42:48.088Z</updated>
+  <updated>2021-09-17T10:04:31.734Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,51 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>task03 学习BERT</title>
+    <link href="http://example.com/nlp-transformer-task03/"/>
+    <id>http://example.com/nlp-transformer-task03/</id>
+    <published>2021-09-17T01:44:18.000Z</published>
+    <updated>2021-09-17T10:04:31.734Z</updated>
+    
+    <content type="html"><![CDATA[<p>(BERT大纲)</p><ul><li>BERT的简介<ul><li>前置知识：词嵌入</li><li>模型的结构、输入、输出</li></ul></li><li>BERT的预训练任务<ul><li>Masked Language Model（MLM）</li><li>Next Sentence Prediction（NSP）</li></ul></li><li>BERT的应用<ul><li>特征提取</li><li>Pretrain + Fine tune</li></ul></li></ul><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>基于transformers的自然语言处理(NLP)入门–在线阅读 <a href="https://datawhalechina.github.io/learn-nlp-with-transformers/#/">https://datawhalechina.github.io/learn-nlp-with-transformers/#/</a></li><li>李宏毅机器学习2019-ELMO,BERT,GPT <a href="https://www.bilibili.com/video/BV1Gb411n7dE?p=61">https:// www.bilibili.com/video/BV1Gb411n7dE?p=61</a></li><li>to be continued</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;(BERT大纲)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BERT的简介&lt;ul&gt;
+&lt;li&gt;前置知识：词嵌入&lt;/li&gt;
+&lt;li&gt;模型的结构、输入、输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;BERT的预训练任务&lt;ul&gt;
+&lt;li&gt;Masked Language Model（MLM）&lt;/l</summary>
+      
+    
+    
+    
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="第29期 基于transformer的NLP" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8Etransformer%E7%9A%84NLP/"/>
+    
+    
+    <category term="NLP" scheme="http://example.com/tags/NLP/"/>
+    
+    <category term="组队学习" scheme="http://example.com/tags/%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="预训练模型" scheme="http://example.com/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="BERT" scheme="http://example.com/tags/BERT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>task02 学习Attentioin和Transformer</title>
     <link href="http://example.com/nlp-transformer-task02/"/>
     <id>http://example.com/nlp-transformer-task02/</id>
     <published>2021-09-17T01:09:24.000Z</published>
-    <updated>2021-09-17T01:42:48.088Z</updated>
+    <updated>2021-09-17T02:01:17.002Z</updated>
     
     <content type="html"><![CDATA[<p>（其实每部分我写了笔记，但还没完善。所以先记一下大纲/doge）</p><h1 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h1><p>Attention涉及的内容包括：</p><ul><li>seq2seq</li><li>Attention机制</li><li>self-attention模型</li><li>有自注意力机制的seq2seq模型</li><li>self-attention的计算过程</li><li>self-attention的矩阵运算</li><li>位置编码</li><li>multi-head attention</li><li>masked multi-head attention</li></ul><h1 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h1><p>Transformer涉及的内容包括：</p><ul><li>transformer整体架构</li><li>transformer模块详解<ul><li>Input</li><li>Encoder</li><li>Decoder</li><li>Output</li></ul></li><li>transformer代码实现<ul><li>Encoder</li><li>Decoder</li><li>Attention</li><li>Full-connected Neural Network</li><li>Enmbedding</li><li>Softmax</li></ul></li><li>transformer应用任务</li></ul><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><strong>理论部分</strong><br>[1] (强推)李宏毅2021春机器学习课程 <a href="https://www.bilibili.com/video/BV1Wv411h7kN?from=search&seid=17090062977285779802&spm_id_from=333.337.0.0">https://www.bilibili.com/video/BV1Wv411h7kN?from=search&amp;seid=17090062977285779802&amp;spm_id_from=333.337.0.0</a><br>[2] <strong>基于transformers的自然语言处理(NLP)入门（涵盖了图解系列、annotated transformer、huggingface）</strong> <a href="https://github.com/datawhalechina/learn-nlp-with-transformers">https://github.com/datawhalechina/learn-nlp-with-transformers</a><br>[3] 图解transformer|The Illustrated Transformer <a href="http://jalammar.github.io/illustrated-transformer/">http://jalammar.github.io/illustrated-transformer/</a><br>[4] 图解seq2seq, attention|Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention) <a href="https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/</a></p><p><strong>代码部分</strong><br>[5] The Annotated Transformer <a href="http://nlp.seas.harvard.edu//2018/04/03/attention.html">http://nlp.seas.harvard.edu//2018/04/03/attention.html</a><br>[6] Huggingface/transformers <a href="https://github.com/huggingface/transformers/blob/master/README_zh-hans.md">https://github.com/huggingface/transformers/blob/master/README_zh-hans.md</a></p><p><strong>论文部分</strong><br>Attention is all “we” need.</p><p><strong>其他不错的博客或教程</strong><br>[7] 基于transformers的自然语言处理(NLP)入门–在线阅读 <a href="https://datawhalechina.github.io/learn-nlp-with-transformers/#/">https://datawhalechina.github.io/learn-nlp-with-transformers/#/</a><br>[8] 李宏毅2021春机器学习课程笔记——自注意力机制 <a href="https://www.cnblogs.com/sykline/p/14730088.html">https://www.cnblogs.com/sykline/p/14730088.html</a><br>[9] 李宏毅2021春机器学习课程笔记——Transformer模型 <a href="https://www.cnblogs.com/sykline/p/14785552.html">https://www.cnblogs.com/sykline/p/14785552.html</a><br>[10] 李宏毅机器学习学习笔记——自注意力机制 <a href="https://blog.csdn.net/p_memory/article/details/116271274">https://blog.csdn.net/p_memory/article/details/116271274</a><br>[11] 车万翔-自然语言处理新范式：基于预训练的方法【讲座+PPT】 <a href="https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_611f48f3e4b02ac39d12246f/3?fromH5=true">https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_611f48f3e4b02ac39d12246f/3?fromH5=true</a><br>[12] 苏剑林-《Attention is All You Need》浅读（简介+代码）<a href="https://spaces.ac.cn/archives/4765">https://spaces.ac.cn/archives/4765</a></p>]]></content>
     
@@ -34,11 +74,9 @@
     
     
     
-    <category term="人工智能" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="自然语言处理" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
-    
-    <category term="第29期 基于transformer的自然语言处理" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8Etransformer%E7%9A%84%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
+    <category term="第29期 基于transformer的NLP" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8Etransformer%E7%9A%84NLP/"/>
     
     
     <category term="NLP" scheme="http://example.com/tags/NLP/"/>
@@ -47,6 +85,10 @@
     
     <category term="预训练模型" scheme="http://example.com/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/"/>
     
+    <category term="attention" scheme="http://example.com/tags/attention/"/>
+    
+    <category term="transfomer" scheme="http://example.com/tags/transfomer/"/>
+    
   </entry>
   
   <entry>
@@ -54,7 +96,7 @@
     <link href="http://example.com/nlp-transformer-task01/"/>
     <id>http://example.com/nlp-transformer-task01/</id>
     <published>2021-09-12T16:14:06.000Z</published>
-    <updated>2021-09-17T01:25:02.795Z</updated>
+    <updated>2021-09-17T02:01:11.972Z</updated>
     
     <content type="html"><![CDATA[<h1 id="NLP思维导图-最近更新日期：2021-09-13"><a href="#NLP思维导图-最近更新日期：2021-09-13" class="headerlink" title="NLP思维导图(最近更新日期：2021-09-13)"></a>NLP思维导图(最近更新日期：2021-09-13)</h1><img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/NLP.png?raw=true" width="900" alt="" align="center" /><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>Datawhale-基于transformers的自然语言处理(NLP)入门 <a href="https://github.com/datawhalechina/learn-nlp-with-transformers">https://github.com/datawhalechina/learn-nlp-with-transformers</a></li><li>《自然语言处理-基于预训练模型的方法》 <a href="https://item.jd.com/13344628.html">https://item.jd.com/13344628.html</a></li><li>刘知远老师-NLP研究入门之道 <a href="https://github.com/zibuyu/research_tao">https://github.com/zibuyu/research_tao</a></li></ul>]]></content>
     
@@ -66,11 +108,9 @@
     
     
     
-    <category term="人工智能" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="自然语言处理" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
-    
-    <category term="第29期 基于transformer的自然语言处理" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8Etransformer%E7%9A%84%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
+    <category term="第29期 基于transformer的NLP" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8Etransformer%E7%9A%84NLP/"/>
     
     
     <category term="NLP" scheme="http://example.com/tags/NLP/"/>
@@ -82,11 +122,44 @@
   </entry>
   
   <entry>
+    <title>CS61A Week1 Comupter_Science, Functions</title>
+    <link href="http://example.com/cs61a-week1/"/>
+    <id>http://example.com/cs61a-week1/</id>
+    <published>2021-09-01T08:46:52.000Z</published>
+    <updated>2021-09-17T01:51:24.035Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>CS61A作为61系列基础课程的第一门课程，是一门计算机入门导论课程，伯克利大一新生的第一门计算机课程。该课程主要使用Python语言，简要介绍了计算机的各种概念，范围广而涉猎不深，包括高阶函数，抽象，递归和树，OOP，简单的SQL语句，Scheme语法和解释器等概念。</p><p>目前推荐的课程是20年秋季学期(fa20)的课程。</p><p>——名校公开课程评价网 <a href="https://conanhujinming.github.io/comments-for-awesome-courses/UC%20BerkeleyCS61A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/">名校公开课程评价网-cs61a</a></p></blockquote><h2 id="文档组织"><a href="#文档组织" class="headerlink" title="文档组织"></a>文档组织</h2><p>对应不同教学内容，文档组织如下：</p><img src="/images/cs61a/01/zuzhi.jpg" width = "200" alt="" align="center" /><ul><li>0_课件：lecture</li><li>1_代码：lecture代码</li><li>2_笔记：学习笔记<ul><li>使用markdown</li><li>内容包括：Weekx内容(x=week number), Lecture Notes, Lab Notes, Homework Notes</li></ul></li><li>3_实验：lab</li><li>4_作业：homework</li><li>5_项目：project</li></ul><h2 id="Week1内容"><a href="#Week1内容" class="headerlink" title="Week1内容"></a>Week1内容</h2><img src="/images/cs61a/01/00.jpg" alt="" align="center" /><p>Week1主要内容：</p><ul><li><p>Lecture01 Computer Science; Lecture02 Functions 介绍计算机科学和函数基础知识</p></li><li><p>Lab00: Getting Started 安装Python3，终端的使用，常用命令行，文档测试（doctest）的使用，测试和提交使用OK系统</p><img src="/images/cs61a/01/02.jpg" width = "500" alt="" align="center" /></li><li><p>HW01: Variables &amp; Functions, Control。掌握函数特性</p></li></ul><h2 id="Lecture-Notes"><a href="#Lecture-Notes" class="headerlink" title="Lecture Notes"></a>Lecture Notes</h2><h3 id="What-is-Computer-Science"><a href="#What-is-Computer-Science" class="headerlink" title="What is Computer Science"></a>What is Computer Science</h3><img src="/images/cs61a/01/01.jpg" alt="" width = "700" align="center" /><p>计算机科学是一门定义和解决计算问题的方法和技术的学科。它的分支结构参考CSRanking的分类方式（ <a href="http://csrankings.org/#/index?all&world">http://csrankings.org/#/index?all&amp;world</a>），大概可以分为人工智能（计算机视觉、机器学习、自然语言处理、信息检索…）、系统（计算机结构、网络、安全、数据库、操作系统、分布式…）、理论（算法和复杂度、formal method…）、交叉（计算生物/生物计算、人机交互、机器人…）等方向。</p><h3 id="Anatomy-of-a-Call-Expression-Operator-Operand"><a href="#Anatomy-of-a-Call-Expression-Operator-Operand" class="headerlink" title="Anatomy of a Call Expression: Operator, Operand"></a>Anatomy of a Call Expression: Operator, Operand</h3><img src="/images/cs61a/01/03.jpg" width = "700" alt="" align="center" /><blockquote><p>在程式語言中, 指示程式進行運算(計算、比較或連結) 的符號, 稱為operators (運算子), 被運算的資料稱為operands (運算元), 一句中有operators 及operands 就稱為expression。</p></blockquote><h3 id="Environment-Diagrams"><a href="#Environment-Diagrams" class="headerlink" title="Environment Diagrams"></a>Environment Diagrams</h3><img src="/images/cs61a/01/04.jpg" width = "700" alt="" align="center" /><p>Environment Diagrams Tools: <a href="http://pythontutor.com/composingprograms.html#mode=edit">http://pythontutor.com/composingprograms.html#mode=edit</a></p><h3 id="Defining-Functions"><a href="#Defining-Functions" class="headerlink" title="Defining Functions"></a>Defining Functions</h3><img src="/images/cs61a/01/05.jpg" alt="" width = "700" align="center" /><img src="/images/cs61a/01/06.jpg" alt="" width = "700" align="center" /><img src="/images/cs61a/01/07.jpg" alt="" width = "700" align="center" /><p>这里涉及到全局变量（Global Variable）和局部变量（Local Variable）的问题，全局变量是整个程序都可访问的变量，生存期从程序开始到程序结束；局部变量存在于模块中(比如某个函数)，只有在模块中才可以访问，生存期从模块开始到模块结束。简单的说，</p><ul><li>全局变量：在模块内、在所有函数的外面、在class外面</li><li>局部变量：在函数内、在class的方法内</li></ul><h2 id="Lab-Notes"><a href="#Lab-Notes" class="headerlink" title="Lab Notes"></a>Lab Notes</h2><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls: lists all files in the current directory</span><br><span class="line">cd &lt;path to directory&gt;: change into the specified directory</span><br><span class="line">mkdir &lt;directory name&gt;: make a new directory with the given name</span><br><span class="line">mv &lt;source path&gt; &lt;destination path&gt;: move the file at the given source to the given destination</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 xxx.py # 运行程序</span><br><span class="line">python3 -i xxx.py # 运行程序并打开交互式会话</span><br><span class="line">python3 -m doctest xxx.py # 运行文档测试</span><br><span class="line">python3 -m doctest - xxx.py # 运行文档测试并显示样例</span><br></pre></td></tr></table></figure><h2 id="Homework-Notes"><a href="#Homework-Notes" class="headerlink" title="Homework Notes"></a>Homework Notes</h2><h3 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h3><p><code>TypeError: &#39;int&#39; object is not callable</code></p><p>修改程序名就可以了。</p><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Q5: If Function vs Statement</p><img src="/images/cs61a/01/hwp01.jpg" alt="" align="center" /><p>while…<br><img src="/images/cs61a/01/hwp02.jpg" alt=""  width="200" align="left" /><br><br><br><br></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>cs61a 20fall 官网 <a href="https://inst.eecs.berkeley.edu/~cs61a/fa20/">https://inst.eecs.berkeley.edu/~cs61a/fa20/</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;CS61A作为61系列基础课程的第一门课程，是一门计算机入门导论课程，伯克利大一新生的第一门计算机课程。该课程主要</summary>
+      
+    
+    
+    
+    <category term="01 计算机基础" scheme="http://example.com/categories/01-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="CS61A 计算机程序的构造与解释" scheme="http://example.com/categories/01-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/CS61A-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/"/>
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="CS公开课" scheme="http://example.com/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+    <category term="function" scheme="http://example.com/tags/function/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《公式之美》：EVERYTHING IS EPHEMERAL BUT FORMULA IS ETERNAL</title>
     <link href="http://example.com/formula/"/>
     <id>http://example.com/formula/</id>
     <published>2021-08-04T12:27:54.000Z</published>
-    <updated>2021-08-17T15:53:36.055Z</updated>
+    <updated>2021-09-17T01:49:34.192Z</updated>
     
     <content type="html"><![CDATA[<p>一个有点意思的科普书，尤其在不想写论文的时候，宁愿去看勾股定理的N种推导也不愿意碰论文。更好玩的是，这里面的插图要比内容更没有争议的获得一致好评。</p><blockquote><p>1854年之前，欧洲数学家灿若星辰，笛卡儿、拉格朗日、牛顿、贝叶斯、拉普拉斯、柯西、傅里叶、伽罗瓦等，无一不是数学天才。<br>1854—1935年，高斯、黎曼等人在数学界领袖群伦，德国取代英法成为世界的数学中心。<br>1935年之后，希特勒给美国送上“科学大礼包”：哥德尔、爱因斯坦、德拜、冯.诺依曼、费米、冯.卡门、外尔……很多科学家逃至北美，数学大本营从德国转向美国，美国成为世界的数学中心。</p></blockquote><blockquote><p>古希腊几何学家阿波洛尼乌斯总结了圆锥曲线理论，一千多年后，德国天文学家开普勒才将其应用于行星轨道；高斯被认为最早发现非欧几何，半个世纪后，由他弟子创立的黎曼几何成为广义相对论的数学基础。伴随着杠杆原理、牛顿三大定律、麦克斯韦方程、香农公式、贝叶斯定理等，人类向蒸汽时代、电力时代、信息时代乃至人工智能时代徐徐迈进。</p></blockquote><h2 id="1-1-2：数学的溯源"><a href="#1-1-2：数学的溯源" class="headerlink" title="1+1=2：数学的溯源"></a>1+1=2：数学的溯源</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/00-1plus1.jpg?raw=true" width="600" alt="" align="center" /><h2 id="勾股定理：数与形的结合"><a href="#勾股定理：数与形的结合" class="headerlink" title="勾股定理：数与形的结合"></a>勾股定理：数与形的结合</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/01-gougudingli.jpg?raw=true" width="600" alt="" align="center" /><h2 id="费马大定理：困扰人类358年"><a href="#费马大定理：困扰人类358年" class="headerlink" title="费马大定理：困扰人类358年"></a>费马大定理：困扰人类358年</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/02-feima.jpg?raw=true" width="600" alt="" align="center" /><h2 id="牛顿-莱布尼茨公式：无穷小的秘密"><a href="#牛顿-莱布尼茨公式：无穷小的秘密" class="headerlink" title="牛顿-莱布尼茨公式：无穷小的秘密"></a>牛顿-莱布尼茨公式：无穷小的秘密</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/03-weijifen.jpg?raw=true" width="600" alt="" align="center" /><h2 id="万有引力：从混沌到光明"><a href="#万有引力：从混沌到光明" class="headerlink" title="万有引力：从混沌到光明"></a>万有引力：从混沌到光明</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/04-wanyouyinli.jpg?raw=true" width="600" alt="" align="center" /><h2 id="欧拉公式：最美的等式"><a href="#欧拉公式：最美的等式" class="headerlink" title="欧拉公式：最美的等式"></a>欧拉公式：最美的等式</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/05-oula.jpg?raw=true" width="600" alt="" align="center" /><h2 id="伽罗瓦理论：无解的方程"><a href="#伽罗瓦理论：无解的方程" class="headerlink" title="伽罗瓦理论：无解的方程"></a>伽罗瓦理论：无解的方程</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/06-jialuowa.jpg?raw=true" width="600" alt="" align="center" /><h2 id="危险的黎曼猜想"><a href="#危险的黎曼猜想" class="headerlink" title="危险的黎曼猜想"></a>危险的黎曼猜想</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/07-liman.jpg?raw=true" width="600" alt="" align="center" /><h2 id="熵增定律：寂灭是宇宙宿命？"><a href="#熵增定律：寂灭是宇宙宿命？" class="headerlink" title="熵增定律：寂灭是宇宙宿命？"></a>熵增定律：寂灭是宇宙宿命？</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/08-shang.jpg?raw=true" width="600" alt="" align="center" /><h2 id="麦克斯韦方程组：让黑暗消失"><a href="#麦克斯韦方程组：让黑暗消失" class="headerlink" title="麦克斯韦方程组：让黑暗消失"></a>麦克斯韦方程组：让黑暗消失</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/09-mksw.jpg?raw=true" width="600" alt="" align="center" /><h2 id="质能方程：开启潘多拉的魔盒"><a href="#质能方程：开启潘多拉的魔盒" class="headerlink" title="质能方程：开启潘多拉的魔盒"></a>质能方程：开启潘多拉的魔盒</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/10-zhineng.jpg?raw=true" width="600" alt="" align="center" /><h2 id="薛定谔方程：猫与量子世界"><a href="#薛定谔方程：猫与量子世界" class="headerlink" title="薛定谔方程：猫与量子世界"></a>薛定谔方程：猫与量子世界</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/11-uedinge.jpg?raw=true" width="600" alt="" align="center" /><h2 id="狄拉克方程：反物质的“先知”"><a href="#狄拉克方程：反物质的“先知”" class="headerlink" title="狄拉克方程：反物质的“先知”"></a>狄拉克方程：反物质的“先知”</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/12-dilake.jpg?raw=true" width="600" alt="" align="center" /><h2 id="杨-米尔斯规范场论：大统一之路"><a href="#杨-米尔斯规范场论：大统一之路" class="headerlink" title="杨-米尔斯规范场论：大统一之路"></a>杨-米尔斯规范场论：大统一之路</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/13-yang.jpg?raw=true" width="600" alt="" align="center" /><h2 id="香农公式：5G背后的主宰"><a href="#香农公式：5G背后的主宰" class="headerlink" title="香农公式：5G背后的主宰"></a>香农公式：5G背后的主宰</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/14-xiangnong.jpg?raw=true" width="600" alt="" align="center" /><h2 id="布莱克-斯科尔斯方程：金融“巫师”"><a href="#布莱克-斯科尔斯方程：金融“巫师”" class="headerlink" title="布莱克-斯科尔斯方程：金融“巫师”"></a>布莱克-斯科尔斯方程：金融“巫师”</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/15-bulaike.jpg?raw=true" width="600" alt="" align="center" /><h2 id="枪械：弹道里的“技术哲学”"><a href="#枪械：弹道里的“技术哲学”" class="headerlink" title="枪械：弹道里的“技术哲学”"></a>枪械：弹道里的“技术哲学”</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/16-qiangxie.jpg?raw=true" width="600" alt="" align="center" /><h2 id="胡克定律：机械表的心脏"><a href="#胡克定律：机械表的心脏" class="headerlink" title="胡克定律：机械表的心脏"></a>胡克定律：机械表的心脏</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/17-huke.jpg?raw=true" width="600" alt="" align="center" /><h2 id="混沌理论：一只蝴蝶引发的思考"><a href="#混沌理论：一只蝴蝶引发的思考" class="headerlink" title="混沌理论：一只蝴蝶引发的思考"></a>混沌理论：一只蝴蝶引发的思考</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/18-hundun.jpg?raw=true" width="600" alt="" align="center" /><h2 id="凯利公式：赌场上的最大赢家"><a href="#凯利公式：赌场上的最大赢家" class="headerlink" title="凯利公式：赌场上的最大赢家"></a>凯利公式：赌场上的最大赢家</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/19-kaili.jpg?raw=true" width="600" alt="" align="center" /><h2 id="贝叶斯定理：AI如何思考？"><a href="#贝叶斯定理：AI如何思考？" class="headerlink" title="贝叶斯定理：AI如何思考？"></a>贝叶斯定理：AI如何思考？</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/20-beiyesi.jpg?raw=true" width="600" alt="" align="center" /><h2 id="三体问题：挥之不去的乌云"><a href="#三体问题：挥之不去的乌云" class="headerlink" title="三体问题：挥之不去的乌云"></a>三体问题：挥之不去的乌云</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/21-santi.jpg?raw=true" width="600" alt="" align="center" /><h2 id="椭圆曲线方程：比特币的基石"><a href="#椭圆曲线方程：比特币的基石" class="headerlink" title="椭圆曲线方程：比特币的基石"></a>椭圆曲线方程：比特币的基石</h2><img src="https://github.com/chuxiaoyu/blog_image/blob/master/formula/22-bitcoin.jpg?raw=true" width="600" alt="" align="center" /><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>《公式之美》<a href="https://book.douban.com/subject/35218287/">https://book.douban.com/subject/35218287/</a></li></ul>]]></content>
     
@@ -102,8 +175,6 @@
     
     <category term="沉思录" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
     
-    <category term="阅读" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/%E9%98%85%E8%AF%BB/"/>
-    
     
     <category term="阅读" scheme="http://example.com/tags/%E9%98%85%E8%AF%BB/"/>
     
@@ -116,7 +187,7 @@
     <link href="http://example.com/nlp-text-representation/"/>
     <id>http://example.com/nlp-text-representation/</id>
     <published>2021-07-31T11:48:54.000Z</published>
-    <updated>2021-09-12T16:04:20.239Z</updated>
+    <updated>2021-09-17T01:53:35.231Z</updated>
     
     <content type="html"><![CDATA[<p>TODO</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href=""></a></li></ul>]]></content>
     
@@ -132,9 +203,9 @@
     
     
     
-    <category term="人工智能" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="自然语言处理" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
+    <category term="自然语言处理" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
     
     
     <category term="NLP" scheme="http://example.com/tags/NLP/"/>
@@ -148,7 +219,7 @@
     <link href="http://example.com/%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/"/>
     <id>http://example.com/%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</id>
     <published>2021-07-28T18:06:58.000Z</published>
-    <updated>2021-08-17T15:53:50.838Z</updated>
+    <updated>2021-09-17T01:49:21.395Z</updated>
     
     <content type="html"><![CDATA[<img src="/images/xgqq/xgqq.jpeg" width = "200" alt="" align="center" /><blockquote><p>《小狗钱钱》是一本理财的启蒙书籍，讲述的是一个会理财的小狗的童话故事：从这个童话故事里可以了解一些金钱的秘密和真相，以及投资、理财的办法。这个故事描述了在实施这些方法的过程中可能遇到的挑战，并且说明了一些令人难以置信的结果。</p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p><strong>认为我们必须忍受拮据的生活，甚至认为这样才是高尚的——这种想法是人类犯下的最重大的错误之一。</strong></p></blockquote><p>有一些批判的声音说，理财是一个很资本主义的概念。把家庭或者生活当做一个公司去经营，过于理性、物质、精明，以至于丧失了生活中的乐趣，因为生活是体验和感受为主的。<br>实际上金钱带来了诸多限制，不然为什么大家整天想着财务自由呢。据说犹太人擅长经商的原因之一就是不掩盖自己对财富的欲望。所以，坦白的说，我很穷，我想赚钱。</p><h1 id="第二章-梦想储蓄罐和梦想相册"><a href="#第二章-梦想储蓄罐和梦想相册" class="headerlink" title="第二章 梦想储蓄罐和梦想相册"></a>第二章 梦想储蓄罐和梦想相册</h1><blockquote><p>太多的人做事犹豫不决，就是因为他们觉得没有完全弄懂这件事。真正付诸实践要比纯粹的思考有用多了。</p></blockquote><p>光想是没用的，just do it.</p><h1 id="第三章-达瑞，一个很会挣钱的男孩"><a href="#第三章-达瑞，一个很会挣钱的男孩" class="headerlink" title="第三章 达瑞，一个很会挣钱的男孩"></a>第三章 达瑞，一个很会挣钱的男孩</h1><blockquote><p>你去准备一个本子，给它取名叫‘成功日记’，然后把所有做成功的事情记录进去。你最好每天都做这件事，每次都写至少5条你的个人成果，任何小事都可以。开始的时候也许你觉得不太容易，可能会问自己，这件或那件事情是否真的可以算作成果。在这种情况下，你的回答应该是肯定的。过于自信比不够自信要好得多。</p></blockquote><p>成功日记，对于一个谦虚的典型中国人来说也太羞耻了吧。但是，最后一句绝对是真理。过于自信或许会经常丢面子，但会抓住很多意想不到的机会，其中某个机会或许就改变了人生轨迹。一定要多做尝试。</p><h1 id="第四章-堂兄的挣钱之道"><a href="#第四章-堂兄的挣钱之道" class="headerlink" title="第四章 堂兄的挣钱之道"></a>第四章 堂兄的挣钱之道</h1><blockquote><p>第一，无论在什么时候都不能把希望只寄托在一份工作上，它持续的时间不会像你设想的那么长，所以你要立即寻找另一份替代的工作。</p></blockquote><p>生活不易，多才多艺。打工人要想生存，就得多掌握点技能。</p><h1 id="第五章-钱钱以前的主人"><a href="#第五章-钱钱以前的主人" class="headerlink" title="第五章 钱钱以前的主人"></a>第五章 钱钱以前的主人</h1><blockquote><p>困难总是在不断地出现。尽管如此，你每天还是要不间断地去做对你的未来意义重大的事情。你为此花费的时间不会超过10分钟，但是就是这10分钟会让一切变得不同。大多数人总是在现有的水平上停滞不前，就是因为他们没有拿出这10分钟。他们总是期望情况能向有利于自己的方向转变，但是他们忽视了一点，那就是他们首先必须改变自己。<br>当你决定做一件事情的时候，你必须在72小时之内完成，否则你很可能永远不会再做了。</p></blockquote><p>个人来说，对未来意义重大的事情就是每天花10分钟记账。</p><h1 id="第六章-爸爸妈妈犯下的错误"><a href="#第六章-爸爸妈妈犯下的错误" class="headerlink" title="第六章 爸爸妈妈犯下的错误"></a>第六章 爸爸妈妈犯下的错误</h1><blockquote><p>根本上说，那些陷入债务的人只要听从4个忠告就可以解决负债问题。一切都很简单。”</p></blockquote><h2 id="欠债的人应当毁掉所有的信用卡。"><a href="#欠债的人应当毁掉所有的信用卡。" class="headerlink" title="欠债的人应当毁掉所有的信用卡。"></a>欠债的人应当毁掉所有的信用卡。</h2><blockquote><p>“因为大多数人在使用信用卡的时候，会比使用现金时花的钱要多得多。”钱钱答道。</p></blockquote><h2 id="应当尽可能少地偿还贷款——也就是大人们说的分期付款。"><a href="#应当尽可能少地偿还贷款——也就是大人们说的分期付款。" class="headerlink" title="应当尽可能少地偿还贷款——也就是大人们说的分期付款。"></a>应当尽可能少地偿还贷款——也就是大人们说的分期付款。</h2><blockquote><p>也许这个忠告听起来有点儿可笑，但你要知道，分期付款额越高，每个月剩下的生活费就越少。</p></blockquote><h2 id="将扣除生活费后剩下的钱的一半存起来，剩下的一半用于支付消费贷款。最好根本不申请消费贷款。"><a href="#将扣除生活费后剩下的钱的一半存起来，剩下的一半用于支付消费贷款。最好根本不申请消费贷款。" class="headerlink" title="将扣除生活费后剩下的钱的一半存起来，剩下的一半用于支付消费贷款。最好根本不申请消费贷款。"></a><strong>将扣除生活费后剩下的钱的一半存起来，剩下的一半用于支付消费贷款。最好根本不申请消费贷款。</strong></h2><blockquote><p>消费贷款是与住房无关的贷款。假如人们为了购置新的汽车、家具、电视机或其他用于生活的商品而贷款，就是消费贷款。<strong>这时候贷款的人应当遵守的一个原则，就是将不用于生活的那部分钱的一半存起来，另一半用于偿还贷款。</strong><br>你的爸爸妈妈应当开始攒钱，他们不需要等到还清债务以后再开始存钱，他们可以现在立即开始，<strong>只有这样，他们才有能力在不申请新的贷款的情况下，满足自己的愿望。</strong>那样他们也才能心安理得地、更好地享用这些东西。<br>钱钱点头说：“这个主意真不错。此外，所有的消费贷款都是不明智的。聪明的做法是只把以前积攒起来的财富用于支出。”</p></blockquote><h2 id="绝不借债。"><a href="#绝不借债。" class="headerlink" title="绝不借债。"></a>绝不借债。</h2><blockquote><p>我作了一个决定：我绝不借债。为实现一个愿望，我要提前开始储蓄。我绝不要陷入和爸爸妈妈一样的困境。</p></blockquote><h1 id="第七章-在金先生家"><a href="#第七章-在金先生家" class="headerlink" title="第七章 在金先生家"></a>第七章 在金先生家</h1><blockquote><p>金先生慢悠悠地说，“鹅代表你的钱。如果你存钱，你就会得到利息。利息就相当于金蛋。”<br>金先生接着说：“大多数人生来并没有‘鹅’。这就是说，他们的钱不足以让他们依靠利息来生活。”<br>这完全要根据你的目标来决定。如果你总是把10%的钱变成‘鹅’，那么你一定会变得富有。但如果你想有一天真的非常有钱的话，你存的比例可能得再高一些。我的习惯是把我收入的50%变成我的‘鹅’。”</p></blockquote><p>这里涉及到经济学中生产要素的概念。生产要素包括劳动、土地、资本、信息、技术等。劳动的收入是工资，土地的收入是地租，资本的收入是利息…</p><h1 id="第八章-陶穆太太"><a href="#第八章-陶穆太太" class="headerlink" title="第八章 陶穆太太"></a>第八章 陶穆太太</h1><blockquote><p>我不同意她的话。金先生看上去十分快乐，而爸爸妈妈却恰恰相反，总是不太高兴。直觉告诉我，贫穷更容易产生不幸。</p></blockquote><p>你以为有钱人真的很快乐吗？是的，他们的快乐你根本想象不到。所以，停止自我安慰吧hh</p><h1 id="第十二章-陶穆太太归来"><a href="#第十二章-陶穆太太归来" class="headerlink" title="第十二章 陶穆太太归来"></a>第十二章 陶穆太太归来</h1><blockquote><p>要想过更幸福、更满意的生活，人就得改变自身。这和钱无关，金钱本身既不会使人幸福，也不会带来不幸。金钱是中性的，既不好，也不坏。只有当钱属于某一个人的时候，它才会对这个人产生好的影响或者坏的影响。钱可以被用于好的用途，也可以被用于坏的用途。一个幸福的人有了钱会更幸福；而一个悲观忧虑的人，钱越多，烦恼就越多。</p></blockquote><h1 id="第十三章-巨大的危机"><a href="#第十三章-巨大的危机" class="headerlink" title="第十三章 巨大的危机"></a>第十三章 巨大的危机</h1><blockquote><p>“这不像你现在想的那么简单。”我听见钱钱用恳切的口气接着说，“成功会使人骄傲。如果你骄傲自大，你就会停止学习。不学习，人就不会再进步。”<br>它停顿了一下，接着说：“当你写成功日记的时候，你会对自己，对世界，还有对成功的规律作更深入的思考，会越来越多地了解自己和自己的愿望，这样你才会有能力去理解别人。彻底了解自己和世界上的所有秘密，是我们无法完全实现的一种理想，但我们可以一步一步地慢慢接近这种理想。”<br>恐惧总是出现在我们设想事情会如何不顺的时候。我们对失败的可能性想得越多，就会越害怕。而当你看着自己的成功日记时，你就会注意到那些成功的事情，自然而然也就会想到应该怎样去做。<br>当你朝着积极的目标去思考的时候，就不会心生畏惧。</p></blockquote><p>首先，人是不能停止学习的，无论到什么阶段，停下来马上会变得迟钝、狭隘。<br>其次，在另一本流行的理财书籍《穷查理宝典》中，作者查理芒格的理念是，“生活上的大多数成功来自于你应该知道避免哪些事情”。虽然作者很牛逼，但我很难认同这一点。因为失败的原因实在太多了，一件事情可以找一万个理由做不到，但只要找到一条路这事就能做成。正如幸福的家庭都是相似的，不幸的家庭各有各的不幸。</p><h1 id="第十四章-投资俱乐部"><a href="#第十四章-投资俱乐部" class="headerlink" title="第十四章 投资俱乐部"></a>第十四章 投资俱乐部</h1><blockquote><p>我们一致认为，只要学会了我们的咒语，就可以从无到有地变出钱来。<br>我们的咒语是：<br>1．确定自己希望获得财务上的成功。<br>2．自信，有想法，做自己喜欢做的事。<br>3．把钱分成日常开销、梦想目标和金鹅账户三部分。<br>4．进行明智的投资。<br>5．享受生活。</p></blockquote><p>第3点，分割账户的理念。我觉得应该分为，日常开销、负债、储蓄、理财。就是说，一个人的净收入大概用于这4个方面的预算是：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">I = 收入</span><br><span class="line"><span class="keyword">if</span> 负债:</span><br><span class="line">    日常开销 = <span class="number">50</span>%*I</span><br><span class="line">    负债 = <span class="number">25</span>%*I</span><br><span class="line">    储蓄 = <span class="number">15</span>%*I</span><br><span class="line">    理财 = <span class="number">10</span>%*I</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    日常开销 = <span class="number">50</span>%*I</span><br><span class="line">    储蓄 = <span class="number">30</span>%*I</span><br><span class="line">    理财 = <span class="number">20</span>%*I</span><br></pre></td></tr></table></figure><p>这是我目前的分配偏好。</p><h1 id="第十七章-爷爷奶奶害怕风险"><a href="#第十七章-爷爷奶奶害怕风险" class="headerlink" title="第十七章 爷爷奶奶害怕风险"></a>第十七章 爷爷奶奶害怕风险</h1><blockquote><p>“只有当我们把它卖出的时候，才会有亏损。可是我们并没有这么做。”</p></blockquote><p>每当股票和基金跌了的时候，很适合自我安慰。这句话其实是经济学或者说会计记账的把戏，因为不卖的话，没有产生经济活动，账本没有变化。:)</p><h1 id="自力更生——写给成年人的后记"><a href="#自力更生——写给成年人的后记" class="headerlink" title="自力更生——写给成年人的后记"></a>自力更生——写给成年人的后记</h1><blockquote><p>我们推崇一种聪明的、简朴的生活方式。也就是说，宁愿购买一件一流产品，也不要不停地买许多的二流产品。而且，不要仅仅因为一件产品的外观不再时髦而新产品正在流行，就不断追逐新鲜的东西。<br>生活质量不是由越来越多的高科技产品堆砌而成的，而体现在一些别的方面，比如悠闲地享受一下生活，增进邻里关系，表达感情或者从事艺术性和创造性的活动。</p></blockquote><p>这也是我开始喜欢极简主义的原因吧。开始极简后，才发现自己买了太多没用的东西。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>《小狗钱钱》<a href="https://book.douban.com/subject/1095634/">https://book.douban.com/subject/1095634/</a></li></ul>]]></content>
     
@@ -165,8 +236,6 @@
     
     <category term="沉思录" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
     
-    <category term="阅读" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/%E9%98%85%E8%AF%BB/"/>
-    
     
     <category term="阅读" scheme="http://example.com/tags/%E9%98%85%E8%AF%BB/"/>
     
@@ -175,44 +244,11 @@
   </entry>
   
   <entry>
-    <title>CS61A Week1 Comupter_Science, Functions</title>
-    <link href="http://example.com/cs61a-week1/"/>
-    <id>http://example.com/cs61a-week1/</id>
-    <published>2021-07-27T08:46:52.000Z</published>
-    <updated>2021-08-06T09:15:52.484Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>CS61A作为61系列基础课程的第一门课程，是一门计算机入门导论课程，伯克利大一新生的第一门计算机课程。该课程主要使用Python语言，简要介绍了计算机的各种概念，范围广而涉猎不深，包括高阶函数，抽象，递归和树，OOP，简单的SQL语句，Scheme语法和解释器等概念。</p><p>目前推荐的课程是20年秋季学期(fa20)的课程。</p><p>——名校公开课程评价网 <a href="https://conanhujinming.github.io/comments-for-awesome-courses/UC%20BerkeleyCS61A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/">名校公开课程评价网-cs61a</a></p></blockquote><h2 id="文档组织"><a href="#文档组织" class="headerlink" title="文档组织"></a>文档组织</h2><p>对应不同教学内容，文档组织如下：</p><img src="/images/cs61a/01/zuzhi.jpg" width = "200" alt="" align="center" /><ul><li>0_课件：lecture</li><li>1_代码：lecture代码</li><li>2_笔记：学习笔记<ul><li>使用markdown</li><li>内容包括：Weekx内容(x=week number), Lecture Notes, Lab Notes, Homework Notes</li></ul></li><li>3_实验：lab</li><li>4_作业：homework</li><li>5_项目：project</li></ul><h2 id="Week1内容"><a href="#Week1内容" class="headerlink" title="Week1内容"></a>Week1内容</h2><img src="/images/cs61a/01/00.jpg" alt="" align="center" /><p>Week1主要内容：</p><ul><li><p>Lecture01 Computer Science; Lecture02 Functions 介绍计算机科学和函数基础知识</p></li><li><p>Lab00: Getting Started 安装Python3，终端的使用，常用命令行，文档测试（doctest）的使用，测试和提交使用OK系统</p><img src="/images/cs61a/01/02.jpg" width = "500" alt="" align="center" /></li><li><p>HW01: Variables &amp; Functions, Control。掌握函数特性</p></li></ul><h2 id="Lecture-Notes"><a href="#Lecture-Notes" class="headerlink" title="Lecture Notes"></a>Lecture Notes</h2><h3 id="What-is-Computer-Science"><a href="#What-is-Computer-Science" class="headerlink" title="What is Computer Science"></a>What is Computer Science</h3><img src="/images/cs61a/01/01.jpg" alt="" width = "700" align="center" /><p>计算机科学是一门定义和解决计算问题的方法和技术的学科。它的分支结构参考CSRanking的分类方式（ <a href="http://csrankings.org/#/index?all&world">http://csrankings.org/#/index?all&amp;world</a>），大概可以分为人工智能（计算机视觉、机器学习、自然语言处理、信息检索…）、系统（计算机结构、网络、安全、数据库、操作系统、分布式…）、理论（算法和复杂度、formal method…）、交叉（计算生物/生物计算、人机交互、机器人…）等方向。</p><h3 id="Anatomy-of-a-Call-Expression-Operator-Operand"><a href="#Anatomy-of-a-Call-Expression-Operator-Operand" class="headerlink" title="Anatomy of a Call Expression: Operator, Operand"></a>Anatomy of a Call Expression: Operator, Operand</h3><img src="/images/cs61a/01/03.jpg" width = "700" alt="" align="center" /><blockquote><p>在程式語言中, 指示程式進行運算(計算、比較或連結) 的符號, 稱為operators (運算子), 被運算的資料稱為operands (運算元), 一句中有operators 及operands 就稱為expression。</p></blockquote><h3 id="Environment-Diagrams"><a href="#Environment-Diagrams" class="headerlink" title="Environment Diagrams"></a>Environment Diagrams</h3><img src="/images/cs61a/01/04.jpg" width = "700" alt="" align="center" /><p>Environment Diagrams Tools: <a href="http://pythontutor.com/composingprograms.html#mode=edit">http://pythontutor.com/composingprograms.html#mode=edit</a></p><h3 id="Defining-Functions"><a href="#Defining-Functions" class="headerlink" title="Defining Functions"></a>Defining Functions</h3><img src="/images/cs61a/01/05.jpg" alt="" width = "700" align="center" /><img src="/images/cs61a/01/06.jpg" alt="" width = "700" align="center" /><img src="/images/cs61a/01/07.jpg" alt="" width = "700" align="center" /><p>这里涉及到全局变量（Global Variable）和局部变量（Local Variable）的问题，全局变量是整个程序都可访问的变量，生存期从程序开始到程序结束；局部变量存在于模块中(比如某个函数)，只有在模块中才可以访问，生存期从模块开始到模块结束。简单的说，</p><ul><li>全局变量：在模块内、在所有函数的外面、在class外面</li><li>局部变量：在函数内、在class的方法内</li></ul><h2 id="Lab-Notes"><a href="#Lab-Notes" class="headerlink" title="Lab Notes"></a>Lab Notes</h2><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls: lists all files in the current directory</span><br><span class="line">cd &lt;path to directory&gt;: change into the specified directory</span><br><span class="line">mkdir &lt;directory name&gt;: make a new directory with the given name</span><br><span class="line">mv &lt;source path&gt; &lt;destination path&gt;: move the file at the given source to the given destination</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 xxx.py # 运行程序</span><br><span class="line">python3 -i xxx.py # 运行程序并打开交互式会话</span><br><span class="line">python3 -m doctest xxx.py # 运行文档测试</span><br><span class="line">python3 -m doctest - xxx.py # 运行文档测试并显示样例</span><br></pre></td></tr></table></figure><h2 id="Homework-Notes"><a href="#Homework-Notes" class="headerlink" title="Homework Notes"></a>Homework Notes</h2><h3 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h3><p><code>TypeError: &#39;int&#39; object is not callable</code></p><p>修改程序名就可以了。</p><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Q5: If Function vs Statement</p><img src="/images/cs61a/01/hwp01.jpg" alt="" align="center" /><p>while…<br><img src="/images/cs61a/01/hwp02.jpg" alt=""  width="200" align="left" /><br><br><br><br></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>cs61a 20fall 官网 <a href="https://inst.eecs.berkeley.edu/~cs61a/fa20/">https://inst.eecs.berkeley.edu/~cs61a/fa20/</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;CS61A作为61系列基础课程的第一门课程，是一门计算机入门导论课程，伯克利大一新生的第一门计算机课程。该课程主要</summary>
-      
-    
-    
-    
-    <category term="计算机基础" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="CS61A 计算机程序的构造与解释" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/CS61A-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%A7%A3%E9%87%8A/"/>
-    
-    
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="CS公开课" scheme="http://example.com/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
-    
-    <category term="python" scheme="http://example.com/tags/python/"/>
-    
-    <category term="function" scheme="http://example.com/tags/function/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SQL表连接&amp;聚合函数&amp;窗口函数</title>
     <link href="http://example.com/SQL%E9%87%8D%E7%82%B9/"/>
     <id>http://example.com/SQL%E9%87%8D%E7%82%B9/</id>
     <published>2021-07-26T19:33:19.000Z</published>
-    <updated>2021-07-31T11:37:18.415Z</updated>
+    <updated>2021-09-17T01:53:20.789Z</updated>
     
     <content type="html"><![CDATA[<h1 id="表连接-join"><a href="#表连接-join" class="headerlink" title="表连接 join"></a>表连接 join</h1><p>join: 以字段（列）为单位进行多表连接。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Inner</span> <span class="keyword">join</span> # 只保留两个表中同时存在的记录。</span><br><span class="line"><span class="keyword">Left</span> <span class="keyword">join</span> # 保留左表所有的记录，无论其是否能够在右表中匹配到对应的记录。若无匹配记录，则需要用<span class="keyword">NULL</span>填补。</span><br><span class="line"><span class="keyword">Right</span> <span class="keyword">join</span> # 保留右表所有的记录，无论其是否能够在左表中匹配到对应的记录。若无匹配记录，则需要用<span class="keyword">NULL</span>填补。</span><br><span class="line"><span class="keyword">Full</span> <span class="keyword">join</span> # 左表和右表所有的记录都会保留，没有匹配记录的用<span class="keyword">NULL</span>填补。</span><br></pre></td></tr></table></figure><h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>() # 返回分组后组内所有记录的和</span><br><span class="line"><span class="built_in">avg</span>() # 返回分组后组内所有记录的均值</span><br><span class="line"><span class="built_in">count</span>() # 返回分组后组内所有记录的计数</span><br><span class="line"><span class="built_in">max</span>()<span class="operator">/</span><span class="built_in">min</span>() # 返回分组后组内所有记录的最大值、最小值</span><br></pre></td></tr></table></figure><h1 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h1><p>窗口函数对记录分组之后进行聚合计算，为分组中的每条记录返回特定值。</p><p>窗口函数的基本结构是：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span>() <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>col1, col2<span class="operator">&gt;</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>col3 <span class="keyword">desc</span><span class="operator">/</span><span class="keyword">asc</span>, col4 <span class="keyword">asc</span><span class="operator">/</span><span class="keyword">desc</span><span class="operator">&gt;</span>)</span><br></pre></td></tr></table></figure><table><thead><tr><th>窗口函数</th><th>介绍</th></tr></thead><tbody><tr><td><code>rank() over()</code></td><td>返回记录在同一分组内的排序，如果有并列名次的行，会占用下一名次的位置</td></tr><tr><td><code>dense_rank() over()</code></td><td>返回记录在同一分组内的排序，如果有并列名次的行，不占用下一名次的位置</td></tr><tr><td><code>row_number() over()</code></td><td>返回记录在同一分组内的排序，不考虑并列名次的情况</td></tr><tr><td><code>percent_rank() over()</code></td><td>返回记录在同一分组内排序的分位数，为0~1</td></tr><tr><td><code>sum(col) over()</code></td><td>返回同一分组内所有记录col值的和，同一分组内记录的返回值相同</td></tr><tr><td><code>avg(col) over()</code></td><td>返回同一分组内所有记录col值的平均值，同一分组内记录的返回值相同</td></tr><tr><td><code>max/min(col) over()</code></td><td>返回同一分组内所有记录col值的最大值/最小值，同一分组内记录的返回值相同</td></tr></tbody></table><p>聚合函数在窗口函数中，是对自身记录、及位于自身记录以上的数据进行运算的结果。聚合函数作为窗口函数，可以在每一行的数据里直观的看到，截止到本行数据，统计数据是多少（最大值、最小值等）。同时可以看出每一行数据，对整体统计数据的影响。</p><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引用来排序数据以加快搜索和排序操作的速度。可以在一个或多个列上定义索引，使DBMS保存其内容的一个排过序的列表。在定义了索引后，DBMS以使用书的索引类似的方法使用它。DBMS 搜索排过序的索引，找出匹配的位置，然后检索这些行。</p><p>索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。</p><p>索引用CREATE INDEX 语句创建（不同DBMS创建索引的语句变化很大）。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1]通俗易懂的学会：SQL窗口函数 <a href="https://zhuanlan.zhihu.com/p/92654574">https://zhuanlan.zhihu.com/p/92654574</a><br>[2]《拿下Offer:数据分析师求职面试指南》 <a href="https://item.jd.com/12686131.html">https://item.jd.com/12686131.html</a><br>[3]《SQL必知必会》 <a href="https://book.douban.com/subject/24250054/">https://book.douban.com/subject/24250054/</a><br>[4]廖雪峰的官方网站-SQL教程 <a href="https://www.liaoxuefeng.com/wiki/1177760294764384">https://www.liaoxuefeng.com/wiki/1177760294764384</a></p>]]></content>
     
@@ -225,9 +261,9 @@
     
     
     
-    <category term="人工智能" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="数据分析" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
     <category term="SQL" scheme="http://example.com/tags/SQL/"/>
@@ -239,7 +275,7 @@
     <link href="http://example.com/git/"/>
     <id>http://example.com/git/</id>
     <published>2021-07-23T13:01:25.000Z</published>
-    <updated>2021-07-31T11:38:24.001Z</updated>
+    <updated>2021-09-17T01:53:30.399Z</updated>
     
     <content type="html"><![CDATA[<p>本文是以下课程的笔记：</p><ul><li>【尚硅谷】5h打通Git全套教程丨2021最新IDEA版（涵盖GitHub\Gitee码云\GitLab）<a href="https://www.bilibili.com/video/BV1vy4y1s7k6?p=41">https://www.bilibili.com/video/BV1vy4y1s7k6?p=41</a></li></ul><h1 id="课程结构"><a href="#课程结构" class="headerlink" title="课程结构"></a>课程结构</h1><p>本套视频从基础的常用命令开始讲起，到开发工具集成Git 、GitHub如何进行团队协作、国内代码托管中心Gitee码云的使用、局域网自建代码托管平台GitLab服务器的部署。<strong>（本文主要是P1-P26的笔记。）</strong></p><ul><li>P1-P2 Git</li><li>P3-P6 Git概述</li><li>P7-P14 Git命令</li><li>P15-P18 Git分支</li><li>P19 Git团队协作</li><li>P20-P26 Git&amp;GitHub</li><li>P27-P37 IDEA集成GitHub</li><li>P38-P40 Gitee码云</li><li>P41-P44 GitLab</li><li>P45 课程总结</li></ul><h1 id="Git介绍"><a href="#Git介绍" class="headerlink" title="Git介绍"></a>Git介绍</h1><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Git是一个<strong>免费的、开源的分布式版本控制系统</strong>，可以快速高效地处理从小型到大型的各种项目。</p><h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><p>版本控制是一种记录文件内容变化，以便将来查阅特定版本修订情况的系统。版本控制其实最重要的是可以记录文件修改历史记录，从而让用户能够查看历史版本，方便版本切换。<br><img src="/images/git/v_ctrl.jpg" width = "500" alt="一个糟糕的版本控制" align="center" /></p><h2 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h2><ul><li>集中式版本控制工具：CVS、SVN(Subversion)、VSS……</li><li>分布式版本控制工具：Git、 Mercurial、 Bazaar、 Darcs……</li></ul><h2 id="Git简史"><a href="#Git简史" class="headerlink" title="Git简史"></a>Git简史</h2><p>Git是Linus大神写的，所以和Linux一套命令<br><img src="/images/git/git_history.jpg" width = "800" alt="Git简史" align="center" /></p><h2 id="Git机制"><a href="#Git机制" class="headerlink" title="Git机制"></a>Git机制</h2><p>在工作区写代码，通过git add添加到暂存区，再通过git commit提交到本地库，生成历史版本。本地库可以push代码到远程库，也可以从远程库pull拉取代码，不同版本的代码可以进行merge。<br><img src="/images/git/git_strcture.jpg" width = "300" alt="Git工作机制" align="center" /></p><h2 id="代码托管中心-远程库"><a href="#代码托管中心-远程库" class="headerlink" title="代码托管中心-远程库"></a>代码托管中心-远程库</h2><p>代码托管中心是基于网络服务器的远程代码仓库，一般我们简单称为远程库。</p><ul><li>局域网：GitLab</li><li>互联网：GitHub(国外)，Gitee（国内）</li></ul><h1 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h1><p>一图以蔽之，<br><img src="/images/git/git_command.jpg" width = "600" alt="Git常用命令" align="center" /></p><h1 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h1><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>在版本控制过程中，同时推进多个任务，为每个任务，我们就可以创建每个任务的单独分支。使用分支意味着程序员可以把自己的工作从开发主线上分离开来，开发自己分支的时候，不会影响主线分支的运行。对于初学者而言，分支可以简单理解为副本，一个分支就是一个单独的副本。（分支底层其实也是指针的引用）</p><p>同时并行推进多个功能开发，可以提高开发效率。各个分支在开发过程中，如果某一个分支开发失败，不会对其他分支有任何影响。失败的分支删除重新开始即可。</p><img src="/images/git/branch.jpg" width = "600" alt="分支示意图" align="center" /><h2 id="Git分支命令"><a href="#Git分支命令" class="headerlink" title="Git分支命令"></a>Git分支命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch -v # 查看分支</span><br><span class="line">git branch 分支名 # 创建分支</span><br><span class="line">git checkout 分支名 # 切换分支</span><br><span class="line">git merge 分支名 # 合并分支</span><br></pre></td></tr></table></figure><h2 id="合并冲突"><a href="#合并冲突" class="headerlink" title="合并冲突"></a>合并冲突</h2><p>合并分支时，两个分支在同一个文件的同一个位置有两套完全不同的修改。Git无法替我们决定使用哪一个。必须人为决定新代码内容。</p><h1 id="Git团队合作"><a href="#Git团队合作" class="headerlink" title="Git团队合作"></a>Git团队合作</h1><p>两个非常形象化的图和生动的例子！</p><h2 id="团队内合作"><a href="#团队内合作" class="headerlink" title="团队内合作"></a>团队内合作</h2><img src="/images/git/inside.jpg" width = "600" alt="团队内合作" align="center" /><h2 id="跨团队合作"><a href="#跨团队合作" class="headerlink" title="跨团队合作"></a>跨团队合作</h2><img src="/images/git/outside.jpg" width = "600" alt="跨团队合作" align="center" /><h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h1><h2 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h2><img src="/images/git/github_command.jpg" width = "600" alt="远程仓库操作" align="center" /><p>clone会做如下操作：</p><ol><li>拉取代码。 </li><li>初始化本地仓库。 </li><li>创建别名（origin）</li></ol><h2 id="邀请合作者"><a href="#邀请合作者" class="headerlink" title="邀请合作者"></a>邀请合作者</h2><img src="/images/git/invitation.jpg" width = "600" alt="邀请合作者" align="center" /><h2 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h2><img src="/images/git/ssh.jpg" width = "600" alt="SSH登录" align="center" /><h1 id="Git与其他环境集成"><a href="#Git与其他环境集成" class="headerlink" title="Git与其他环境集成"></a>Git与其他环境集成</h1><p>官方文档-Git与各种IDE的集成：<a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></p><h1 id="码云Gitee"><a href="#码云Gitee" class="headerlink" title="码云Gitee"></a>码云Gitee</h1><p>众所周知，GitHub服务器在国外，使用GitHub作为项目托管网站，如果网速不好的话，严重影响使用体验，甚至会出现登录不上的情况。针对这个情况，大家也可以使用国内的项目托管网站-码云 <a href="https://gitee.com/">https://gitee.com/</a>。</p><h1 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h1><p>GitLab <a href="https://about.gitlab.com/">https://about.gitlab.com/</a>是由GitLabInc.开发，使用MIT许可证的基于网络的Git仓库管理工具，且具有wiki和issue跟踪功能。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。<br>GitLab由乌克兰程序员DmitriyZaporozhets和ValerySizov开发，它使用Ruby语言写成。后来,一些部分用Go语言重写。截止2018年5月，该公司约有290名团队成员，以及2000多名开源贡献者。GitLab被IBM, Sony, JülichResearchCenter, NASA, Alibaba, Invincea, O’Reilly Media, Leibniz-Rechenzentrum, CERN, SpaceX等组织使用。</p>]]></content>
     
@@ -253,7 +289,7 @@
     
     
     
-    <category term="工具箱" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E7%AE%B1/"/>
+    <category term="03 工具箱" scheme="http://example.com/categories/03-%E5%B7%A5%E5%85%B7%E7%AE%B1/"/>
     
     
     <category term="git" scheme="http://example.com/tags/git/"/>
@@ -267,7 +303,7 @@
     <link href="http://example.com/%E5%A4%A7%E7%90%86/"/>
     <id>http://example.com/%E5%A4%A7%E7%90%86/</id>
     <published>2021-07-21T14:49:49.000Z</published>
-    <updated>2021-08-17T15:55:50.839Z</updated>
+    <updated>2021-09-17T01:49:12.305Z</updated>
     
     <content type="html"><![CDATA[<p>生活就是换个地方打工。</p><p>然而田园的生活也不是那么美好的，有很多想象不到的问题。比如，随时随地出现的各种蚊虫、大蜘蛛、蛇，花花草草都要每天浇水和定时剪枝，下雨天泳池会有很多脏东西需要处理，垃圾必须每天清空不然会有老鼠光顾，厨房排水做不好的话会倒流没法用（怪不得要专业疏通下水道），还有电路也时不时的出点毛病。</p><p>由于每天都在处理这种琐碎的事情，这段时间最常去的地方就是仓库了。仓库就像哆啦A梦的口袋一样，变出我以前不知道的各种工具来，有些我即使认识也不知道名字，但是这些小玩意儿在生活中如此有用，比如玻璃胶、磨砂纸、扎带种种。有一次，洗衣机旁的电源开关的接触不好，电工来修，把电线直接接到了一个插排上，虽然我对这个做法的安全性和易用性保持怀疑，但足够让物理一向不好的我很是佩服——毕竟我连火线零线都分不清，高中物理连接小灯泡的题也得想半天。</p><p>后来，就匆匆离开了。就像Harry说的，It is not better or worse than any place else - just different. </p><img src="/images/dali/1.JPG" width="300" alt="" align="left" /><img src="/images/dali/2.JPG" width="300" alt="" align="left" /><img src="/images/dali/3.JPG" width="300" alt="" align="left" /><img src="/images/dali/4.JPG" width="300" alt="" align="left" /><img src="/images/dali/5.JPG" width="300" alt="" align="left" /><img src="/images/dali/8.JPG" width="300" alt="" align="left" /><img src="/images/dali/6.jpeg" width="300" alt="" align="left" /><img src="/images/dali/7.jpeg" width="300" alt="" align="left" /><img src="/images/dali/9.jpeg" width="300" alt="" align="left" />]]></content>
     
@@ -282,8 +318,6 @@
     
     <category term="沉思录" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
     
-    <category term="旅行" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/%E6%97%85%E8%A1%8C/"/>
-    
     
     <category term="大理" scheme="http://example.com/tags/%E5%A4%A7%E7%90%86/"/>
     
@@ -294,7 +328,7 @@
     <link href="http://example.com/%E6%A0%A1%E5%87%86%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E9%A2%84%E6%9C%9F/"/>
     <id>http://example.com/%E6%A0%A1%E5%87%86%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E9%A2%84%E6%9C%9F/</id>
     <published>2021-07-15T09:34:54.000Z</published>
-    <updated>2021-08-17T15:53:16.975Z</updated>
+    <updated>2021-09-17T01:53:48.924Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>校准对世界的预期，这个题目出自于播客里听到的一段话：</p><blockquote><p>从学校步入职场，要做的第一件事是重新校准你对世界的预期。这世界就是很糟糕的（或者说，这世界是 okay 的，但是你对它有不切实际的预期）。</p></blockquote><p>很早的时候我经常怀疑，老师讲的东西有什么用？总有那么些课程，既不能直接用到工作中，又不能锻炼思维和逻辑能力。最后不得不承认一个危险的真相：上课太耽误学习了。而自己之所以为此感到痛苦，是因为抱有不合理的假设和预期。比如，当我产生怀疑的时候，其实我的假设就是老师教的就应该是有用的。可是凭什么呢？明明是我一厢情愿的这样认为，然后发现事实与预期不符，于是就不断痛苦。这样的假设还包括：</p><h2 id="H1-学校教的是对工作有用的-×"><a href="#H1-学校教的是对工作有用的-×" class="headerlink" title="H1. 学校教的是对工作有用的(×)"></a>H1. 学校教的是对工作有用的(×)</h2><p>学校是用来筛选的。学校有一套自己的游戏规则，按照这个规则走，就会得到老师和同学的赞赏、拿奖学金、保研、发论文、获得一系列荣誉奖项等——最终筛选出一个乖巧、听话、能干活、而且学习能力不错的人（或者至少愿意伪装成这样的人）。但把这个规则玩好，并不等同于拥有了工作需要的实力和能力，因为工作是另一套规则和玩法。由于从小一直灌输的是学校的规则，所以很难意识到游戏已经切换了，这就是常说的学生思维吧。</p><p>同时，这个世界上有无数个行业和领域，就有无数游戏和规则。诚然底层的东西是可以迁移，例如努力、负责等品质在哪里都是被认可的，但仍然要保持开放的心态，不能做出一个选择就否定其他选择，比如，一些马上想到但是不可描述的例子。这种心态的形成至少有3个因素：1.人的心理天然倾向于找各种理由支持自己的选择，而忽略对自己选择不利的方面。2.即使知道自己的选择有不好的一面，但出于虚荣坚决不能承认。3.即使知道自己的选择有不好的一面，但忽悠更多人进来才方便找人接盘。</p><p>最终通过身边的现象来看，乖乖听老师话的找不到工作只能考公（不是说公务员不好，而是说这种情况下并没有选择权），早早翘课去实习的拿到了令人羡慕的offer。用朋友圈里看到的一段话概括就是：主修LeetCode，辅修bilibili，旁听cs公开课，最后混一下学位必修课以达到毕业要求。这才是找到好工作的正确姿势。</p><h2 id="H2-世界是公平的-×"><a href="#H2-世界是公平的-×" class="headerlink" title="H2. 世界是公平的(×)"></a>H2. 世界是公平的(×)</h2><p>世界本来是不公平的，也不天然应该是公平的，因为人类文明的出现于是变好了一点点。所以那些声称只能接受这个糟糕的世界的说法也不对，这简直是在否定人类文明，没有什么是理所当然的。</p><h2 id="尝试放下所有假设和预期"><a href="#尝试放下所有假设和预期" class="headerlink" title="尝试放下所有假设和预期"></a>尝试放下所有假设和预期</h2><p>我们对于很多东西的判断是来自于书籍、电视、网络、和他人的只言片语、自己的经验。通过经验学习当然很有效，但问题是这些经验不都是客观理性的，如果我们放下这些先验知识，感受事物本身，通过自己的独立思考得到自己的结论，那么被忽悠的概率会大大降低吧。</p><h2 id="参考播客"><a href="#参考播客" class="headerlink" title="参考播客"></a>参考播客</h2><ul><li>BYM 职场12: 生活就是不公平的，你打算怎么办 <a href="https://www.xiaoyuzhoufm.com/episode/5e280fac418a84a0461fb16a?s=eyJ1IjogIjVlZWJiNWJkOTJkNzAyMzc2NzhkMDRkZSJ9">收听链接</a></li><li>BYM 职场14: 认清世界之残酷，你才可能成为那 5% 拥有自己事业的人 <a href="https://www.xiaoyuzhoufm.com/episode/5e280fac418a84a0461fb166?s=eyJ1IjogIjVlZWJiNWJkOTJkNzAyMzc2NzhkMDRkZSJ9">收听链接</a></li></ul>]]></content>
     
@@ -310,8 +344,6 @@
     
     <category term="沉思录" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
     
-    <category term="工作" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/%E5%B7%A5%E4%BD%9C/"/>
-    
     
     <category term="沉思录" scheme="http://example.com/tags/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
     
@@ -322,7 +354,7 @@
     <link href="http://example.com/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87LaTeX%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF/"/>
     <id>http://example.com/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87LaTeX%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF/</id>
     <published>2021-07-15T08:23:20.000Z</published>
-    <updated>2021-07-22T09:01:32.827Z</updated>
+    <updated>2021-09-17T01:53:59.711Z</updated>
     
     <content type="html"><![CDATA[<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>简历的结构主要包括：</p><ul><li>标题 Heading（姓名、联系方式等）</li><li>教育背景 Education</li><li>经历 Experience<ul><li>实习 Work</li><li>科研/论文 Publications</li><li>项目 Projects</li></ul></li><li>个人技能 Skills</li></ul><h2 id="GitHub模板"><a href="#GitHub模板" class="headerlink" title="GitHub模板"></a>GitHub模板</h2><h3 id="英文简历-https-github-com-sb2nov-resume"><a href="#英文简历-https-github-com-sb2nov-resume" class="headerlink" title="英文简历 https://github.com/sb2nov/resume"></a>英文简历 <a href="https://github.com/sb2nov/resume">https://github.com/sb2nov/resume</a></h3><img src="/images/resume/resume_01.png" width = "600" alt="rusume_01" align="center" /><h3 id="中文简历-https-github-com-hijiangtao-resume"><a href="#中文简历-https-github-com-hijiangtao-resume" class="headerlink" title="中文简历 https://github.com/hijiangtao/resume"></a>中文简历 <a href="https://github.com/hijiangtao/resume">https://github.com/hijiangtao/resume</a></h3><img src="/images/resume/resume_02.png" width = "600" alt="rusume_02" align="center" /><h3 id="中英文兼容的简历-https-github-com-billryan-resume-tree-zh-CN"><a href="#中英文兼容的简历-https-github-com-billryan-resume-tree-zh-CN" class="headerlink" title="中英文兼容的简历 https://github.com/billryan/resume/tree/zh_CN"></a>中英文兼容的简历 <a href="https://github.com/billryan/resume/tree/zh_CN">https://github.com/billryan/resume/tree/zh_CN</a></h3><img src="/images/resume/resume_03.png" width = "600" alt="rusume_03" align="center" /><img src="/images/resume/resume_04.png" width = "600" alt="rusume_04" align="center" /><h2 id="怎么写简历的参考文章"><a href="#怎么写简历的参考文章" class="headerlink" title="怎么写简历的参考文章"></a>怎么写简历的参考文章</h2><h3 id="师妹看了都说好的简历长啥样"><a href="#师妹看了都说好的简历长啥样" class="headerlink" title="师妹看了都说好的简历长啥样"></a>师妹看了都说好的简历长啥样</h3><p><a href="https://mp.weixin.qq.com/s/ea2Pq3ZbJ30lTV3etaECoQ">https://mp.weixin.qq.com/s/ea2Pq3ZbJ30lTV3etaECoQ</a></p><h3 id="一个简洁优雅的-XeLaTeX-简历模板"><a href="#一个简洁优雅的-XeLaTeX-简历模板" class="headerlink" title="一个简洁优雅的 XeLaTeX 简历模板"></a>一个简洁优雅的 XeLaTeX 简历模板</h3><p><a href="https://tiankuizhang.github.io/files/00CV_CN/README/">https://tiankuizhang.github.io/files/00CV_CN/README/</a></p>]]></content>
     
@@ -337,7 +369,7 @@
     
     
     
-    <category term="工具箱" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E7%AE%B1/"/>
+    <category term="03 工具箱" scheme="http://example.com/categories/03-%E5%B7%A5%E5%85%B7%E7%AE%B1/"/>
     
     
     <category term="laTeX" scheme="http://example.com/tags/laTeX/"/>
@@ -351,7 +383,7 @@
     <link href="http://example.com/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
     <id>http://example.com/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</id>
     <published>2021-07-14T07:32:58.000Z</published>
-    <updated>2021-08-22T18:26:20.905Z</updated>
+    <updated>2021-09-17T01:53:15.370Z</updated>
     
     <content type="html"><![CDATA[<ol><li><p>&lt;&lt;SQL必知必会&gt;&gt; <a href="https://book.douban.com/subject/35167240/">https://book.douban.com/subject/35167240/</a></p></li><li><p>SQLZOO <a href="https://sqlzoo.net/">https://sqlzoo.net/</a></p></li><li><p>牛客网-SQL <a href="https://www.nowcoder.com/activity/oj?tab=1">https://www.nowcoder.com/activity/oj?tab=1</a></p></li><li><p>LeetCode-数据库 <a href="https://leetcode-cn.com/problemset/database/">https://leetcode-cn.com/problemset/database/</a></p></li><li><p>Datafrog-SQL经典45题 <a href="https://www.bilibili.com/video/BV1pp4y1Q7Yv">https://www.bilibili.com/video/BV1pp4y1Q7Yv</a></p></li><li><p>尚硅谷-MySQL基础教程 <a href="https://www.bilibili.com/video/BV1xW411u7ax">https://www.bilibili.com/video/BV1xW411u7ax</a></p></li></ol>]]></content>
     
@@ -365,9 +397,9 @@
     
     
     
-    <category term="人工智能" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="数据分析" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
     <category term="SQL" scheme="http://example.com/tags/SQL/"/>
@@ -379,7 +411,7 @@
     <link href="http://example.com/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
     <id>http://example.com/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/</id>
     <published>2021-07-14T03:03:00.000Z</published>
-    <updated>2021-07-26T17:38:15.149Z</updated>
+    <updated>2021-09-17T01:53:40.027Z</updated>
     
     <content type="html"><![CDATA[<h1 id="概率统计的基础概念"><a href="#概率统计的基础概念" class="headerlink" title="概率统计的基础概念"></a>概率统计的基础概念</h1><p>随机试验；随机变量；概率分布；概率分布函数；概率密度函数；累积分布函数；样本和总体。</p><h1 id="离散型随机变量及其分布"><a href="#离散型随机变量及其分布" class="headerlink" title="离散型随机变量及其分布"></a>离散型随机变量及其分布</h1><p>根据随机试验的结果数量是否可数，分为离散型随机变量和连续型随机变量。</p><h2 id="0-1分布-伯努利分布"><a href="#0-1分布-伯努利分布" class="headerlink" title="0-1分布/伯努利分布"></a><strong>0-1分布/伯努利分布</strong></h2><ol><li>定义：伯努利分布指的是对于随机变量X有参数为p（0&lt;1&lt;P），它分别以概率p和1-p取1和0为值。ex. 令X表示抛硬币的结果。</li><li>表示：<code>X ~ b( p)</code></li><li>公式：<code>P(X=1) = p, P(X=0) = 1-p, where p in [0,1]</code></li><li>期望与方差：<code>E(X)=p, D(X)=p(1-p)</code></li></ol><h2 id="二项分布-n个重复独立的伯努利分布"><a href="#二项分布-n个重复独立的伯努利分布" class="headerlink" title="二项分布/n个重复独立的伯努利分布"></a><strong>二项分布/n个重复独立的伯努利分布</strong></h2><ol><li>在n次独立重复的伯努利试验中，设每次试验中事件A发生的概率为p。用X表示n重伯努利试验中事件A发生的次数，则X的可能取值为0，1，…，n,且对每一个k（0≤k≤n）,事件{X=k}即为“n次试验中事件A恰好发生k次”，随机变量X的离散概率分布即为二项分布（Binomial Distribution）。</li><li>表示：<code>X ~ b(n, p)</code></li><li>概率函数：<img src="/images/statistic/bi.jpg" alt="" width="250"></li><li>期望与方差：<code>E(X)=np, D(X)=np(1-p)</code></li></ol><h2 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a><strong>几何分布</strong></h2><ol><li>定义：几何分布（Geometric distribution）是离散型概率分布。其中一种定义为：在n次伯努利试验中，试验k次才得到第一次成功的机率。详细地说，是：前k-1次皆失败，第k次成功的概率。</li><li>表示：<code>X ~ g( p)</code></li><li>概率函数：<img src="/images/statistic/ge.jpg" alt="" width="300"></li><li>期望与方差：<code>E(X)=1/p, D(X)=(1-p)/p^2</code></li></ol><h2 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a><strong>泊松分布</strong></h2><ol><li>定义：Poisson分布，是一种统计与概率学里常见到的离散概率分布。泊松分布的参数λ是单位时间(或单位面积)内随机事件的平均发生次数。 泊松分布适合于描述单位时间内随机事件发生的次数。</li><li>表示：<code>X ~ p(λ)</code></li><li>概率函数：<img src="/images/statistic/po.jpg" alt="" width="300"></li><li>期望与方差：<code>E(X)=λ, D(X)=λ</code></li><li>ex. 某一服务设施在一定时间内到达的人数、某网站或APP在单位时间内的访问人数。</li><li>泊松分布与二项分布：当二项分布的n很大而p很小时，泊松分布可作为二项分布的近似，其中λ为np。通常当n≧20,p≦0.05时，就可以用泊松公式近似得计算。</li></ol><h1 id="连续型随机变量及其分布"><a href="#连续型随机变量及其分布" class="headerlink" title="连续型随机变量及其分布"></a>连续型随机变量及其分布</h1><h2 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a><strong>均匀分布</strong></h2><ol><li>定义：均匀分布也叫矩形分布，它是对称概率分布，在相同长度间隔的分布概率是等可能的。 均匀分布由两个参数a和b定义，它们是数轴上的最小值和最大值，通常缩写为U（a，b）。</li><li>表示：<code>X ~ u(a,b)</code></li><li>概率密度函数：<img src="/images/statistic/uni.jpg" alt="" width="250"></li><li>累积分布函数：<img src="/images/statistic/uni2.jpg" alt="" width="250"></li><li>期望和方差：<code>E(X)=(a+b)/2, D(X)=(a-b)^2/12</code></li></ol><h2 id="正态分布-高斯分布"><a href="#正态分布-高斯分布" class="headerlink" title="正态分布/高斯分布"></a><strong>正态分布/高斯分布</strong></h2><ol><li>定义：若随机变量X服从一个数学期望为μ、方差为σ^2的正态分布，记为<code>N(μ，σ^2)</code>。其概率密度函数为正态分布的期望值μ决定了其位置，其标准差σ决定了分布的幅度。当μ = 0,σ = 1时的正态分布是标准正态分布。</li><li>表示：<code>N(μ，σ^2)</code></li><li>标准化变换：<img src="/images/statistic/normal.jpg" alt="" width="350"></li><li>概率分布函数：<img src="/images/statistic/normal2.jpg" alt="" width="300"></li><li>期望和方差：<code>E(X)=μ，D(X)=σ^2</code></li><li>性质：<img src="./images/statistic/normal3.jpg" alt="todo" width="800"></li></ol><h2 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a><strong>指数分布</strong></h2><ol><li>定义：在概率理论和统计学中，指数分布（也称为负指数分布）是描述泊松过程中的事件之间的时间的概率分布，即事件以恒定平均速率连续且独立地发生的过程。</li><li><code>X ~ E(λ)</code> 其中λ &gt; 0是分布的一个参数，常被称为率参数（rate parameter）。即每单位时间内发生某事件的次数。指数分布的区间是[0,∞)。</li><li>概率密度函数：<img src="/images/statistic/e.jpeg" alt="" width="200"></li><li>累积分布函数：<img src="/images/statistic/e2.jpg" alt="" width="250"></li><li>期望和方差：<code>E(X)=1/λ, D(X)=1/λ^2</code></li></ol><h1 id="随机变量的分布特征与统计量"><a href="#随机变量的分布特征与统计量" class="headerlink" title="随机变量的分布特征与统计量"></a>随机变量的分布特征与统计量</h1><h2 id="数据的分布特征与统计量"><a href="#数据的分布特征与统计量" class="headerlink" title="数据的分布特征与统计量"></a>数据的分布特征与统计量</h2><img src="./images/statistic/feature.jpg" alt="" width="500"><h2 id="重要随机变量的期望和方差总结"><a href="#重要随机变量的期望和方差总结" class="headerlink" title="重要随机变量的期望和方差总结"></a><strong>重要随机变量的期望和方差总结</strong></h2><table><thead><tr><th>随机变量</th><th>表示</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>0-1分布</td><td><code>X ~ b( p)</code></td><td><code>E(X)=p</code></td><td><code>D(X)=p(1-p)</code></td></tr><tr><td>二项分布</td><td><code>X ~ b(n, p)</code></td><td><code>E(X)=np</code></td><td><code>D(X)=np(1-p)</code></td></tr><tr><td>几何分布</td><td><code>X ~ g( p)</code></td><td><code>E(X)=1/p</code></td><td><code>D(X)=(1-p)/p^2</code></td></tr><tr><td>泊松分布</td><td><code>X ~ p(λ)</code></td><td><code>E(X)=λ</code></td><td><code>D(X)=λ</code></td></tr><tr><td>均匀分布</td><td><code>X ~ u(a,b)</code></td><td><code>E(X)=(a+b)/2</code></td><td><code>D(X)=(a-b)^2/12</code></td></tr><tr><td>正态分布</td><td><code>N(μ，σ^2)</code></td><td><code>E(X)=μ</code></td><td><code>D(X)=σ^2</code></td></tr><tr><td>指数分布</td><td><code>X ~ E(λ)</code></td><td><code>E(X)=1/λ</code></td><td><code>D(X)=1/λ^2</code></td></tr></tbody></table><h2 id="协方差和相关系数"><a href="#协方差和相关系数" class="headerlink" title="协方差和相关系数"></a><strong>协方差和相关系数</strong></h2><p><strong>协方差</strong><br>协方差（Covariance）在概率论和统计学中用于衡量两个变量的总体误差。而方差是协方差的一种特殊情况，即当两个变量是相同的情况。协方差表示的是两个变量的总体的误差。<br><a href="https://baike.baidu.com/item/%E5%8D%8F%E6%96%B9%E5%B7%AE">https://baike.baidu.com/item/协方差</a></p><p><strong>相关系数</strong><br>相关关系是一种非确定性的关系，相关系数是研究变量之间线性相关程度的量。相关系数是最早由统计学家卡尔·皮尔逊设计的统计指标，是研究变量之间线性相关程度的量，一般用字母 r 表示。由于研究对象的不同，相关系数有多种定义方式，较为常用的是皮尔逊相关系数。<br><a href="https://baike.baidu.com/item/%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0">https://baike.baidu.com/item/相关系数</a></p><h1 id="独立事件、条件概率、贝叶斯定理"><a href="#独立事件、条件概率、贝叶斯定理" class="headerlink" title="独立事件、条件概率、贝叶斯定理"></a>独立事件、条件概率、贝叶斯定理</h1><p><strong>独立事件</strong><br>独立事件：两个事件不论哪一个事件发生都不影响另一个发生的概率。<br>A和B是独立的, 当且仅当: <code>P(AB) = P(A)P(B)</code></p><p><strong>条件概率</strong><br>条件概率：当事件B已经发生时，事件A发生的概率。<br>事件B发生条件下事件A发生的概率为: <code>P(A|B) = P(AB)/P(B)</code><br>概率的乘法公式: <code>P(AB) = P(A|B)P(B) = P(B|A)P(A)</code></p><p><strong>全概率公式</strong><br><code>P(B) = ∑P(B|Ai)P(Ai)，i=1,2,...,k</code></p><p><strong>贝叶斯定理</strong><br><img src="./img/bys.jpg" alt="todo" width="300"><br>通常P(Ai)为A的先验概率，P(Ai|B)为A的后验概率。</p><h1 id="大数定理与中心极限定理"><a href="#大数定理与中心极限定理" class="headerlink" title="大数定理与中心极限定理"></a>大数定理与中心极限定理</h1><p><strong>大数定律</strong><br>大数定律：将随机变量X所对应的随机试验重复多次，随着试验次数的增加，X的均值会愈发趋近于E(X)。或当样本数据无限大时，样本均值趋于总体均值。</p><p><strong>中心极限定理</strong><br>中心极限定理（central limit theorem）:设从均值为μ、方差为o2 （有限）的任意一个总体中抽取样本量为n的样本，当n充分大时，样本均值X的抽样分布近似服从均值为μ、方差为o2/n的正态分布。</p><h1 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h1><p><strong>置信区间、置信度</strong><br>在区间估计中，由样本统计量所构造的总体参数的估计区间称为<strong>置信区间（confidence interval）</strong>，其中区间的最小值称为置信下限，最大值称为置信上限。由于统计学家在某种程度上确信这个区间会包含真正的总体参数，所以给它取名为置信区间。原因是，如果抽取了许多不同的样本，比如说抽取100个样本，根据每一个样本构造一个置信区间，这样，由100个样本构造的总体参数的100个置信区间中，有95%的区间包含了总体参数的真值，而5%则没包含，则95%这个值称为置信水平。一 般地，如果将构造置信区间的步骤重复多次，置信区间中包含总体参数真值的次数所占的比例称为<strong>置信水平（ confidence level）</strong>，也称为<strong>置信度</strong>或<strong>置信系数（ confidence coefficient）</strong>。</p><p><strong>评价估计量的标准：1.无偏性 2.有效性 3.一致性</strong></p><p><strong>一个总体参数的区间估计</strong></p><p><strong>两个总体参数的区间估计</strong></p><h1 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h1><p>H0: 原假设<br>H1: 备择假设</p><p>检验统计量：用于假设检验计算的统计量，基于样本检验统计量的值来接受或者拒绝原假设。在原假设成立的情况下，检验统计量服从一个特定的分布；而在备择假设成立的情况下，则不服从该分布。常用的检验统计量有t统计量、z统计量等。</p><h2 id="假设检验的基本思想"><a href="#假设检验的基本思想" class="headerlink" title="假设检验的基本思想"></a><strong>假设检验的基本思想</strong></h2><p>通过证明在原假设成立的前提下，检验统计量出现当前值或者更为极端的值属于“小概率”事件，以此推翻原假设，接受备择假设。</p><h2 id="p-value"><a href="#p-value" class="headerlink" title="p-value"></a><strong>p-value</strong></h2><p>“检验统计量出现当前值或者更为极端的值”的概率就是p-value.将p值与预先设定的显著性水平α进行对比，如果p值小于α，就可以推翻原假设，接受备择假设。</p><h2 id="两类错误"><a href="#两类错误" class="headerlink" title="两类错误"></a>两类错误</h2><table><thead><tr><th>项目</th><th>没有拒绝H0</th><th>拒绝H0</th></tr></thead><tbody><tr><td>H0为真</td><td>1-α (正确决策)</td><td>α (弃真错误/第i类错误)</td></tr><tr><td>H0为伪</td><td>β (取伪错误/第ii类错误)</td><td>1-β (正确决策)</td></tr></tbody></table><h2 id="抽样分布：z分布、卡方分布、t分布、F分布"><a href="#抽样分布：z分布、卡方分布、t分布、F分布" class="headerlink" title="抽样分布：z分布、卡方分布、t分布、F分布"></a>抽样分布：z分布、卡方分布、t分布、F分布</h2><p><strong>z分布</strong><br>z分布：正态分布（Normal distribution）又名高斯分布（Gaussiandistribution），若随机变量X服从一个数学期望为μ、方差为σ2的高斯分布，记为N(μ，σ2)。</p><p><strong>卡方分布</strong><br>若n个相互独立的随机变量ξ₁，ξ₂，…,ξn ，均服从标准正态分布（也称独立同分布于标准正态分布），则这n个服从标准正态分布的随机变量的平方和构成一新的随机变量，其分布规律称为卡方分布（chi-square distribution）。其中参数n称为自由度。卡方分布是由正态分布构造而成的一个新的分布，当自由度很大时，卡方分布近似为正态分布。<br>E = n, D = 2n</p><p><strong>t分布</strong><br>t分布:首先要提一句u分布，正态分布（normal distribution）是许多统计方法的理论基础。正态分布的两个参数μ和σ决定了正态分布的位置和形态。为了应用方便，常将一般的正态变 量X通过u变换(X一μ)/σ转化成标准正态变量u， 以使原来各种形态的正态分布都转换为μ=0，σ= 1的标准正态分布（standard normaldistribution） ，亦称u分布。根据中心极限定理，通过抽样模拟试验表明，在正态分布总体中以固定n抽取若干个样本时，样本均数的分布仍服从正态分布，即N (μ， σ)。所以，对样本均数的分布进行u变换，也可变换为标准正态分布N(0,1)<br><strong>由于在实际工作中，往往σ（总体方差）是未知的，常用s （样本方差）作为o的估计值，为了与u变换区别，称为t变换，统计量t值的分布称为t分布。</strong></p><p><strong>F分布</strong><br><img src="./img/F.jpg" alt="todo" width="700"></p><p><strong>一个总体参数的检验</strong></p><p><strong>两个总体参数的检验</strong></p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1]《统计学完全教程》第一版 L.沃塞曼<br>[2]《统计学》第六版 贾俊平</p>]]></content>
     
@@ -391,9 +423,9 @@
     
     
     
-    <category term="人工智能" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="数据分析" scheme="http://example.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <category term="数据分析" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
     <category term="统计" scheme="http://example.com/tags/%E7%BB%9F%E8%AE%A1/"/>
