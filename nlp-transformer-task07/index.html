@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>task07 Transformers解决文本分类 | Memex</title>
+    
+    
+        <meta name="keywords" content="笔记,NLP,组队学习,预训练模型,BERT,transfomer,文本分类" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="该部分的内容翻译自🤗HuggingFace&#x2F;notebooks https:&#x2F;&#x2F;github.com&#x2F;huggingface&#x2F;notebooks&#x2F;tree&#x2F;master&#x2F;examples中文翻译：Datawhale&#x2F;learn-nlp-with-transformers&#x2F;4.1-文本分类 Datawhale&#x2F;learn-nlp-with-transformers&#x2F;4.1-文本分类 微调预训练模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="task07 Transformers解决文本分类">
+<meta property="og:url" content="http://example.com/nlp-transformer-task07/index.html">
+<meta property="og:site_name" content="Memex">
+<meta property="og:description" content="该部分的内容翻译自🤗HuggingFace&#x2F;notebooks https:&#x2F;&#x2F;github.com&#x2F;huggingface&#x2F;notebooks&#x2F;tree&#x2F;master&#x2F;examples中文翻译：Datawhale&#x2F;learn-nlp-with-transformers&#x2F;4.1-文本分类 Datawhale&#x2F;learn-nlp-with-transformers&#x2F;4.1-文本分类 微调预训练模型">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true">
+<meta property="article:published_time" content="2021-09-25T08:57:45.000Z">
+<meta property="article:modified_time" content="2021-09-25T19:41:36.931Z">
+<meta property="article:author" content="Xiaoyu CHU">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="NLP">
+<meta property="article:tag" content="组队学习">
+<meta property="article:tag" content="预训练模型">
+<meta property="article:tag" content="BERT">
+<meta property="article:tag" content="transfomer">
+<meta property="article:tag" content="文本分类">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Memex" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Memex</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            01 计算机基础
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            CS61A 计算机程序的构造与解释
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/cs61a-week1/">CS61A Week1 Comupter_Science, Functions</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            02 人工智能
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            数据分析
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计</a></li>  <li class="file"><a href="/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">SQL学习资料</a></li>  <li class="file"><a href="/SQL%E9%87%8D%E7%82%B9/">SQL表连接&聚合函数&窗口函数</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            自然语言处理
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-text-representation/">NLP中的文本表示方法</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            03 工具箱
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87LaTeX%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF/">一些好用的中英文LaTeX简历模板</a></li>  <li class="file"><a href="/git/">5h打通Git全套教程</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            04 组队学习
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            第29期 基于Transformer的NLP
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-transformer-task01/">task01 NLP学习概览</a></li>  <li class="file"><a href="/nlp-transformer-task02/">task02 学习Attentioin和Transformer</a></li>  <li class="file"><a href="/nlp-transformer-task03/">task03 学习BERT</a></li>  <li class="file"><a href="/nlp-transformer-task04/">task04 学习GPT</a></li>  <li class="file"><a href="/nlp-transformer-task05/">task05 编写BERT模型</a></li>  <li class="file"><a href="/nlp-transformer-task06/">task06 BERT应用、训练和优化</a></li>  <li class="file active"><a href="/nlp-transformer-task07/">task07 Transformers解决文本分类</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第30期 深入浅出PyTorch
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/pytorch-chap01-02/">chap01-02 PyTorch的简介和安装、PyTorch基础知识</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            沉思录
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/%E6%A0%A1%E5%87%86%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E9%A2%84%E6%9C%9F/">校准对世界的预期</a></li>  <li class="file"><a href="/%E5%A4%A7%E7%90%86/">大理：在民宿打工的日子</a></li>  <li class="file"><a href="/%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/">小狗钱钱：理财启蒙的童话</a></li>  <li class="file"><a href="/formula/">公式之美：EVERYTHING IS EPHEMERAL BUT FORMULA IS ETERNAL</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tag cloud</span></h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BERT/" style="font-size: 14px;">BERT</a> <a href="/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/" style="font-size: 10px;">CS公开课</a> <a href="/tags/GPT/" style="font-size: 10px;">GPT</a> <a href="/tags/NLP/" style="font-size: 18px;">NLP</a> <a href="/tags/PyTorch/" style="font-size: 10px;">PyTorch</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/attention/" style="font-size: 10px;">attention</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laTeX/" style="font-size: 10px;">laTeX</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/transfomer/" style="font-size: 14px;">transfomer</a> <a href="/tags/%E5%A4%A7%E7%90%86/" style="font-size: 10px;">大理</a> <a href="/tags/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" style="font-size: 10px;">文本分类</a> <a href="/tags/%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA/" style="font-size: 10px;">文本表示</a> <a href="/tags/%E6%B2%89%E6%80%9D%E5%BD%95/" style="font-size: 10px;">沉思录</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/" style="font-size: 18px;">组队学习</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">统计</a> <a href="/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86/" style="font-size: 10px;">财务管理</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 12px;">阅读</a> <a href="/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/" style="font-size: 16px;">预训练模型</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/nlp-transformer-task07/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true)" alt="task07 Transformers解决文本分类" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8ETransformer%E7%9A%84NLP/">第29期 基于Transformer的NLP</a></p>
+                            <p class="item-title"><a href="/nlp-transformer-task07/" class="title">task07 Transformers解决文本分类</a></p>
+                            <p class="item-date"><time datetime="2021-09-25T08:57:45.000Z" itemprop="datePublished">2021-09-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/nlp-transformer-task06/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true)" alt="task06 BERT应用、训练和优化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8ETransformer%E7%9A%84NLP/">第29期 基于Transformer的NLP</a></p>
+                            <p class="item-title"><a href="/nlp-transformer-task06/" class="title">task06 BERT应用、训练和优化</a></p>
+                            <p class="item-date"><time datetime="2021-09-24T07:18:42.000Z" itemprop="datePublished">2021-09-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/nlp-transformer-task05/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true)" alt="task05 编写BERT模型" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8ETransformer%E7%9A%84NLP/">第29期 基于Transformer的NLP</a></p>
+                            <p class="item-title"><a href="/nlp-transformer-task05/" class="title">task05 编写BERT模型</a></p>
+                            <p class="item-date"><time datetime="2021-09-20T19:01:35.000Z" itemprop="datePublished">2021-09-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/nlp-transformer-task04/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true)" alt="task04 学习GPT" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8ETransformer%E7%9A%84NLP/">第29期 基于Transformer的NLP</a></p>
+                            <p class="item-title"><a href="/nlp-transformer-task04/" class="title">task04 学习GPT</a></p>
+                            <p class="item-date"><time datetime="2021-09-19T12:02:17.000Z" itemprop="datePublished">2021-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/pytorch-chap01-02/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/pytorch/torch_logo.jpeg?raw=true)" alt="chap01-02 PyTorch的简介和安装、PyTorch基础知识" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC30%E6%9C%9F-%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPyTorch/">第30期 深入浅出PyTorch</a></p>
+                            <p class="item-title"><a href="/pytorch-chap01-02/" class="title">chap01-02 PyTorch的简介和安装、PyTorch基础知识</a></p>
+                            <p class="item-date"><time datetime="2021-09-18T02:26:03.000Z" itemprop="datePublished">2021-09-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-nlp-transformer-task07" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8ETransformer%E7%9A%84NLP/">第29期 基于Transformer的NLP</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/BERT/" rel="tag">BERT</a>, <a class="tag-link-link" href="/tags/NLP/" rel="tag">NLP</a>, <a class="tag-link-link" href="/tags/transfomer/" rel="tag">transfomer</a>, <a class="tag-link-link" href="/tags/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" rel="tag">文本分类</a>, <a class="tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>, <a class="tag-link-link" href="/tags/%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/" rel="tag">组队学习</a>, <a class="tag-link-link" href="/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/" rel="tag">预训练模型</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-transformer-task07/">
+            <time datetime="2021-09-25T08:57:45.000Z" itemprop="datePublished">2021-09-25</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            task07 Transformers解决文本分类
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E8%B0%83%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">微调预训练模型进行文本分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">2.</span> <span class="toc-text">加载数据集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">数据预处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E8%B0%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">微调模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B6%85%E5%8F%82%E6%90%9C%E7%B4%A2"><span class="toc-number">5.</span> <span class="toc-text">超参搜索</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">6.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                </div>
+            
+        
+        
+            <p><em>该部分的内容翻译自🤗HuggingFace/notebooks <a target="_blank" rel="noopener" href="https://github.com/huggingface/notebooks/tree/master/examples">https://github.com/huggingface/notebooks/tree/master/examples</a></em><br><em>中文翻译：Datawhale/learn-nlp-with-transformers/4.1-文本分类 <a target="_blank" rel="noopener" href="https://github.com/datawhalechina/learn-nlp-with-transformers/blob/main/docs/%E7%AF%87%E7%AB%A04-%E4%BD%BF%E7%94%A8Transformers%E8%A7%A3%E5%86%B3NLP%E4%BB%BB%E5%8A%A1/4.1-%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB.md">Datawhale/learn-nlp-with-transformers/4.1-文本分类</a></em></p>
+<h1 id="微调预训练模型进行文本分类"><a href="#微调预训练模型进行文本分类" class="headerlink" title="微调预训练模型进行文本分类"></a>微调预训练模型进行文本分类</h1><p>我们将使用 🤗 Transformers代码库中的模型来解决文本分类任务，任务来源于GLUE Benchmark.<br>GLUE榜单包含了9个句子级别的分类任务，分别是：</p>
+<ul>
+<li>CoLA (Corpus of Linguistic Acceptability) 鉴别一个句子是否语法正确.</li>
+<li>MNLI (Multi-Genre Natural Language Inference) 给定一个假设，判断另一个句子与该假设的关系：entails, contradicts 或者 unrelated。</li>
+<li>MRPC (Microsoft Research Paraphrase Corpus) 判断两个句子是否互为paraphrases.</li>
+<li>QNLI (Question-answering Natural Language Inference) 判断第2句是否包含第1句问题的答案。</li>
+<li>QQP (Quora Question Pairs2) 判断两个问句是否语义相同。</li>
+<li>RTE (Recognizing Textual Entailment)判断一个句子是否与假设成entail关系。</li>
+<li>SST-2 (Stanford Sentiment Treebank) 判断一个句子的情感正负向.</li>
+<li>STS-B (Semantic Textual Similarity Benchmark) 判断两个句子的相似性（分数为1-5分）。</li>
+<li>WNLI (Winograd Natural Language Inference) Determine if a sentence with an anonymous pronoun and a sentence with this pronoun replaced are entailed or not.</li>
+</ul>
+<p>对于以上任务，我们将展示如何使用简单的Dataset库加载数据集，同时使用transformer中的Trainer接口对预训练模型进行微调。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLUE_TASKS = [<span class="string">&quot;cola&quot;</span>, <span class="string">&quot;mnli&quot;</span>, <span class="string">&quot;mnli-mm&quot;</span>, <span class="string">&quot;mrpc&quot;</span>, <span class="string">&quot;qnli&quot;</span>, <span class="string">&quot;qqp&quot;</span>, <span class="string">&quot;rte&quot;</span>, <span class="string">&quot;sst2&quot;</span>, <span class="string">&quot;stsb&quot;</span>, <span class="string">&quot;wnli&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>This notebook is built to run on any of the tasks in the list above, with any model checkpoint from the Model Hub as long as that model has a version with a classification head. Depending on you model and the GPU you are using, you might need to adjust the batch size to avoid out-of-memory errors. Set those three parameters, then the rest of the notebook should run smoothly:<br>本notebook理论上可以使用各种各样的transformer模型（模型面板），解决任何文本分类分类任务。如果您所处理的任务有所不同，大概率只需要很小的改动便可以使用本notebook进行处理。同时，您应该根据您的GPU显存来调整微调训练所需要的btach size大小，避免显存溢出。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">task = <span class="string">&quot;cola&quot;</span></span><br><span class="line">model_checkpoint = <span class="string">&quot;distilbert-base-uncased&quot;</span></span><br><span class="line">batch_size = <span class="number">16</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="加载数据集"><a href="#加载数据集" class="headerlink" title="加载数据集"></a>加载数据集</h1><p>We will use the 🤗 Datasets library to download the data and get the metric we need to use for evaluation (to compare our model to the benchmark). This can be easily done with the functions <code>load_dataset</code> and <code>load_metric</code>.<br>我们将会使用🤗 Datasets库来加载数据和对应的评测方式。数据加载和评测方式加载只需要简单使用load_dataset和load_metric即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from datasets import load_dataset, load_metric</span><br></pre></td></tr></table></figure>
+
+<p>Apart from mnli-mm being a special code, we can directly pass our task name to those functions. <code>load_dataset</code> will cache the dataset to avoid downloading it again the next time you run this cell.<br>除了mnli-mm以外，其他任务都可以直接通过任务名字进行加载。数据加载之后会自动缓存。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">actual_task = <span class="string">&quot;mnli&quot;</span> <span class="keyword">if</span> task == <span class="string">&quot;mnli-mm&quot;</span> <span class="keyword">else</span> task</span><br><span class="line">dataset = load_dataset(<span class="string">&quot;glue&quot;</span>, actual_task)</span><br><span class="line">metric = load_metric(<span class="string">&#x27;glue&#x27;</span>, actual_task)</span><br></pre></td></tr></table></figure>
+<p><em>上节讲过，这里，最好手动下载glue.py和gule_metric.py，不下载到本地的话，容易出现连接错误。</em></p>
+<p>The dataset object itself is DatasetDict, which contains one key for the training, validation and test set (with more keys for the mismatched validation and test set in the special case of mnli).<br>这个datasets对象本身是一种DatasetDict数据结构.对于训练集、验证集和测试集，只需要使用对应的key（train，validation，test）即可得到相应的数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dataset</span><br><span class="line">DatasetDict(&#123;</span><br><span class="line">    train: Dataset(&#123;</span><br><span class="line">        features: [<span class="string">&#x27;sentence&#x27;</span>, <span class="string">&#x27;label&#x27;</span>, <span class="string">&#x27;idx&#x27;</span>],</span><br><span class="line">        num_rows: <span class="number">8551</span></span><br><span class="line">    &#125;)</span><br><span class="line">    validation: Dataset(&#123;</span><br><span class="line">        features: [<span class="string">&#x27;sentence&#x27;</span>, <span class="string">&#x27;label&#x27;</span>, <span class="string">&#x27;idx&#x27;</span>],</span><br><span class="line">        num_rows: <span class="number">1043</span></span><br><span class="line">    &#125;)</span><br><span class="line">    test: Dataset(&#123;</span><br><span class="line">        features: [<span class="string">&#x27;sentence&#x27;</span>, <span class="string">&#x27;label&#x27;</span>, <span class="string">&#x27;idx&#x27;</span>],</span><br><span class="line">        num_rows: <span class="number">1063</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dataset[<span class="string">&quot;train&quot;</span>][<span class="number">0</span>]</span><br><span class="line">&#123;<span class="string">&#x27;sentence&#x27;</span>: <span class="string">&quot;Our friends won&#x27;t buy this analysis, let alone the next one we propose.&quot;</span>,</span><br><span class="line"><span class="string">&#x27;label&#x27;</span>: <span class="number">1</span>, </span><br><span class="line"><span class="string">&#x27;idx&#x27;</span>: <span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>To get a sense of what the data looks like, the following function will show some examples picked randomly in the dataset.<br>为了能够进一步理解数据长什么样子，下面的函数将从数据集里随机选择几个例子进行展示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display, HTML</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_random_elements</span>(<span class="params">dataset, num_examples=<span class="number">10</span></span>):</span></span><br><span class="line">    <span class="keyword">assert</span> num_examples &lt;= <span class="built_in">len</span>(dataset), <span class="string">&quot;Can&#x27;t pick more elements than there are in the dataset.&quot;</span></span><br><span class="line">    picks = []</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(num_examples):</span><br><span class="line">        pick = random.randint(<span class="number">0</span>, <span class="built_in">len</span>(dataset)-<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">while</span> pick <span class="keyword">in</span> picks:</span><br><span class="line">            pick = random.randint(<span class="number">0</span>, <span class="built_in">len</span>(dataset)-<span class="number">1</span>)</span><br><span class="line">        picks.append(pick)</span><br><span class="line">    </span><br><span class="line">    df = pd.DataFrame(dataset[picks])</span><br><span class="line">    <span class="keyword">for</span> column, typ <span class="keyword">in</span> dataset.features.items():</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(typ, datasets.ClassLabel):</span><br><span class="line">            df[column] = df[column].transform(<span class="keyword">lambda</span> i: typ.names[i])</span><br><span class="line">    display(HTML(df.to_html()))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show_random_elements(dataset[<span class="string">&quot;train&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<p>The metric is an instance of datasets.Metric:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>You can call its <code>compute</code> method with your predictions and labels directly and it will return a dictionary with the metric(s) value:<br>直接调用metric的compute方法，传入labels和predictions即可得到metric的值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">fake_preds = np.random.randint(<span class="number">0</span>, <span class="number">2</span>, size=(<span class="number">64</span>,))</span><br><span class="line">fake_labels = np.random.randint(<span class="number">0</span>, <span class="number">2</span>, size=(<span class="number">64</span>,))</span><br><span class="line">metric.compute(predictions=fake_preds, references=fake_labels)</span><br></pre></td></tr></table></figure>
+<p>Note that load_metric has loaded the proper metric associated to your task, which is:<br>每一个文本分类任务所对应的metic有所不同，具体如下:</p>
+<ul>
+<li>for CoLA: Matthews Correlation Coefficient</li>
+<li>for MNLI (matched or mismatched): Accuracy</li>
+<li>for MRPC: Accuracy and F1 score</li>
+<li>for QNLI: Accuracy</li>
+<li>for QQP: Accuracy and F1 score</li>
+<li>for RTE: Accuracy</li>
+<li>for SST-2: Accuracy</li>
+<li>for STS-B: Pearson Correlation Coefficient and Spearman’s_Rank_Correlation_Coefficient</li>
+<li>for WNLI: Accuracy</li>
+</ul>
+<p>so the metric object only computes the one(s) needed for your task.</p>
+<h1 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h1><p>Before we can feed those texts to our model, we need to preprocess them. This is done by a 🤗 Transformers <code>Tokenizer</code> which will (as the name indicates) tokenize the inputs (including converting the tokens to their corresponding IDs in the pretrained vocabulary) and put it in a format the model expects, as well as generate the other inputs that model requires.<br>在将数据喂入模型之前，我们需要对数据进行预处理。预处理的工具叫Tokenizer。Tokenizer首先对输入进行tokenize，然后将tokens转化为预模型中需要对应的token ID，再转化为模型需要的输入格式。</p>
+<p>To do all of this, we instantiate our tokenizer with the <code>AutoTokenizer.from_pretrained</code> method, which will ensure:</p>
+<ul>
+<li>we get a tokenizer that corresponds to the model architecture we want to use,</li>
+<li>we download the vocabulary used when pretraining this specific checkpoint.</li>
+</ul>
+<p>为了达到数据预处理的目的，我们使用AutoTokenizer.from_pretrained方法实例化我们的tokenizer，这样可以确保：</p>
+<ul>
+<li>我们得到一个与预训练模型一一对应的tokenizer。</li>
+<li>使用指定的模型checkpoint对应的tokenizer的时候，我们也下载了模型需要的词表库vocabulary，准确来说是tokens vocabulary。</li>
+</ul>
+<p>That vocabulary will be cached, so it’s not downloaded again the next time we run the cell.<br>这个被下载的tokens vocabulary会被缓存起来，从而再次使用的时候不会重新下载。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> AutoTokenizer</span><br><span class="line">    </span><br><span class="line">tokenizer = AutoTokenizer.from_pretrained(model_checkpoint, use_fast=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>You can directly call this tokenizer on one sentence or a pair of sentences:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tokenizer(<span class="string">&quot;Hello, this one sentence!&quot;</span>, <span class="string">&quot;And this sentence goes with it.&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>输出为：<br>pass</p>
+<p>To preprocess our dataset, we will thus need the names of the columns containing the sentence(s). The following dictionary keeps track of the correspondence task to column names:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">task_to_keys = &#123;</span><br><span class="line">    <span class="string">&quot;cola&quot;</span>: (<span class="string">&quot;sentence&quot;</span>, <span class="literal">None</span>),</span><br><span class="line">    <span class="string">&quot;mnli&quot;</span>: (<span class="string">&quot;premise&quot;</span>, <span class="string">&quot;hypothesis&quot;</span>),</span><br><span class="line">    <span class="string">&quot;mnli-mm&quot;</span>: (<span class="string">&quot;premise&quot;</span>, <span class="string">&quot;hypothesis&quot;</span>),</span><br><span class="line">    <span class="string">&quot;mrpc&quot;</span>: (<span class="string">&quot;sentence1&quot;</span>, <span class="string">&quot;sentence2&quot;</span>),</span><br><span class="line">    <span class="string">&quot;qnli&quot;</span>: (<span class="string">&quot;question&quot;</span>, <span class="string">&quot;sentence&quot;</span>),</span><br><span class="line">    <span class="string">&quot;qqp&quot;</span>: (<span class="string">&quot;question1&quot;</span>, <span class="string">&quot;question2&quot;</span>),</span><br><span class="line">    <span class="string">&quot;rte&quot;</span>: (<span class="string">&quot;sentence1&quot;</span>, <span class="string">&quot;sentence2&quot;</span>),</span><br><span class="line">    <span class="string">&quot;sst2&quot;</span>: (<span class="string">&quot;sentence&quot;</span>, <span class="literal">None</span>),</span><br><span class="line">    <span class="string">&quot;stsb&quot;</span>: (<span class="string">&quot;sentence1&quot;</span>, <span class="string">&quot;sentence2&quot;</span>),</span><br><span class="line">    <span class="string">&quot;wnli&quot;</span>: (<span class="string">&quot;sentence1&quot;</span>, <span class="string">&quot;sentence2&quot;</span>),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>We can double check it does work on our current dataset:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sentence1_key, sentence2_key = task_to_keys[task]</span><br><span class="line"><span class="keyword">if</span> sentence2_key <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Sentence: <span class="subst">&#123;dataset[<span class="string">&#x27;train&#x27;</span>][<span class="number">0</span>][sentence1_key]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Sentence 1: <span class="subst">&#123;dataset[<span class="string">&#x27;train&#x27;</span>][<span class="number">0</span>][sentence1_key]&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Sentence 2: <span class="subst">&#123;dataset[<span class="string">&#x27;train&#x27;</span>][<span class="number">0</span>][sentence2_key]&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sentence: Our friends won&#x27;t buy this analysis, let alone the next one we propose.</span><br></pre></td></tr></table></figure>
+
+<p>We can them write the function that will preprocess our samples. We just feed them to the <code>tokenizer</code> with the argument <code>truncation=True</code>. This will ensure that an input longer that what the model selected can handle will be truncated to the maximum length accepted by the model.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preprocess_function</span>(<span class="params">examples</span>):</span></span><br><span class="line">    <span class="keyword">if</span> sentence2_key <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> tokenizer(examples[sentence1_key], truncation=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">return</span> tokenizer(examples[sentence1_key], examples[sentence2_key], truncation=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>preprocess_function(dataset[<span class="string">&#x27;train&#x27;</span>][:<span class="number">5</span>])</span><br><span class="line">&#123;<span class="string">&#x27;input_ids&#x27;</span>: [[<span class="number">101</span>, <span class="number">2256</span>, <span class="number">2814</span>, <span class="number">2180</span>, <span class="number">1005</span>, <span class="number">1056</span>, <span class="number">4965</span>, <span class="number">2023</span>, <span class="number">4106</span>, <span class="number">1010</span>, <span class="number">2292</span>, <span class="number">2894</span>, <span class="number">1996</span>, <span class="number">2279</span>, <span class="number">2028</span>, <span class="number">2057</span>, <span class="number">16599</span>, <span class="number">1012</span>, <span class="number">102</span>], [<span class="number">101</span>, <span class="number">2028</span>, <span class="number">2062</span>, <span class="number">18404</span>, <span class="number">2236</span>, <span class="number">3989</span>, <span class="number">1998</span>, <span class="number">1045</span>, <span class="number">1005</span>, <span class="number">1049</span>, <span class="number">3228</span>, <span class="number">2039</span>, <span class="number">1012</span>, <span class="number">102</span>], [<span class="number">101</span>, <span class="number">2028</span>, <span class="number">2062</span>, <span class="number">18404</span>, <span class="number">2236</span>, <span class="number">3989</span>, <span class="number">2030</span>, <span class="number">1045</span>, <span class="number">1005</span>, <span class="number">1049</span>, <span class="number">3228</span>, <span class="number">2039</span>, <span class="number">1012</span>, <span class="number">102</span>], [<span class="number">101</span>, <span class="number">1996</span>, <span class="number">2062</span>, <span class="number">2057</span>, <span class="number">2817</span>, <span class="number">16025</span>, <span class="number">1010</span>, <span class="number">1996</span>, <span class="number">13675</span>, <span class="number">16103</span>, <span class="number">2121</span>, <span class="number">2027</span>, <span class="number">2131</span>, <span class="number">1012</span>, <span class="number">102</span>], [<span class="number">101</span>, <span class="number">2154</span>, <span class="number">2011</span>, <span class="number">2154</span>, <span class="number">1996</span>, <span class="number">8866</span>, <span class="number">2024</span>, <span class="number">2893</span>, <span class="number">14163</span>, <span class="number">8024</span>, <span class="number">3771</span>, <span class="number">1012</span>, <span class="number">102</span>]], <span class="string">&#x27;attention_mask&#x27;</span>: [[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>To apply this function on all the sentences (or pairs of sentences) in our dataset, we just use the <code>map</code> method of our <code>dataset</code> object we created earlier. This will apply the function on all the elements of all the splits in <code>dataset</code>, so our training, validation and testing data will be preprocessed in one single command.<br>接下来对数据集datasets里面的所有样本进行预处理，处理的方式是使用map函数，将预处理函数prepare_train_features应用到（map)所有样本上。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">encoded_dataset = dataset.<span class="built_in">map</span>(preprocess_function, batched=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="微调模型"><a href="#微调模型" class="headerlink" title="微调模型"></a>微调模型</h1><p>Now that our data is ready, we can download the pretrained model and fine-tune it. Since all our tasks are about sentence classification, we use the AutoModelForSequenceClassification class. Like with the tokenizer, the from_pretrained method will download and cache the model for us. The only thing we have to specify is the number of labels for our problem (which is always 2, except for STS-B which is a regression problem and MNLI where we have 3 labels):<br>既然数据已经准备好了，现在我们需要下载并加载我们的预训练模型，然后微调预训练模型。既然我们是做seq2seq任务，那么我们需要一个能解决这个任务的模型类。我们使用AutoModelForSequenceClassification 这个类。和tokenizer相似，from_pretrained方法同样可以帮助我们下载并加载模型，同时也会对模型进行缓存，就不会重复下载模型啦。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> AutoModelForSequenceClassification, TrainingArguments, Trainer</span><br><span class="line"></span><br><span class="line">num_labels = <span class="number">3</span> <span class="keyword">if</span> task.startswith(<span class="string">&quot;mnli&quot;</span>) <span class="keyword">else</span> <span class="number">1</span> <span class="keyword">if</span> task==<span class="string">&quot;stsb&quot;</span> <span class="keyword">else</span> <span class="number">2</span></span><br><span class="line">model = AutoModelForSequenceClassification.from_pretrained(model_checkpoint, num_labels=num_labels)</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Some weights of the model checkpoint at distilbert-base-uncased were not used when initializing DistilBertForSequenceClassification: [&#x27;vocab_transform.bias&#x27;, &#x27;vocab_projector.weight&#x27;, &#x27;vocab_layer_norm.bias&#x27;, &#x27;vocab_layer_norm.weight&#x27;, &#x27;vocab_projector.bias&#x27;, &#x27;vocab_transform.weight&#x27;]</span><br><span class="line">- This IS expected if you are initializing DistilBertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).</span><br><span class="line">- This IS NOT expected if you are initializing DistilBertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).</span><br><span class="line">Some weights of DistilBertForSequenceClassification were not initialized from the model checkpoint at distilbert-base-uncased and are newly initialized: [&#x27;classifier.weight&#x27;, &#x27;classifier.bias&#x27;, &#x27;pre_classifier.bias&#x27;, &#x27;pre_classifier.weight&#x27;]</span><br><span class="line">You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.</span><br></pre></td></tr></table></figure>
+<p>The warning is telling us we are throwing away some weights (the vocab_transform and vocab_layer_norm layers) and randomly initializing some other (the pre_classifier and classifier layers). This is absolutely normal in this case, because we are removing the head used to pretrain the model on a masked language modeling objective and replacing it with a new head for which we don’t have pretrained weights, so the library warns us we should fine-tune this model before using it for inference, which is exactly what we are going to do.<br>由于我们微调的任务是文本分类任务，而我们加载的是预训练的语言模型，所以会提示我们加载模型的时候扔掉了一些不匹配的神经网络参数（比如：预训练语言模型的神经网络head被扔掉了，同时随机初始化了文本分类的神经网络head）。</p>
+<p>To instantiate a <code>Trainer</code>, we will need to define two more things. The most important is the <code>TrainingArguments</code>, which is a class that contains all the attributes to customize the training. It requires one folder name, which will be used to save the checkpoints of the model, and all other arguments are optional:<br>为了能够得到一个Trainer训练工具，我们还需要3个要素，其中最重要的是训练的设定/参数 TrainingArguments。这个训练设定包含了能够定义训练过程的所有属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">metric_name = <span class="string">&quot;pearson&quot;</span> <span class="keyword">if</span> task == <span class="string">&quot;stsb&quot;</span> <span class="keyword">else</span> <span class="string">&quot;matthews_correlation&quot;</span> <span class="keyword">if</span> task == <span class="string">&quot;cola&quot;</span> <span class="keyword">else</span> <span class="string">&quot;accuracy&quot;</span></span><br><span class="line">model_name = model_checkpoint.split(<span class="string">&quot;/&quot;</span>)[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">args = TrainingArguments(</span><br><span class="line">    <span class="string">&quot;test-glue&quot;</span>,</span><br><span class="line">    evaluation_strategy = <span class="string">&quot;epoch&quot;</span>,</span><br><span class="line">    save_strategy = <span class="string">&quot;epoch&quot;</span>,</span><br><span class="line">    learning_rate=<span class="number">2e-5</span>,</span><br><span class="line">    per_device_train_batch_size=batch_size,</span><br><span class="line">    per_device_eval_batch_size=batch_size,</span><br><span class="line">    num_train_epochs=<span class="number">5</span>,</span><br><span class="line">    weight_decay=<span class="number">0.01</span>,</span><br><span class="line">    load_best_model_at_end=<span class="literal">True</span>,</span><br><span class="line">    metric_for_best_model=metric_name,</span><br><span class="line">    push_to_hub=<span class="literal">False</span>,</span><br><span class="line">    push_to_hub_model_id=<span class="string">f&quot;<span class="subst">&#123;model_name&#125;</span>-finetuned-<span class="subst">&#123;task&#125;</span>&quot;</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>Here we set the evaluation to be done at the end of each epoch, tweak the learning rate, use the <code>batch_size</code> defined at the top of the notebook and customize the number of epochs for training, as well as the weight decay. Since the best model might not be the one at the end of training, we ask the <code>Trainer</code> to load the best model it saved (according to <code>metric_name</code>) at the end of training.<br>上面evaluation_strategy = “epoch”参数告诉训练代码：我们每个epcoh会做一次验证评估。<br>上面batch_size在这个notebook之前定义好了。</p>
+<p>The last two arguments are to setup everything so we can push the model to the <code>Hub</code> at the end of training. Remove the two of them if you didn’t follow the installation steps at the top of the notebook, otherwise you can change the value of <code>push_to_hub_model_id</code> to something you would prefer.<br><em>(后面需要连接到hub客户端，太麻烦，所以先设为False)</em></p>
+<p>The last thing to define for our <code>Trainer</code> is how to compute the metrics from the predictions. We need to define a function for this, which will just use the <code>metric</code> we loaded earlier, the only preprocessing we have to do is to take the argmax of our predicted logits (our just squeeze the last axis in the case of STS-B):<br>最后，由于不同的任务需要不同的评测指标，我们定一个函数来根据任务名字得到评价方法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_metrics</span>(<span class="params">eval_pred</span>):</span></span><br><span class="line">    predictions, labels = eval_pred</span><br><span class="line">    <span class="keyword">if</span> task != <span class="string">&quot;stsb&quot;</span>:</span><br><span class="line">        predictions = np.argmax(predictions, axis=<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        predictions = predictions[:, <span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> metric.compute(predictions=predictions, references=labels)</span><br></pre></td></tr></table></figure>
+
+<p>Then we just need to pass all of this along with our datasets to the Trainer:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">validation_key = <span class="string">&quot;validation_mismatched&quot;</span> <span class="keyword">if</span> task == <span class="string">&quot;mnli-mm&quot;</span> <span class="keyword">else</span> <span class="string">&quot;validation_matched&quot;</span> <span class="keyword">if</span> task == <span class="string">&quot;mnli&quot;</span> <span class="keyword">else</span> <span class="string">&quot;validation&quot;</span></span><br><span class="line">trainer = Trainer(</span><br><span class="line">    model,</span><br><span class="line">    args,</span><br><span class="line">    train_dataset=encoded_dataset[<span class="string">&quot;train&quot;</span>],</span><br><span class="line">    eval_dataset=encoded_dataset[validation_key],</span><br><span class="line">    tokenizer=tokenizer,</span><br><span class="line">    compute_metrics=compute_metrics</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>BUG:<br>ValueError: You must login to the Hugging Face hub on this computer by typing <code>transformers-cli login</code> and entering your credentials to use <code>use_auth_token=True</code>. Alternatively, you can pass your own token as the <code>use_auth_token</code> argument.<br>把args里面的该项参数改为False   <code>push_to_hub=False,</code>。</p>
+</blockquote>
+<p>We can now finetune our model by just calling the <code>train</code> method:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trainer.train()</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>We can check with the <code>evaluate</code> method that our <code>Trainer</code> did reload the best model properly (if it was not the last one):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trainer.evaluate()</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="超参搜索"><a href="#超参搜索" class="headerlink" title="超参搜索"></a>超参搜索</h1><p>The Trainer supports hyperparameter search using optuna or Ray Tune. </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install optuna</span><br><span class="line">pip install ray[tune]</span><br></pre></td></tr></table></figure>
+
+<p>During hyperparameter search, the Trainer will run several trainings, so it needs to have the model defined via a function (so it can be reinitialized at each new run) instead of just having it passed. We jsut use the same function as before:<br>超参搜索时，Trainer将会返回多个训练好的模型，所以需要传入一个定义好的模型从而让Trainer可以不断重新初始化该传入的模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">model_init</span>():</span></span><br><span class="line">    <span class="keyword">return</span> AutoModelForSequenceClassification.from_pretrained(model_checkpoint, num_labels=num_labels)</span><br></pre></td></tr></table></figure>
+
+<p>And we can instantiate our Trainer like before:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">trainer = Trainer(</span><br><span class="line">    model_init=model_init,</span><br><span class="line">    args=args,</span><br><span class="line">    train_dataset=encoded_dataset[<span class="string">&quot;train&quot;</span>],</span><br><span class="line">    eval_dataset=encoded_dataset[validation_key],</span><br><span class="line">    tokenizer=tokenizer,</span><br><span class="line">    compute_metrics=compute_metrics</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>The method we call this time is <code>hyperparameter_search</code>. Note that it can take a long time to run on the full dataset for some of the tasks. You can try to find some good hyperparameter on a portion of the training dataset by replacing the <code>train_dataset</code> line above by:<br><code>train_dataset = encoded_dataset[&quot;train&quot;].shard(index=1, num_shards=10) </code><br>for 1/10th of the dataset. Then you can run a full training on the best hyperparameters picked by the search.<br>调用方法hyperparameter_search。注意，这个过程可能很久，我们可以先用部分数据集进行超参搜索，再进行全量训练。 比如使用1/10的数据进行搜索：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">best_run = trainer.hyperparameter_search(n_trials=<span class="number">10</span>, direction=<span class="string">&quot;maximize&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>The hyperparameter_search method returns a <code>BestRun</code> objects, which contains the value of the objective maximized (by default the sum of all metrics) and the hyperparameters it used for that run.<br>hyperparameter_search会返回效果最好的模型相关的参数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>best_run</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>To reproduce the best training, just set the hyperparameters in your TrainingArgument before creating a Trainer:<br>将Trainner设置为搜索到的最好参数，进行训练：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> n, v <span class="keyword">in</span> best_run.hyperparameters.items():</span><br><span class="line">    <span class="built_in">setattr</span>(trainer.args, n, v)</span><br><span class="line"></span><br><span class="line">trainer.train()</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>HuggingFace/transfomers/BERT <a target="_blank" rel="noopener" href="https://huggingface.co/transformers/model_doc/bert.html#">https://huggingface.co/transformers/model_doc/bert.html#</a></li>
+<li>基于transformers的自然语言处理(NLP)入门–在线阅读 <a target="_blank" rel="noopener" href="https://datawhalechina.github.io/learn-nlp-with-transformers/#/">https://datawhalechina.github.io/learn-nlp-with-transformers/#/</a></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/nlp-transformer-task06/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">task06 BERT应用、训练和优化</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Xiaoyu CHU &copy; 2021 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
