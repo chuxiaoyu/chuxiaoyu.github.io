@@ -9,16 +9,16 @@
         <meta name="keywords" content="笔记,NLP,组队学习,预训练模型,BERT,transfomer" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Overview本部分是BERT源码的解读，来自HuggingFace&#x2F;transfomers&#x2F;BERT[1]。如图所示，代码结构和作用如下：  BertTokenizer 预处理和切词 BertModel BertEmbeddings 词嵌入 BertEncoder BertAttention 注意力机制 BertIntermediate 全连接和激活函数 BertOutput 全连接、残差链接">
+    <meta name="description" content="Overview本部分是BERT源码的解读，来自HuggingFace&#x2F;transfomers&#x2F;BERT[1]。  如图所示，代码结构和作用如下：  BertTokenizer 预处理和切词 BertModel BertEmbeddings 词嵌入 BertEncoder BertAttention 注意力机制 BertIntermediate 全连接和激活函数 BertOutput 全连接、残差">
 <meta property="og:type" content="article">
 <meta property="og:title" content="task05 编写BERT模型">
 <meta property="og:url" content="http://example.com/nlp-transformer-task05/index.html">
 <meta property="og:site_name" content="Memex">
-<meta property="og:description" content="Overview本部分是BERT源码的解读，来自HuggingFace&#x2F;transfomers&#x2F;BERT[1]。如图所示，代码结构和作用如下：  BertTokenizer 预处理和切词 BertModel BertEmbeddings 词嵌入 BertEncoder BertAttention 注意力机制 BertIntermediate 全连接和激活函数 BertOutput 全连接、残差链接">
+<meta property="og:description" content="Overview本部分是BERT源码的解读，来自HuggingFace&#x2F;transfomers&#x2F;BERT[1]。  如图所示，代码结构和作用如下：  BertTokenizer 预处理和切词 BertModel BertEmbeddings 词嵌入 BertEncoder BertAttention 注意力机制 BertIntermediate 全连接和激活函数 BertOutput 全连接、残差">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true">
 <meta property="article:published_time" content="2021-09-20T19:01:35.000Z">
-<meta property="article:modified_time" content="2021-09-21T17:29:37.878Z">
+<meta property="article:modified_time" content="2021-09-22T07:03:54.456Z">
 <meta property="article:author" content="Xiaoyu CHU">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="NLP">
@@ -253,7 +253,7 @@
                             &nbsp;
                             第29期 基于transformer的NLP
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-transformer-task01/">task01 NLP学习概览</a></li>  <li class="file"><a href="/nlp-transformer-task02/">task02 学习Attentioin和Transformer</a></li>  <li class="file"><a href="/nlp-transformer-task03/">task03 学习BERT</a></li>  <li class="file"><a href="/nlp-transformer-task04/">task04 学习GPT</a></li>  <li class="file active"><a href="/nlp-transformer-task05/">task05 编写BERT模型</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-transformer-task01/">task01 NLP学习概览</a></li>  <li class="file"><a href="/nlp-transformer-task02/">task02 学习Attentioin和Transformer</a></li>  <li class="file"><a href="/nlp-transformer-task03/">task03 学习BERT</a></li>  <li class="file"><a href="/nlp-transformer-task04/">task04 学习GPT</a></li>  <li class="file active"><a href="/nlp-transformer-task05/">task05 编写BERT模型</a></li>  <li class="file"><a href="/nlp-transformer-task06/">task06 BERT应用到下游任务、训练和优化</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -347,7 +347,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title"><span>tag cloud</span></h3>
         <div class="widget tagcloud">
-            <a href="/tags/BERT/" style="font-size: 12.5px;">BERT</a> <a href="/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/" style="font-size: 10px;">CS公开课</a> <a href="/tags/GPT/" style="font-size: 10px;">GPT</a> <a href="/tags/NLP/" style="font-size: 17.5px;">NLP</a> <a href="/tags/PyTorch/" style="font-size: 10px;">PyTorch</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/attention/" style="font-size: 10px;">attention</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laTeX/" style="font-size: 10px;">laTeX</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/transfomer/" style="font-size: 12.5px;">transfomer</a> <a href="/tags/%E5%A4%A7%E7%90%86/" style="font-size: 10px;">大理</a> <a href="/tags/%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA/" style="font-size: 10px;">文本表示</a> <a href="/tags/%E6%B2%89%E6%80%9D%E5%BD%95/" style="font-size: 10px;">沉思录</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/" style="font-size: 17.5px;">组队学习</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">统计</a> <a href="/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86/" style="font-size: 10px;">财务管理</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 12.5px;">阅读</a> <a href="/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/" style="font-size: 15px;">预训练模型</a>
+            <a href="/tags/BERT/" style="font-size: 14px;">BERT</a> <a href="/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/" style="font-size: 10px;">CS公开课</a> <a href="/tags/GPT/" style="font-size: 10px;">GPT</a> <a href="/tags/NLP/" style="font-size: 18px;">NLP</a> <a href="/tags/PyTorch/" style="font-size: 10px;">PyTorch</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/attention/" style="font-size: 10px;">attention</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laTeX/" style="font-size: 10px;">laTeX</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/transfomer/" style="font-size: 14px;">transfomer</a> <a href="/tags/%E5%A4%A7%E7%90%86/" style="font-size: 10px;">大理</a> <a href="/tags/%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA/" style="font-size: 10px;">文本表示</a> <a href="/tags/%E6%B2%89%E6%80%9D%E5%BD%95/" style="font-size: 10px;">沉思录</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/" style="font-size: 18px;">组队学习</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">统计</a> <a href="/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86/" style="font-size: 10px;">财务管理</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 12px;">阅读</a> <a href="/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/" style="font-size: 16px;">预训练模型</a>
         </div>
     </div>
 
@@ -357,6 +357,25 @@
         <h3 class="widget-title"><span>recent</span></h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/nlp-transformer-task06/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true)" alt="task06 BERT应用到下游任务、训练和优化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8Etransformer%E7%9A%84NLP/">第29期 基于transformer的NLP</a></p>
+                            <p class="item-title"><a href="/nlp-transformer-task06/" class="title">task06 BERT应用到下游任务、训练和优化</a></p>
+                            <p class="item-date"><time datetime="2021-09-24T07:18:42.000Z" itemprop="datePublished">2021-09-24</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -434,25 +453,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/nlp-transformer-task02/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true)" alt="task02 学习Attentioin和Transformer" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC29%E6%9C%9F-%E5%9F%BA%E4%BA%8Etransformer%E7%9A%84NLP/">第29期 基于transformer的NLP</a></p>
-                            <p class="item-title"><a href="/nlp-transformer-task02/" class="title">task02 学习Attentioin和Transformer</a></p>
-                            <p class="item-date"><time datetime="2021-09-17T01:09:24.000Z" itemprop="datePublished">2021-09-17</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -517,7 +517,9 @@
             
         
         
-            <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>本部分是BERT源码的解读，来自HuggingFace/transfomers/BERT[1]。<br><img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/bert_1.png?raw=true" width="600" alt="" align="center" /><br>如图所示，代码结构和作用如下：</p>
+            <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>本部分是BERT源码的解读，来自HuggingFace/transfomers/BERT[1]。<br><img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/bert_1.png?raw=true" width="600" alt="" align="center" /></p>
+<p><img src="/Users/chuxiaoyu/Blog/blog_image/nlp/bert_1.png"></p>
+<p>如图所示，代码结构和作用如下：</p>
 <ul>
 <li>BertTokenizer 预处理和切词</li>
 <li>BertModel<ul>
@@ -533,6 +535,13 @@
 </li>
 </ul>
 <h1 id="BERT的实现"><a href="#BERT的实现" class="headerlink" title="BERT的实现"></a>BERT的实现</h1><h2 id="BertConfig"><a href="#BertConfig" class="headerlink" title="BertConfig"></a>BertConfig</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">classtransformers.BertConfig(vocab_size=<span class="number">30522</span>, hidden_size=<span class="number">768</span>, </span><br><span class="line">    num_hidden_layers=<span class="number">12</span>, num_attention_heads=<span class="number">12</span>, intermediate_size=<span class="number">3072</span>, </span><br><span class="line">    hidden_act=<span class="string">&#x27;gelu&#x27;</span>, hidden_dropout_prob=<span class="number">0.1</span>, attention_probs_dropout_prob=<span class="number">0.1</span></span><br><span class="line">    , max_position_embeddings=<span class="number">512</span>, type_vocab_size=<span class="number">2</span>, initializer_range=<span class="number">0.02</span>, </span><br><span class="line">    layer_norm_eps=<span class="number">1e-12</span>, pad_token_id=<span class="number">0</span>, gradient_checkpointing=<span class="literal">False</span>, </span><br><span class="line">    position_embedding_type=<span class="string">&#x27;absolute&#x27;</span>, use_cache=<span class="literal">True</span>, classifier_dropout=<span class="literal">None</span>,</span><br><span class="line">     **kwargs)</span><br></pre></td></tr></table></figure>
+<p>这是存储BertModel（Torch.nn.Module的子类）或TFBertModel（tf.keras.Model的子类）配置的配置类。它用于根据指定的参数来实例化BERT模型，定义模型架构。</p>
+<p>配置对象从PretrainedConfig继承，可用于控制模型输出。</p>
+<p>参数：</p>
+<ul>
+<li>vocab_size: BERT模型的词汇量，定义了能被inputs_ids表示的token数量。</li>
+<li>hidden_size: </li>
+</ul>
 <h2 id="BertTokenizer"><a href="#BertTokenizer" class="headerlink" title="BertTokenizer"></a>BertTokenizer</h2><h2 id="BertModel"><a href="#BertModel" class="headerlink" title="BertModel"></a>BertModel</h2><h1 id="BERT的应用"><a href="#BERT的应用" class="headerlink" title="BERT的应用"></a>BERT的应用</h1><h2 id="BertForPreTraining"><a href="#BertForPreTraining" class="headerlink" title="BertForPreTraining"></a>BertForPreTraining</h2><h2 id="BertForNextSentencePrediction"><a href="#BertForNextSentencePrediction" class="headerlink" title="BertForNextSentencePrediction"></a>BertForNextSentencePrediction</h2><h2 id="BertForSequenceClassification"><a href="#BertForSequenceClassification" class="headerlink" title="BertForSequenceClassification"></a>BertForSequenceClassification</h2><h2 id="BertForMultipleChoice"><a href="#BertForMultipleChoice" class="headerlink" title="BertForMultipleChoice"></a>BertForMultipleChoice</h2><h2 id="BertForTokenClassification"><a href="#BertForTokenClassification" class="headerlink" title="BertForTokenClassification"></a>BertForTokenClassification</h2><h2 id="BertForQuestionAnswering"><a href="#BertForQuestionAnswering" class="headerlink" title="BertForQuestionAnswering"></a>BertForQuestionAnswering</h2><h1 id="BERT的训练和优化"><a href="#BERT的训练和优化" class="headerlink" title="BERT的训练和优化"></a>BERT的训练和优化</h1><h2 id="Pre-Training"><a href="#Pre-Training" class="headerlink" title="Pre-Training"></a>Pre-Training</h2><h2 id="Fine-Tuning"><a href="#Fine-Tuning" class="headerlink" title="Fine-Tuning"></a>Fine-Tuning</h2><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li>HuggingFace/transfomers/BERT <a target="_blank" rel="noopener" href="https://huggingface.co/transformers/model_doc/bert.html#">https://huggingface.co/transformers/model_doc/bert.html#</a></li>
 <li>基于transformers的自然语言处理(NLP)入门–在线阅读 <a target="_blank" rel="noopener" href="https://datawhalechina.github.io/learn-nlp-with-transformers/#/">https://datawhalechina.github.io/learn-nlp-with-transformers/#/</a></li>
@@ -548,6 +557,15 @@
 
     
 <nav id="article-nav">
+    
+        <a href="/nlp-transformer-task06/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    task06 BERT应用到下游任务、训练和优化
+                
+            </div>
+        </a>
     
     
         <a href="/nlp-transformer-task04/" id="article-nav-older" class="article-nav-link-wrap">
