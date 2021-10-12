@@ -53,11 +53,11 @@
   </entry>
   
   <entry>
-    <title>PyTorch的主要组成模块</title>
+    <title>chap03 PyTorch的主要组成模块</title>
     <link href="http://example.com/pytorch-chap03/"/>
     <id>http://example.com/pytorch-chap03/</id>
     <published>2021-09-28T01:31:42.000Z</published>
-    <updated>2021-09-30T07:42:57.784Z</updated>
+    <updated>2021-10-10T10:04:02.779Z</updated>
     
     <content type="html"><![CDATA[<h1 id="完成深度学习的必要部分"><a href="#完成深度学习的必要部分" class="headerlink" title="完成深度学习的必要部分"></a>完成深度学习的必要部分</h1><p>(待补充)</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>Datawhale开源项目：深入浅出PyTorch <a href="https://github.com/datawhalechina/thorough-pytorch/">https://github.com/datawhalechina/thorough-pytorch/</a></li></ul>]]></content>
     
