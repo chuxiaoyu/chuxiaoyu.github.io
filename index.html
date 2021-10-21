@@ -214,7 +214,7 @@
                             &nbsp;
                             自然语言处理
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-text-representation/">NLP之文本表示</a></li>  <li class="file"><a href="/nlp-multi-label-classification/">NLP之文本多标签分类</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-text-representation/">NLP之文本表示</a></li>  <li class="file"><a href="/nlp-multi-label-classification/">NLP之多标签文本分类</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -361,7 +361,7 @@
                             <a href="/nlp-multi-label-classification/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/doge.jpeg)" alt="NLP之文本多标签分类" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/doge.jpeg)" alt="NLP之多标签文本分类" class="thumbnail-image"></span>
     
 </a>
 
@@ -369,7 +369,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">02 人工智能</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/">自然语言处理</a></p>
-                            <p class="item-title"><a href="/nlp-multi-label-classification/" class="title">NLP之文本多标签分类</a></p>
+                            <p class="item-title"><a href="/nlp-multi-label-classification/" class="title">NLP之多标签文本分类</a></p>
                             <p class="item-date"><time datetime="2021-10-15T09:03:37.000Z" itemprop="datePublished">2021-10-15</time></p>
                         </div>
                     </li>
@@ -497,7 +497,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/nlp-multi-label-classification/">NLP之文本多标签分类</a>
+            <a class="article-title" href="/nlp-multi-label-classification/">NLP之多标签文本分类</a>
         </h1>
     
 
@@ -527,7 +527,7 @@
                 
                 
                     
-                    <p><h1 id="分类问题有哪些分类？"><a href="#分类问题有哪些分类？" class="headerlink" title="分类问题有哪些分类？"></a>分类问题有哪些分类？</h1><p>文本分类的输入是一段文本序列，根据输出output的不同，分为二分类、多标签分类、多输出分类。</p>
+                    <p><h1 id="分类问题有哪些？"><a href="#分类问题有哪些？" class="headerlink" title="分类问题有哪些？"></a>分类问题有哪些？</h1><p>文本分类的输入是一段文本序列，根据输出output的不同，分为二分类、多标签分类、多输出分类。</p>
 <p>input: 文本序列</p>
 <p>output: [0, 1] 二分类</p>
 <p>output: [x1, x2, x3, …, xn], xn = 0, 1 多标签分类/多类别分类</p>
@@ -708,11 +708,11 @@
                 
                 
                     
-                    <p><h1 id="数据集和任务介绍"><a href="#数据集和任务介绍" class="headerlink" title="数据集和任务介绍"></a>数据集和任务介绍</h1><p>我们这里的任务是对10个类别的“时装”图像进行分类，使用FashionMNIST数据集。</p>
+                    <p><h1 id="第四章-PyTorch基础实战——FashionMNIST图像分类"><a href="#第四章-PyTorch基础实战——FashionMNIST图像分类" class="headerlink" title="第四章 PyTorch基础实战——FashionMNIST图像分类"></a>第四章 PyTorch基础实战——FashionMNIST图像分类</h1><h2 id="数据集和任务介绍"><a href="#数据集和任务介绍" class="headerlink" title="数据集和任务介绍"></a>数据集和任务介绍</h2><p>我们这里的任务是对10个类别的“时装”图像进行分类，使用FashionMNIST数据集。</p>
 <p>FashionMNIST数据集中包含已经预先划分好的训练集和测试集，其中训练集共60,000张图像，测试集共10,000张图像。每张图像均为单通道黑白图像，大小为32*32pixel，分属10个类别。</p>
-<h1 id="导入必要的包"><a href="#导入必要的包" class="headerlink" title="导入必要的包"></a>导入必要的包</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset, DataLoader</span><br></pre></td></tr></table></figure>
+<h2 id="导入必要的包"><a href="#导入必要的包" class="headerlink" title="导入必要的包"></a>导入必要的包</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset, DataLoader</span><br></pre></td></tr></table></figure>
 
-<h1 id="配置训练环境和超参数"><a href="#配置训练环境和超参数" class="headerlink" title="配置训练环境和超参数"></a>配置训练环境和超参数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置GPU，这里有两种方式</span></span><br><span class="line"><span class="comment">## 方案一：使用os.environ</span></span><br><span class="line"><span class="comment"># os.environ[&#x27;CUDA_VISIBLE_DEVICES&#x27;] = &#x27;0&#x27;</span></span><br><span class="line"><span class="comment"># 方案二：使用“device”，后续对要使用GPU的变量用.to(device)即可</span></span><br><span class="line"><span class="comment"># device = torch.device(&quot;cuda:1&quot; if torch.cuda.is_available() else &quot;cpu&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 配置其他超参数，如batch_size, num_workers, learning rate, 以及总的epochs</span></span><br><span class="line">batch_size = <span class="number">256</span></span><br><span class="line">num_workers = <span class="number">4</span></span><br><span class="line">lr = <span class="number">1e-4</span></span><br><span class="line">epochs = <span class="number">20</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置训练环境和超参数"><a href="#配置训练环境和超参数" class="headerlink" title="配置训练环境和超参数"></a>配置训练环境和超参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置GPU，这里有两种方式</span></span><br><span class="line"><span class="comment">## 方案一：使用os.environ</span></span><br><span class="line"><span class="comment"># os.environ[&#x27;CUDA_VISIBLE_DEVICES&#x27;] = &#x27;0&#x27;</span></span><br><span class="line"><span class="comment"># 方案二：使用“device”，后续对要使用GPU的变量用.to(device)即可</span></span><br><span class="line"><span class="comment"># device = torch.device(&quot;cuda:1&quot; if torch.cuda.is_available() else &quot;cpu&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 配置其他超参数，如batch_size, num_workers, learning rate, 以及总的epochs</span></span><br><span class="line">batch_size = <span class="number">256</span></span><br><span class="line">num_workers = <span class="number">4</span></span><br><span class="line">lr = <span class="number">1e-4</span></span><br><span class="line">epochs = <span class="number">20</span></span><br></pre></td></tr></table></figure>
 <p>
                 
             
