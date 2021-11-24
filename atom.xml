@@ -49,9 +49,9 @@
     <link href="http://example.com/leeml-rnn/"/>
     <id>http://example.com/leeml-rnn/</id>
     <published>2021-10-24T08:15:10.000Z</published>
-    <updated>2021-10-24T08:18:20.606Z</updated>
+    <updated>2021-11-24T09:54:26.470Z</updated>
     
-    <content type="html"><![CDATA[<p>本文学习的课程是：李宏毅机器学习(2017)-RNN <a href="https://www.bilibili.com/video/BV13x411v7US?p=36">https://www.bilibili.com/video/BV13x411v7US?p=36</a></p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>李宏毅机器学习(2017)-RNN <a href="https://www.bilibili.com/video/BV13x411v7US?p=36">https://www.bilibili.com/video/BV13x411v7US?p=36</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>本文学习的课程是：李宏毅机器学习(2017)-RNN <a href="https://www.bilibili.com/video/BV13x411v7US?p=36">https://www.bilibili.com/video/BV13x411v7US?p=36</a></p><p>（挖坑）</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>李宏毅机器学习(2017)-RNN <a href="https://www.bilibili.com/video/BV13x411v7US?p=36">https://www.bilibili.com/video/BV13x411v7US?p=36</a></li></ul>]]></content>
     
     
       
@@ -61,9 +61,9 @@
     
     
     
-    <category term="04 组队学习" scheme="http://example.com/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="第30期 李宏毅机器学习" scheme="http://example.com/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC30%E6%9C%9F-%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="李宏毅机器学习" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="machine learning" scheme="http://example.com/tags/machine-learning/"/>
@@ -73,46 +73,18 @@
   </entry>
   
   <entry>
-    <title>NLP之多标签文本分类</title>
-    <link href="http://example.com/nlp-multi-label-classification/"/>
-    <id>http://example.com/nlp-multi-label-classification/</id>
-    <published>2021-10-15T09:03:37.000Z</published>
-    <updated>2021-10-24T08:12:57.471Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="分类问题有哪些？"><a href="#分类问题有哪些？" class="headerlink" title="分类问题有哪些？"></a>分类问题有哪些？</h1><p>文本分类的输入是一段文本序列，根据输出output的不同，分为二分类、多标签分类、多输出分类。</p><p>input: 文本序列</p><p>output: [0, 1] 二分类</p><p>output: [x1, x2, x3, …, xn], xn = 0, 1 多标签分类/多类别分类</p><p>output: [x], x = 0, 1, 2, 3, …, m 多输出分类/多元分类</p><p>实际上多标签和多输出的区别在于分类是否互斥：多标签是不互斥的，多输出是互斥的。</p><p>本文的案例属于多标签分类，n = 6（在接下来的数据集中介绍）</p><h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>使用Pytorch和BERT进行多标签文本分类 <a href="https://cloud.tencent.com/developer/article/1814597">https://cloud.tencent.com/developer/article/1814597</a></li><li></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;分类问题有哪些？&quot;&gt;&lt;a href=&quot;#分类问题有哪些？&quot; class=&quot;headerlink&quot; title=&quot;分类问题有哪些？&quot;&gt;&lt;/a&gt;分类问题有哪些？&lt;/h1&gt;&lt;p&gt;文本分类的输入是一段文本序列，根据输出output的不同，分为二分类、多标签分类、多输出分类</summary>
-      
-    
-    
-    
-    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    <category term="自然语言处理" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
-    
-    
-    <category term="NLP" scheme="http://example.com/tags/NLP/"/>
-    
-    <category term="multi label classification" scheme="http://example.com/tags/multi-label-classification/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Lecture01(elective) 反向传播算法</title>
     <link href="http://example.com/leeml-lec01-bp/"/>
     <id>http://example.com/leeml-lec01-bp/</id>
     <published>2021-10-15T06:55:13.000Z</published>
-    <updated>2021-10-22T08:09:25.024Z</updated>
+    <updated>2021-11-24T09:54:18.393Z</updated>
     
-    <content type="html"><![CDATA[<p>（TODO）</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href=""></a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>（挖坑）</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href=""></a></li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;（TODO）&lt;/p&gt;
+    <summary type="html">&lt;p&gt;（挖坑）&lt;/p&gt;
 &lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -121,9 +93,9 @@
     
     
     
-    <category term="04 组队学习" scheme="http://example.com/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="第30期 李宏毅机器学习" scheme="http://example.com/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC30%E6%9C%9F-%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="李宏毅机器学习" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="machine learning" scheme="http://example.com/tags/machine-learning/"/>
@@ -169,7 +141,7 @@
     <link href="http://example.com/leeml-lec01-introduction/"/>
     <id>http://example.com/leeml-lec01-introduction/</id>
     <published>2021-10-12T05:40:12.000Z</published>
-    <updated>2021-10-22T08:08:00.534Z</updated>
+    <updated>2021-11-24T09:54:31.117Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文学习的课程是：李宏毅2021春机器学习课程 Lecture01 机器学习和深度学习简介 <a href="https://www.bilibili.com/video/BV1Wv411h7kN?p=2">https://www.bilibili.com/video/BV1Wv411h7kN?p=2</a></p><h1 id="李宏毅2021春机器学习课程大纲"><a href="#李宏毅2021春机器学习课程大纲" class="headerlink" title="李宏毅2021春机器学习课程大纲"></a>李宏毅2021春机器学习课程大纲</h1><p>第一节 Introduction  作业 HW1: Regression<br>第二节 Deep Learning  作业 HW2: Classification<br>第三节 Self-Attention  作业 HW3: CNN HW4: Self-Attention<br>第四节 Theory of ML<br>第五节 Transformer  作业 HW5: Transformer<br>第六节 Generative Model  作业 HW6: GAN<br>第七节 Self-Supervised Learning  作业 HW7: BERT HW8: Autoencoder<br>第八节 Explainable AI / Adversarial Attack  作业 HW9: Explainable AI HW10: Adversarial Attack<br>第九节 Domain Adaptation/ RL  作业 HW11: Adaptation<br>第十节 RL  作业 HW12: RL<br>第十一节  Privacy v.s. ML<br>第十二节  Quantum ML<br>第十三节  Life-Long/Compression  作业 HW13: Life-Long HW14: Compression<br>第十四节  Meta Learning  作业 HW15: Meta Learning</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/00_lec_schedule.jpg?raw=true" width="600" alt="" align="center" /><h1 id="Buffet-Style-Learning-自助式学习"><a href="#Buffet-Style-Learning-自助式学习" class="headerlink" title="Buffet Style Learning/自助式学习"></a>Buffet Style Learning/自助式学习</h1><blockquote><p>Everyone can take this course.</p><p>You decide how much you want to learn.</p><p>You decide how deep you want to learn.</p></blockquote><h1 id="机器学习基本概念简介"><a href="#机器学习基本概念简介" class="headerlink" title="机器学习基本概念简介"></a>机器学习基本概念简介</h1><p>Machine Learning 约等于 Looking for Function</p><h2 id="不同类型的函数"><a href="#不同类型的函数" class="headerlink" title="不同类型的函数"></a>不同类型的函数</h2><p>Regression/回归：函数的输出是数值。</p><p>Classification/分类：给定选项（类别），输出正确的类别。</p><p>Structured Learning：create something with structure (image, document etc.)</p><h2 id="How-to-find-a-function-A-case"><a href="#How-to-find-a-function-A-case" class="headerlink" title="How to find a function: A case"></a>How to find a function: A case</h2><p>Case: Predict YouTobe views</p><p>模型的训练：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/05_framework.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Step1-Function-with-Unknown-Parameters"><a href="#Step1-Function-with-Unknown-Parameters" class="headerlink" title="Step1. Function with Unknown Parameters"></a>Step1. Function with Unknown Parameters</h3><p>基于领域知识写出一个带有位置参数的函数</p><p><code>y = b + wx1</code> w: weight, b: bias </p><h3 id="Step2-Define-Loss-from-Training-Data"><a href="#Step2-Define-Loss-from-Training-Data" class="headerlink" title="Step2. Define Loss from Training Data"></a>Step2. Define Loss from Training Data</h3><p>Loss is a function of parameters. <code>L(b, w)</code></p><p>Loss is how good a set of values is.</p><h3 id="Step3-Optimization"><a href="#Step3-Optimization" class="headerlink" title="Step3. Optimization"></a>Step3. Optimization</h3><p><code>w*, b* = arg min L(w, b)</code></p><p>Gradient Descent/梯度下降（1个参数，多参数同理）</p><ul><li><p>随机选取一个初始点w0</p></li><li><p>计算w0对L的微分。learning rate/学习率。</p><ul><li>Negative: increase w</li><li>Positive: decrease w</li></ul></li><li><p>Update w iteratively/迭代更新w</p></li></ul><h3 id="Training-Step1-3"><a href="#Training-Step1-3" class="headerlink" title="Training: Step1-3"></a>Training: Step1-3</h3><h1 id="深度学习基本概念简介"><a href="#深度学习基本概念简介" class="headerlink" title="深度学习基本概念简介"></a>深度学习基本概念简介</h1><h2 id="Regression-回归，梦开始的地方"><a href="#Regression-回归，梦开始的地方" class="headerlink" title="Regression/回归，梦开始的地方"></a>Regression/回归，梦开始的地方</h2><h3 id="如何逼近复杂的曲线？——Sigmoid-Function"><a href="#如何逼近复杂的曲线？——Sigmoid-Function" class="headerlink" title="如何逼近复杂的曲线？——Sigmoid Function"></a>如何逼近复杂的曲线？——Sigmoid Function</h3><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/01_sigmoid.jpg?raw=true" width="400" alt="" align="center" /><p>用多段sigmoid逼近复杂函数：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/02_sigmoid.jpg?raw=true" width="400" alt="" align="center" /><p>给sigmoid加更多的feature（就是多段 <code>y=b+wx</code>组合起来）：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/03_sigmoid.jpg?raw=true" width="400" alt="" align="center" /><p>sigmoid的矩阵运算：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/04_sigmoid.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Loss-损失函数"><a href="#Loss-损失函数" class="headerlink" title="Loss/损失函数"></a>Loss/损失函数</h3><p>什么是损失函数：</p><ul><li>一个关于参数的函数<code>L(𝜃)</code></li><li>衡量这一组模型参数的效果</li></ul><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/06_loss.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Optimization-优化器"><a href="#Optimization-优化器" class="headerlink" title="Optimization/优化器"></a>Optimization/优化器</h3><p>使用梯度下降更新参数：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/07_optm.jpg?raw=true" width="400" alt="" align="center" /><p>一些概念：</p><ul><li><p>Batch: 数据包</p></li><li><p>Update：每次更新一次参数</p></li><li><p>Epoch：所有batch过一遍</p></li></ul><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/08_optm.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Activation-function-激活函数"><a href="#Activation-function-激活函数" class="headerlink" title="Activation function/激活函数"></a>Activation function/激活函数</h3><ul><li>sigmoid</li><li>ReLU</li></ul><h3 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h3><p>A fancy name: Deep Learning. </p><blockquote><p>It is just so deep, right?</p></blockquote><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/09_dl.jpg?raw=true" width="400" alt="" align="center" /><p>Go deeper and deeper:</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/10_dl.jpg?raw=true" width="400" alt="" align="center" /><p>Think: Why deep network, not fat network?</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/11_dl.jpg?raw=true" width="400" alt="" align="center" /><h2 id="选修-深度学习简介"><a href="#选修-深度学习简介" class="headerlink" title="(选修)深度学习简介"></a>(选修)深度学习简介</h2><h3 id="Deep-Learning的发展历程"><a href="#Deep-Learning的发展历程" class="headerlink" title="Deep Learning的发展历程"></a>Deep Learning的发展历程</h3><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/12_dl.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Deep-Learning的三个步骤"><a href="#Deep-Learning的三个步骤" class="headerlink" title="Deep Learning的三个步骤"></a>Deep Learning的三个步骤</h3><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/13_dl.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Full-Connect-Feedforward-Network-全连接前馈神经网络"><a href="#Full-Connect-Feedforward-Network-全连接前馈神经网络" class="headerlink" title="Full Connect Feedforward Network/全连接前馈神经网络"></a>Full Connect Feedforward Network/全连接前馈神经网络</h3><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/14_dl.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Matrix-Operation-矩阵运算"><a href="#Matrix-Operation-矩阵运算" class="headerlink" title="Matrix Operation/矩阵运算"></a>Matrix Operation/矩阵运算</h3><p>参数矩阵：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/15_dl.jpg?raw=true" width="400" alt="" align="center" /><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/16_dl.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Output-Layer"><a href="#Output-Layer" class="headerlink" title="Output Layer"></a>Output Layer</h3><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/17_dl.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Example-Application"><a href="#Example-Application" class="headerlink" title="Example Application"></a>Example Application</h3><p>手写识别案例：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/18_dl.jpg?raw=true" width="400" alt="" align="center" /><p>You need to decide the network structure to let a good function in your function set.</p><h3 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h3><p>计算损失函数：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/19_dl.jpg?raw=true" width="400" alt="" align="center" /><p>找一个最小化损失函数的函数，即找一组参数可以最小化损失函数：</p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/leeml/20_dl.jpg?raw=true" width="400" alt="" align="center" /><h3 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h3><p>如何寻找这样的参数？——梯度下降。</p><h3 id="Backpropagation-反向传播"><a href="#Backpropagation-反向传播" class="headerlink" title="Backpropagation/反向传播"></a>Backpropagation/反向传播</h3><p>如何计算梯度？——反向传播算法。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li>李宏毅2021春机器学习课程 <a href="https://www.bilibili.com/video/BV1Wv411h7kN?p=2">https://www.bilibili.com/video/BV1Wv411h7kN?p=2</a></li></ul>]]></content>
     
@@ -181,9 +153,9 @@
     
     
     
-    <category term="04 组队学习" scheme="http://example.com/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/"/>
+    <category term="02 人工智能" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
-    <category term="第30期 李宏毅机器学习" scheme="http://example.com/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/%E7%AC%AC30%E6%9C%9F-%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="李宏毅机器学习" scheme="http://example.com/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="组队学习" scheme="http://example.com/tags/%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/"/>
@@ -602,14 +574,14 @@
     <link href="http://example.com/nlp-text-representation/"/>
     <id>http://example.com/nlp-text-representation/</id>
     <published>2021-07-31T11:48:54.000Z</published>
-    <updated>2021-10-15T09:30:30.378Z</updated>
+    <updated>2021-11-24T09:49:10.494Z</updated>
     
-    <content type="html"><![CDATA[<p>TODO</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href=""></a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>（挖坑待填…）</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href=""></a></li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;TODO&lt;/p&gt;
+    <summary type="html">&lt;p&gt;（挖坑待填…）&lt;/p&gt;
 &lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -653,6 +625,34 @@
     
     
     <category term="SQL" scheme="http://example.com/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5h打通Git全套教程</title>
+    <link href="http://example.com/git/"/>
+    <id>http://example.com/git/</id>
+    <published>2021-07-23T13:01:25.000Z</published>
+    <updated>2021-09-17T01:53:30.399Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是以下课程的笔记：</p><ul><li>【尚硅谷】5h打通Git全套教程丨2021最新IDEA版（涵盖GitHub\Gitee码云\GitLab）<a href="https://www.bilibili.com/video/BV1vy4y1s7k6?p=41">https://www.bilibili.com/video/BV1vy4y1s7k6?p=41</a></li></ul><h1 id="课程结构"><a href="#课程结构" class="headerlink" title="课程结构"></a>课程结构</h1><p>本套视频从基础的常用命令开始讲起，到开发工具集成Git 、GitHub如何进行团队协作、国内代码托管中心Gitee码云的使用、局域网自建代码托管平台GitLab服务器的部署。<strong>（本文主要是P1-P26的笔记。）</strong></p><ul><li>P1-P2 Git</li><li>P3-P6 Git概述</li><li>P7-P14 Git命令</li><li>P15-P18 Git分支</li><li>P19 Git团队协作</li><li>P20-P26 Git&amp;GitHub</li><li>P27-P37 IDEA集成GitHub</li><li>P38-P40 Gitee码云</li><li>P41-P44 GitLab</li><li>P45 课程总结</li></ul><h1 id="Git介绍"><a href="#Git介绍" class="headerlink" title="Git介绍"></a>Git介绍</h1><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>Git是一个<strong>免费的、开源的分布式版本控制系统</strong>，可以快速高效地处理从小型到大型的各种项目。</p><h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><p>版本控制是一种记录文件内容变化，以便将来查阅特定版本修订情况的系统。版本控制其实最重要的是可以记录文件修改历史记录，从而让用户能够查看历史版本，方便版本切换。<br><img src="/images/git/v_ctrl.jpg" width = "500" alt="一个糟糕的版本控制" align="center" /></p><h2 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h2><ul><li>集中式版本控制工具：CVS、SVN(Subversion)、VSS……</li><li>分布式版本控制工具：Git、 Mercurial、 Bazaar、 Darcs……</li></ul><h2 id="Git简史"><a href="#Git简史" class="headerlink" title="Git简史"></a>Git简史</h2><p>Git是Linus大神写的，所以和Linux一套命令<br><img src="/images/git/git_history.jpg" width = "800" alt="Git简史" align="center" /></p><h2 id="Git机制"><a href="#Git机制" class="headerlink" title="Git机制"></a>Git机制</h2><p>在工作区写代码，通过git add添加到暂存区，再通过git commit提交到本地库，生成历史版本。本地库可以push代码到远程库，也可以从远程库pull拉取代码，不同版本的代码可以进行merge。<br><img src="/images/git/git_strcture.jpg" width = "300" alt="Git工作机制" align="center" /></p><h2 id="代码托管中心-远程库"><a href="#代码托管中心-远程库" class="headerlink" title="代码托管中心-远程库"></a>代码托管中心-远程库</h2><p>代码托管中心是基于网络服务器的远程代码仓库，一般我们简单称为远程库。</p><ul><li>局域网：GitLab</li><li>互联网：GitHub(国外)，Gitee（国内）</li></ul><h1 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h1><p>一图以蔽之，<br><img src="/images/git/git_command.jpg" width = "600" alt="Git常用命令" align="center" /></p><h1 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h1><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>在版本控制过程中，同时推进多个任务，为每个任务，我们就可以创建每个任务的单独分支。使用分支意味着程序员可以把自己的工作从开发主线上分离开来，开发自己分支的时候，不会影响主线分支的运行。对于初学者而言，分支可以简单理解为副本，一个分支就是一个单独的副本。（分支底层其实也是指针的引用）</p><p>同时并行推进多个功能开发，可以提高开发效率。各个分支在开发过程中，如果某一个分支开发失败，不会对其他分支有任何影响。失败的分支删除重新开始即可。</p><img src="/images/git/branch.jpg" width = "600" alt="分支示意图" align="center" /><h2 id="Git分支命令"><a href="#Git分支命令" class="headerlink" title="Git分支命令"></a>Git分支命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch -v # 查看分支</span><br><span class="line">git branch 分支名 # 创建分支</span><br><span class="line">git checkout 分支名 # 切换分支</span><br><span class="line">git merge 分支名 # 合并分支</span><br></pre></td></tr></table></figure><h2 id="合并冲突"><a href="#合并冲突" class="headerlink" title="合并冲突"></a>合并冲突</h2><p>合并分支时，两个分支在同一个文件的同一个位置有两套完全不同的修改。Git无法替我们决定使用哪一个。必须人为决定新代码内容。</p><h1 id="Git团队合作"><a href="#Git团队合作" class="headerlink" title="Git团队合作"></a>Git团队合作</h1><p>两个非常形象化的图和生动的例子！</p><h2 id="团队内合作"><a href="#团队内合作" class="headerlink" title="团队内合作"></a>团队内合作</h2><img src="/images/git/inside.jpg" width = "600" alt="团队内合作" align="center" /><h2 id="跨团队合作"><a href="#跨团队合作" class="headerlink" title="跨团队合作"></a>跨团队合作</h2><img src="/images/git/outside.jpg" width = "600" alt="跨团队合作" align="center" /><h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h1><h2 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h2><img src="/images/git/github_command.jpg" width = "600" alt="远程仓库操作" align="center" /><p>clone会做如下操作：</p><ol><li>拉取代码。 </li><li>初始化本地仓库。 </li><li>创建别名（origin）</li></ol><h2 id="邀请合作者"><a href="#邀请合作者" class="headerlink" title="邀请合作者"></a>邀请合作者</h2><img src="/images/git/invitation.jpg" width = "600" alt="邀请合作者" align="center" /><h2 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h2><img src="/images/git/ssh.jpg" width = "600" alt="SSH登录" align="center" /><h1 id="Git与其他环境集成"><a href="#Git与其他环境集成" class="headerlink" title="Git与其他环境集成"></a>Git与其他环境集成</h1><p>官方文档-Git与各种IDE的集成：<a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></p><h1 id="码云Gitee"><a href="#码云Gitee" class="headerlink" title="码云Gitee"></a>码云Gitee</h1><p>众所周知，GitHub服务器在国外，使用GitHub作为项目托管网站，如果网速不好的话，严重影响使用体验，甚至会出现登录不上的情况。针对这个情况，大家也可以使用国内的项目托管网站-码云 <a href="https://gitee.com/">https://gitee.com/</a>。</p><h1 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h1><p>GitLab <a href="https://about.gitlab.com/">https://about.gitlab.com/</a>是由GitLabInc.开发，使用MIT许可证的基于网络的Git仓库管理工具，且具有wiki和issue跟踪功能。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。<br>GitLab由乌克兰程序员DmitriyZaporozhets和ValerySizov开发，它使用Ruby语言写成。后来,一些部分用Go语言重写。截止2018年5月，该公司约有290名团队成员，以及2000多名开源贡献者。GitLab被IBM, Sony, JülichResearchCenter, NASA, Alibaba, Invincea, O’Reilly Media, Leibniz-Rechenzentrum, CERN, SpaceX等组织使用。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本文是以下课程的笔记：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;【尚硅谷】5h打通Git全套教程丨2021最新IDEA版（涵盖GitHub\Gitee码云\GitLab）&lt;a href=&quot;https://www.bilibili.com/video/BV1vy4y1s7k6?p=41&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="03 工具箱" scheme="http://example.com/categories/03-%E5%B7%A5%E5%85%B7%E7%AE%B1/"/>
+    
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
