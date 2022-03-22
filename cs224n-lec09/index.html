@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>CS224n Lec09 自注意力模型、Transformers | CHU XIAOYU</title>
+    
+    
+        <meta name="keywords" content="CS公开课,NLP" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="参考资料:  CS224n官方网站http:&#x2F;&#x2F;web.stanford.edu&#x2F;class&#x2F;cs224n&#x2F; bilibili https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1nP4y1j7rZ   本节主要内容 从RNN到基于注意力的NLP模型 Transformer模型  1 从RNN到基于注意力的NLP模型1.1 RNN模型存在的问题 线性相互作用距离（Linear i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS224n Lec09 自注意力模型、Transformers">
+<meta property="og:url" content="http://example.com/cs224n-lec09/index.html">
+<meta property="og:site_name" content="CHU XIAOYU">
+<meta property="og:description" content="参考资料:  CS224n官方网站http:&#x2F;&#x2F;web.stanford.edu&#x2F;class&#x2F;cs224n&#x2F; bilibili https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1nP4y1j7rZ   本节主要内容 从RNN到基于注意力的NLP模型 Transformer模型  1 从RNN到基于注意力的NLP模型1.1 RNN模型存在的问题 线性相互作用距离（Linear i">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/chuxiaoyu/blog_image/blob/master/cs224n/nlp.jpg?raw=true">
+<meta property="article:published_time" content="2022-03-22T22:19:47.000Z">
+<meta property="article:modified_time" content="2022-03-22T22:26:31.980Z">
+<meta property="article:author" content="chuxiaoyu">
+<meta property="article:tag" content="CS公开课">
+<meta property="article:tag" content="NLP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/chuxiaoyu/blog_image/blob/master/cs224n/nlp.jpg?raw=true">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="CHU XIAOYU" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/images/logo.png" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">CHU XIAOYU</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            01 计算机基础
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            CS61A 计算机程序的构造与解释
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/cs61a-week1/">CS61A Week1 Comupter_Science, Functions</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            数据结构与算法
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/dsa-python/">数据结构与算法Python</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            02 人工智能
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            CS224n 自然语言处理
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/cs224n-lec07/">CS224n Lec07 机器翻译、Seq2seq模型、注意力机制</a></li>  <li class="file active"><a href="/cs224n-lec09/">CS224n Lec09 自注意力模型、Transformers</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            数据分析
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计</a></li>  <li class="file"><a href="/SQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">SQL学习资料</a></li>  <li class="file"><a href="/SQL%E9%87%8D%E7%82%B9/">SQL表连接&聚合函数&窗口函数</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            李宏毅机器学习
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/leeml-lec01-introduction/">Lecture01 机器学习和深度学习简介</a></li>  <li class="file"><a href="/leeml-rnn/">循环神经网络</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            03 工具箱
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87LaTeX%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF/">一些好用的中英文LaTeX简历模板</a></li>  <li class="file"><a href="/git/">5h打通Git全套教程</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            04 组队学习
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2021-09 基于transformer的NLP
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-transformer-task01/">Task01 NLP学习概览</a></li>  <li class="file"><a href="/nlp-transformer-task02/">Task02 学习Attentioin和Transformer</a></li>  <li class="file"><a href="/nlp-transformer-task03/">Task03 学习BERT</a></li>  <li class="file"><a href="/nlp-transformer-task04/">Task04 学习GPT</a></li>  <li class="file"><a href="/nlp-transformer-task05/">Task05 编写BERT模型</a></li>  <li class="file"><a href="/nlp-transformer-task06/">Task06 BERT应用、训练和优化</a></li>  <li class="file"><a href="/nlp-transformer-task07/">Task07 使用Transformers解决文本分类任务</a></li>  <li class="file"><a href="/nlp-transformer-summary/">Summary Transformer课程总结</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2021-10 深入浅出PyTorch
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/pytorch-chap01-02/">Chapter01-02 PyTorch的简介和安装、PyTorch基础知识</a></li>  <li class="file"><a href="/pytorch-chap03/">Chapter03 PyTorch的主要组成模块</a></li>  <li class="file"><a href="/pytorch-chap04/">Chapter04 PyTorch基础实战——FashionMNIST图像分类</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2022-01 LeetCode刷题
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/leetcode/">Leetcode刷题（第1-2期）</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            沉思录
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/%E5%A4%A7%E7%90%86/">大理，在民宿打工的日子</a></li>  <li class="file"><a href="/formula/">公式之美，EVERYTHING IS EPHEMERAL BUT FORMULA IS ETERNAL</a></li>  <li class="file"><a href="/feynman-quotes/">费曼语录（翻译自Twitter）</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/hello-world/">Hello-World|本站导航</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cs224n-lec09/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/cs224n/nlp.jpg?raw=true)" alt="CS224n Lec09 自注意力模型、Transformers" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">02 人工智能</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/CS224n-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/">CS224n 自然语言处理</a></p>
+                            <p class="item-title"><a href="/cs224n-lec09/" class="title">CS224n Lec09 自注意力模型、Transformers</a></p>
+                            <p class="item-date"><time datetime="2022-03-22T22:19:47.000Z" itemprop="datePublished">2022-03-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/dsa-python/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/cs224n/leetcode.png?raw=true)" alt="数据结构与算法Python" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/01-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">01 计算机基础</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/01-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></p>
+                            <p class="item-title"><a href="/dsa-python/" class="title">数据结构与算法Python</a></p>
+                            <p class="item-date"><time datetime="2022-02-07T00:31:45.000Z" itemprop="datePublished">2022-02-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/leetcode/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/cs224n/leetcode.png?raw=true)" alt="Leetcode刷题（第1-2期）" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/">04 组队学习</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/04-%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/2022-01-LeetCode%E5%88%B7%E9%A2%98/">2022-01 LeetCode刷题</a></p>
+                            <p class="item-title"><a href="/leetcode/" class="title">Leetcode刷题（第1-2期）</a></p>
+                            <p class="item-date"><time datetime="2022-01-24T15:26:18.000Z" itemprop="datePublished">2022-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hello-world/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/formula/08-shang.jpg?raw=true)" alt="Hello-World|本站导航" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/hello-world/" class="title">Hello-World|本站导航</a></p>
+                            <p class="item-date"><time datetime="2022-01-19T18:39:32.000Z" itemprop="datePublished">2022-01-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/feynman-quotes/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/chuxiaoyu/blog_image/blob/master/cs224n/feynman.jpg?raw=true)" alt="费曼语录（翻译自Twitter）" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%B2%89%E6%80%9D%E5%BD%95/">沉思录</a></p>
+                            <p class="item-title"><a href="/feynman-quotes/" class="title">费曼语录（翻译自Twitter）</a></p>
+                            <p class="item-date"><time datetime="2021-12-02T05:38:38.000Z" itemprop="datePublished">2021-12-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tag cloud</span></h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BERT/" style="font-size: 14.29px;">BERT</a> <a href="/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/" style="font-size: 12.86px;">CS公开课</a> <a href="/tags/GPT/" style="font-size: 10px;">GPT</a> <a href="/tags/NLP/" style="font-size: 18.57px;">NLP</a> <a href="/tags/PyTorch/" style="font-size: 12.86px;">PyTorch</a> <a href="/tags/SQL/" style="font-size: 11.43px;">SQL</a> <a href="/tags/attention/" style="font-size: 10px;">attention</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/feynman/" style="font-size: 10px;">feynman</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laTeX/" style="font-size: 10px;">laTeX</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 11.43px;">machine learning</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/quote/" style="font-size: 10px;">quote</a> <a href="/tags/regression/" style="font-size: 10px;">regression</a> <a href="/tags/rnn/" style="font-size: 10px;">rnn</a> <a href="/tags/team-learning/" style="font-size: 10px;">team learning</a> <a href="/tags/transfomer/" style="font-size: 15.71px;">transfomer</a> <a href="/tags/%E5%A4%A7%E7%90%86/" style="font-size: 10px;">大理</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" style="font-size: 10px;">文本分类</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%BB%84%E9%98%9F%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">组队学习</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">统计</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/" style="font-size: 17.14px;">预训练模型</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-cs224n-lec09" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">02 人工智能</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/02-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/CS224n-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/">CS224n 自然语言处理</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/CS%E5%85%AC%E5%BC%80%E8%AF%BE/" rel="tag">CS公开课</a>, <a class="tag-link-link" href="/tags/NLP/" rel="tag">NLP</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/cs224n-lec09/">
+            <time datetime="2022-03-22T22:19:47.000Z" itemprop="datePublished">2022-03-22</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            CS224n Lec09 自注意力模型、Transformers
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E8%8A%82%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">本节主要内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%8ERNN%E5%88%B0%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84NLP%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">1 从RNN到基于注意力的NLP模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-RNN%E6%A8%A1%E5%9E%8B%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 RNN模型存在的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 自注意力模型介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 自注意力模块的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 位置编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-%E9%81%AE%E7%BD%A9"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 遮罩</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Transformer%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">2 Transformer模型介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Transformer%E6%A6%82%E8%A7%88"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 Transformer概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Transformer%E7%BC%96%E7%A0%81%E5%99%A8"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 Transformer编码器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-Query-Key-Value%E5%90%91%E9%87%8F%E7%9F%A9%E9%98%B5"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.2.1 Query-Key-Value向量矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E5%A4%9A%E5%A4%B4%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2.2 多头注意力机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.3.</span> <span class="toc-text">2.2.3 残差连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-4-%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">3.2.4.</span> <span class="toc-text">2.2.4 归一化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-5-%E7%BC%A9%E6%94%BE%E7%82%B9%E7%A7%AF%E8%BF%90%E7%AE%97"><span class="toc-number">3.2.5.</span> <span class="toc-text">2.2.5 缩放点积运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-6-%E5%B0%8F%E7%BB%93"><span class="toc-number">3.2.6.</span> <span class="toc-text">2.2.6 小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Transformer%E8%A7%A3%E7%A0%81%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 Transformer解码器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number"></span> <span class="toc-text">参考资料</span></a>
+                </div>
+            
+        
+        
+            <blockquote>
+<p>参考资料:</p>
+<ul>
+<li>CS224n官方网站<a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs224n/">http://web.stanford.edu/class/cs224n/</a></li>
+<li>bilibili <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nP4y1j7rZ">https://www.bilibili.com/video/BV1nP4y1j7rZ</a></li>
+</ul>
+</blockquote>
+<h2 id="本节主要内容"><a href="#本节主要内容" class="headerlink" title="本节主要内容"></a>本节主要内容</h2><ul>
+<li>从RNN到基于注意力的NLP模型</li>
+<li>Transformer模型</li>
+</ul>
+<h2 id="1-从RNN到基于注意力的NLP模型"><a href="#1-从RNN到基于注意力的NLP模型" class="headerlink" title="1 从RNN到基于注意力的NLP模型"></a>1 从RNN到基于注意力的NLP模型</h2><h3 id="1-1-RNN模型存在的问题"><a href="#1-1-RNN模型存在的问题" class="headerlink" title="1.1 RNN模型存在的问题"></a>1.1 RNN模型存在的问题</h3><ol>
+<li>线性相互作用距离（Linear interaction distance），即长距离依赖问题。</li>
+<li>缺少并行性（parallelizability）。</li>
+</ol>
+<p>为了解决上述问题，人们考虑到了注意力机制。</p>
+<blockquote>
+<p><em>[学生提问]注意力和全连接网络的区别是什么？</em></p>
+<p><em>1.注意力的权重是动态的</em></p>
+<p><em>2.参数的计算不同</em></p>
+</blockquote>
+<h3 id="1-2-自注意力模型介绍"><a href="#1-2-自注意力模型介绍" class="headerlink" title="1.2 自注意力模型介绍"></a>1.2 自注意力模型介绍</h3><p>注意力机制的运作需要queris, keys, values向量：</p>
+<ul>
+<li><strong>queries</strong>  $q_1, q_2,…, q_T$，$q_i∈R^d$</li>
+<li><strong>keys</strong>  $k_1, k_2,…, k_T$，$k_i∈R^d$</li>
+<li><strong>values</strong>  $v_1, v_2,…, v_T$，$v_i∈R^d$</li>
+</ul>
+<p>在自注意力模型（self-attention）中，queries，keys，values来源相同。</p>
+<ul>
+<li>例如，如果某层的输出是$x_1, x_2,…, x_T$，那么可以使$v_i = k_i = q_i = x_i$[?]</li>
+</ul>
+<p>那么，自注意力的计算（以点积为例）如下：</p>
+<p>（1）计算query-key乘积，得到注意力分数$e_{ij}$<br>$$<br>e_{ij} = q_i^Tk_j<br>$$<br>（2）计算注意力权重$α$<br>$$<br>α_{ij} = softmax(e_{ij})<br>$$<br>（3）计算输出<br>$$<br>output_i = \sum_j{α_{ij}v_j}<br>$$</p>
+<h3 id="1-3-自注意力模块的处理"><a href="#1-3-自注意力模块的处理" class="headerlink" title="1.3 自注意力模块的处理"></a>1.3 自注意力模块的处理</h3><h4 id="1-3-1-位置编码"><a href="#1-3-1-位置编码" class="headerlink" title="1.3.1 位置编码"></a>1.3.1 位置编码</h4><p>因为自注意力没有考虑位置信息，所以需要将序列的位置编码到keys，queries，values向量中。</p>
+<p>考虑将序列索引（sequence index）用向量（vector）表示：<br>$$<br>p_i∈R^d, for; i∈{1,2,…,T}<br>$$<br>$p_i$即位置向量（positional vector）。</p>
+<p>得到位置向量后，我们将其加到输入里。假设$\widetilde q$，$\widetilde k$，$\widetilde v$是之前的向量，则：<br>$$<br>q_i =\widetilde q_i + p_i\<br>k_i =\widetilde k_i + p_i\<br>v_i =\widetilde v_i + p_i\<br>$$</p>
+<blockquote>
+<p><em>[?]位置向量不是加到输入里吗？为什么这里是加入到q,k,v？</em></p>
+</blockquote>
+<p>位置向量有多种计算方式，如正弦位置表示等，最常用的是绝对位置表示（absolute position representations）。（注：有点像独热编码）</p>
+<h4 id="1-3-2-遮罩"><a href="#1-3-2-遮罩" class="headerlink" title="1.3.2 遮罩"></a>1.3.2 遮罩</h4><p>进行序列预测的时候，不能看到后面的信息，因此采用了遮罩（Masking）处理，即将后面单词的注意力分数设置为$-\infty$：</p>
+<p>$$<br>e_{ij} = \left{<br>\begin{aligned}<br>q^T_ik_j, j&lt;i\<br>-\infty, j≥i<br>\end{aligned}<br>\right.<br>$$</p>
+<h2 id="2-Transformer模型介绍"><a href="#2-Transformer模型介绍" class="headerlink" title="2 Transformer模型介绍"></a>2 Transformer模型介绍</h2><h3 id="2-1-Transformer概览"><a href="#2-1-Transformer概览" class="headerlink" title="2.1 Transformer概览"></a>2.1 Transformer概览</h3><p><img src="/image/image-20220113163942108.png" alt="image-20220113163942108"></p>
+<h3 id="2-2-Transformer编码器"><a href="#2-2-Transformer编码器" class="headerlink" title="2.2 Transformer编码器"></a>2.2 Transformer编码器</h3><p>编码器（Encoder）包含以下模块：</p>
+<ul>
+<li><p>Q-K-V向量</p>
+</li>
+<li><p>多头注意力机制（Multi-head attention）</p>
+</li>
+</ul>
+<p>其他训练技巧（这些技巧不能提升模型能做什么，而是加速训练过程）</p>
+<ul>
+<li>残差连接（Residual connections）</li>
+<li>归一化（Layer normalization）</li>
+<li>缩放点积运算（Scaled Dot Product）</li>
+</ul>
+<h4 id="2-2-1-Query-Key-Value向量矩阵"><a href="#2-2-1-Query-Key-Value向量矩阵" class="headerlink" title="2.2.1 Query-Key-Value向量矩阵"></a>2.2.1 Query-Key-Value向量矩阵</h4><p>用$x_1,…,x_T$ $(x_i∈R^d)$表示Transformer编码器的输入向量，则queries, keys, values的计算如下：</p>
+<ul>
+<li>$q_i=Qx_i$，$Q∈R^{d×d}$是权重矩阵</li>
+<li>$k_i=Kx_i$，$K∈R^{d×d}$是权重矩阵</li>
+<li>$v_i=Vx_i$，$V∈R^{d×d}$是权重矩阵</li>
+</ul>
+<p>对不同的参数矩阵对原始输入向量做线性变换，从而让不同的变换结果承担不同角色。</p>
+<p>让我们通过矩阵的视角来看Q，K，V是如何计算的：</p>
+<p>首先，用$X=[x_1;…;x_T]∈R^{T×d}$表示输入向量的拼接矩阵，那么$XQ∈R^{T×d}$，$XK∈R^{T×d}$，$XV∈R^{T×d}$。输出就可以表示为：<br>$$<br>output = softmax(XQ(XK)^T)×XV<br>$$<br><img src="/image/image-20220113180152211.png" alt="image-20220113180152211"></p>
+<h4 id="2-2-2-多头注意力机制"><a href="#2-2-2-多头注意力机制" class="headerlink" title="2.2.2 多头注意力机制"></a>2.2.2 多头注意力机制</h4><p>对于单词$i$，自注意力只注意到$x^T_iQ^TKx_j$高的地方，但是我们如何关注到不同的$j$呢？</p>
+<blockquote>
+<p><em>这里对为什么要使用多头的解释并不清楚，可以参考：为什么Transformer 需要进行 Multi-head Attention？ - 知乎 <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/341222779">https://www.zhihu.com/question/341222779</a></em></p>
+<p><em>《自然语言处理——基于预训练模型的方法》P93中的解释是：</em></p>
+<p><em>“由于自注意力结果需要经过归一化，导致即使一个输入和多个其他的输入相关，也无法同时为这些输入赋予较大的注意力值，即自注意力结果之间是互斥的，无法同时关注多个输入。因此，如果能使用多组注意力模型产生多组不同的注意力结果，则不同组注意力模型可能关注到不同的输入上，从而增强模型的表达能力。“</em></p>
+</blockquote>
+<p>我们通过多个$Q, K, V$矩阵定义多头注意力（Multi-headed Attention）。</p>
+<p>用$Q_ℓ,K_ℓ,V_ℓ∈R^{d×d/h}$ 表示不同的参数矩阵，其中$h$表示注意力头的序号，$ℓ$的取值范围是从$1$到$h$。*($R^{d×d/h}$)*</p>
+<p>每个注意力头独立运算：<br>$$<br>output_ℓ = softmax(XQ_ℓK^T_ℓX^T)*XV_ℓ<br>$$<br>其中$output_ℓ∈R^{d/h}$。</p>
+<p>然后，将所有的输出混合：<br>$$<br>output = Y[output_1;…;output_h],\ Y∈R^{d×d}<br>$$<br>下图是单头注意力和多头注意力的简单示意图：</p>
+<p><img src="/image/image-20220114135758701.png" alt="image-20220114135758701"></p>
+<p>可以看出，多头注意力和单个注意力的计算量是一样的。<em>（都是把矩阵拼起来计算一次）</em></p>
+<h4 id="2-2-3-残差连接"><a href="#2-2-3-残差连接" class="headerlink" title="2.2.3 残差连接"></a>2.2.3 残差连接</h4><p>残差连接（Residual connections）是一种提升模型训练效果的技巧。</p>
+<p>正常情况：$X^{(i)} = Layer(X^{(i-1)})$</p>
+<p><img src="/image/image-20220114140717577.png" alt="image-20220114140717577"></p>
+<p>残差连接：$X^{(i)} = X^{(i-1)}+Layer(X^{(i-1)})$</p>
+<p><img src="/image/image-20220114140832475.png" alt="image-20220114140832475"></p>
+<h4 id="2-2-4-归一化"><a href="#2-2-4-归一化" class="headerlink" title="2.2.4 归一化"></a>2.2.4 归一化</h4><p>归一化（Layer normalization）是一种提升模型训练速度的技巧。<br>$$<br>output = \frac{x-μ}{\sqrt{𝜎}+𝜖}*𝛾+𝛽<br>$$<br>其中，𝜇是均值，𝜎是标准差。𝛾和𝛽是gain和bias参数[?]。</p>
+<h4 id="2-2-5-缩放点积运算"><a href="#2-2-5-缩放点积运算" class="headerlink" title="2.2.5 缩放点积运算"></a>2.2.5 缩放点积运算</h4><p>缩放点积运算是为了防止在维数过大时，梯度变小或消失。</p>
+<p>正常情况：</p>
+<p>$$<br>output_ℓ = softmax(XQ_ℓK_ℓ^TX^T)*XV_ℓ<br>$$</p>
+<p>缩放点积运算：</p>
+<p>$$<br>output_ℓ = softmax(\frac{XQ_ℓK_ℓ^TX^T}{\sqrt{d/h}})*XV_ℓ<br>$$</p>
+<p>可以看出，就是将注意力分数除以维数$d$除以注意力头的数量$h$的根。</p>
+<h4 id="2-2-6-小结"><a href="#2-2-6-小结" class="headerlink" title="2.2.6 小结"></a>2.2.6 小结</h4><p>2.1中给出了Tranformer编码器的整体概览，经过对模块组成的分解，编码器更具体的结构如下图所示：</p>
+<p><img src="/image/image-20220114143617158.png" alt="image-20220114143617158"></p>
+<h3 id="2-3-Transformer解码器"><a href="#2-3-Transformer解码器" class="headerlink" title="2.3 Transformer解码器"></a>2.3 Transformer解码器</h3><p>解码器的结构与编码器类似，如图：</p>
+<p><img src="/image/image-20220114144135116.png" alt="image-20220114144135116"></p>
+<p>可以看出，稍微不一样的地方在于交叉注意力（Cross attention）。</p>
+<p><strong>交叉注意力机制</strong></p>
+<p>假设$h_1,…,h_T$是Transformer编码器的输出向量，$z_1,…,z_T$是Transformer解码器的输入向量，那么，</p>
+<ul>
+<li>keys和values来自编码器：$k_i = Kh_i,v_i = Vh_i$</li>
+<li>queries来自解码器：$q_i=Qz_i$.</li>
+</ul>
+<p>假设$H = [h_1;…;h_T]$是编码器向量的拼接，$Z = [z_1;…;z_T]$是解码器向量的拼接，那么输出可以定义为：<br>$$<br>output = softmax(ZQ(HK)^T)×HV<br>$$<br><img src="/image/image-20220114145530907.png" alt="image-20220114145530907"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href=""></a></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/dsa-python/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">数据结构与算法Python</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            chuxiaoyu &copy; 2022 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
