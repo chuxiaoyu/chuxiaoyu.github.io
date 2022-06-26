@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-15T18:19:48.802Z</updated>
+  <updated>2022-06-23T18:59:52.843Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,15 @@
     <link href="http://example.com/hello-world/"/>
     <id>http://example.com/hello-world/</id>
     <published>2022-05-13T20:59:23.020Z</published>
-    <updated>2022-05-15T18:19:48.802Z</updated>
+    <updated>2022-06-23T18:59:52.843Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p><a href='https://clustrmaps.com/site/1boev'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&ct=ffffff'/></a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p>I am a CS student.</p><p><a href='https://clustrmaps.com/site/1boev'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&ct=ffffff'/></a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;About&quot;&gt;&lt;a href=&quot;#About&quot; class=&quot;headerlink&quot; title=&quot;About&quot;&gt;&lt;/a&gt;About&lt;/h1&gt;&lt;p&gt;&lt;a href=&#39;https://clustrmaps.com/site/1boev&#39;  title=&#39;Visit </summary>
+    <summary type="html">&lt;h1 id=&quot;About&quot;&gt;&lt;a href=&quot;#About&quot; class=&quot;headerlink&quot; title=&quot;About&quot;&gt;&lt;/a&gt;About&lt;/h1&gt;&lt;p&gt;I am a CS student.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#39;https://clustrmaps.com/</summary>
       
     
     
