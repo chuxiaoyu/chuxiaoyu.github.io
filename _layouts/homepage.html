@@ -40,11 +40,15 @@
         <br>
         {% endif %}
         {% if site.affiliation %}
-        <a href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
+        <a href="{{ site.affiliation_link }}" rel="noopener" target="_blank" style="color:#393939">{{ site.affiliation }}</a>
         <br>
         {% endif %}
         {% if site.email %}
-        <email>{{ site.email }}</email>
+        <b><email>{{ site.email }}</email></b>
+        {% endif %}
+        <br>
+        {% if site.quote %}
+        <i><font color="grey" size="4">{{ site.quote }}</font></i>
         {% endif %}
 
         <br>
