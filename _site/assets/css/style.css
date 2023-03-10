@@ -4,7 +4,7 @@ body { background-color: #fff; padding: 0px; font: 17.0px/1.5 Crimson Pro, serif
 
 .pub-row { display: flex; align-items: center; }
 
-.social-icons a { display: inline-block; height: 2.4rem; width: 2.4rem; background-color: transparent; color: #043361 !important; border-radius: 100%; text-align: center; font-size: 1.5rem; line-height: 2.5rem; margin-right: 1rem; }
+.social-icons a { display: inline-block; height: 2rem; width: 2rem; background-color: transparent; color: #043361 !important; border-radius: 100%; text-align: center; font-size: 1.5rem; line-height: 2.5rem; margin-right: 1rem; }
 
 @media (prefers-color-scheme: dark) { .social-icons a { color: #043361 !important; } }
 .social-icons a:last-child { margin-right: 0; }
