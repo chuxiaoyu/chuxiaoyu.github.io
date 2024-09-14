@@ -4,25 +4,24 @@ layout: homepage
 
 ## About Me
 
-I am a Ph.D. student in the <a href="https://atlarge-research.com/" target="_blank">Massivizing Computer Systems</a> Group.
-
+Hoi! I am a Ph.D. student at the <a href="https://atlarge-research.com" target="_blank">Massivizing Computer Systems Group</a>, supervised by <a href="https://scholar.google.com/citations?user=7wwQ7twAAAAJ" target="_blank">Alexandru Iosup</a>. 
+My research is applying data science and machine learning to support HPC **Operational Data Analytics**.
 
 ## Research Interests
-
-- **Operational Data Analytics:** HPC Data Centers, Energy and Reliability Analysis, Workloads Modeling
-
-<div style="display:none"> 注释内容
-- **Machine Learning for Time Series:** Spatio-Temporal Graph, Prediction, Anomaly Detection
-</div>
-
-<div style="display:none"> 注释内容
-## Blog
-
-<a href="https://chuxiaoyu.cn/blog" target="_blank">Go to my blog</a>.
-</div>
+- **System Analysis and Modeling**: <a href="./#2023-hotcloudperf-mlfailures">[1]</a><a href="./#2023-hotcloudperf-mlfailures">[3]</a>
+- **Ontology for HPC**: <a href="./#2024-graphsys-ontology">[2]</a>
+- **LLMxHPC**: work in process
 
 {% include_relative _includes/publications.md %}
 
-{% include_relative _includes/services.md %}
+<!-- {% include_relative _includes/publication.md %} -->
 
-<a href='https://clustrmaps.com/site/1boev'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&co=2d78ad&ct=ffffff'/></a>
+<!-- {% include_relative _includes/supervision.md %} -->
+
+<!-- 
+{% include_relative _includes/services.md %}
+-->
+
+<br>
+
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=m&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>

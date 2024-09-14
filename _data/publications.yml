@@ -1,0 +1,58 @@
+main:
+  - title: "Generic and ML Workloads in an HPC Datacenter: Node Energy, Job Failures, and Node-Job Analysis"
+    authors: <strong>Xiaoyu Chu*</strong>, Daniel Hofstätter*, Shashikant Ilager, Sacheendra Talluri, Duncan Kampert, Damian Podareanu, Dmitry Duplyakin, Ivona Brandic, Alexandru Iosup (*Equal contributions)
+    conference_short: "ICPADS'24"
+    conference: The 30th International Conference on Parallel and Distributed Systems (ICPADS 2024)
+    pdf: https://atlarge-research.com/pdfs/2024-icpads-hpc-workload-characterization.pdf
+    code: https://github.com/atlarge-research/2024-icpads-hpc-workload-characterization
+    data: https://zenodo.org/records/11028934
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    doi: 
+    # image: ./assets/img/fig-oda_setup.png
+    # notes: Early Accept
+    label: 2024-icpads-workload-chracterization
+    num: "[3]"
+
+  - title: "Enabling Operational Data Analytics for Datacenters through Ontologies, Monitoring, and Simulation-based Prediction"
+    authors: Shekhar Suman*, <strong>Xiaoyu Chu*</strong>, Dante Niewenhuis, Sacheendra Talluri, Tiziano De Matteis, Alexandru Iosup (*Equal contributions)
+    conference_short: "GraphSys'24"
+    conference: The 2nd Workshop on Serverless, Extreme-Scale, and Sustainable Graph Processing Systems @ ICPE 2024
+    pdf: https://atlarge-research.com/pdfs/2024-graphsys-ontology.pdf
+    code: https://github.com/chuxiaoyu/hpc-ontology-modeller
+    # data: https://doi.org/
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    doi: https://dl.acm.org/doi/10.1145/3629527.3652897
+    # image: ./assets/img/fig-oda_setup.png
+    # notes: Early Accept
+    label: 2024-graphsys-ontology
+    num: "[2]"
+
+  - title: "How Do ML Jobs Fail in Datacenters? Analysis of a Long-Term Dataset from an HPC Cluster"
+    authors: <strong>Xiaoyu Chu</strong>, Sacheendra Talluri, Laurens Versluis, Alexandru Iosup 
+    conference_short: "HotCloudPerf'23"
+    conference: 6th Workshop on Hot Topics in Cloud Computing Performance @ ICPE 2023
+    pdf: https://atlarge-research.com/pdfs/2023-hotcloudperf-mlfailures.pdf
+    code: https://github.com/chuxiaoyu/2023-hotcloudperf-ml-failures
+    data: https://zenodo.org/records/12750561
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    doi: https://dl.acm.org/doi/10.1145/3578245.3584726 
+    # notes: Oral Presentation
+    # image: ./assets/img/fig-job_state.png
+    label: 2023-hotcloudperf-mlfailures
+    num: "[1]"
+  
+  # template
+  # - title: ""
+  #   authors: <strong>Xiaoyu Chu</strong>
+  #   conference_short: 
+  #   conference: 
+  #   pdf: 
+  #   code: 
+  #   data: 
+  #   page: 
+  #   bibtex: 
+  #   notes: 
+  #   image: 
+  #   label: 
+  #   num: ""

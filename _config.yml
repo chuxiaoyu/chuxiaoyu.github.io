@@ -2,27 +2,24 @@
 title: Xiaoyu Chu
 position: Ph.D. Student
 affiliation: Vrije University Amsterdam
-affiliation_link: https://vu.nl/en
-email: <a href="mailto:x.chu@vu.nl" target="_blank">x.chu@vu.nl</a>
-quote: be the change you wish to see in the world
+email: chuxiaoyu123 (at) gmail.com
 
 # Search Engine Optimization (SEO)
 # The following information is used to improve the website traffic from search engines, e.g., Google.
 keywords: Xiaoyu Chu
-description: Xiaoyu's academic personal homepage.
+description: Xiaoyu's research homepage.
 canonical: https://chuxiaoyu.github.io
 
 # Links 
 # If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.com/
-cv_link: assets/files/curriculum_vitae.pdf
+# google_scholar: https://scholar.google.com/
+# cv_link: assets/files/curriculum_vitae.pdf
 github_link: https://github.com/chuxiaoyu
 linkedin: https://www.linkedin.com/in/chuxiaoyu/
-# zhihu: https://www.zhihu.com/people/chuxiaoyu123
 
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/me.png
+avatar: ./assets/img/xchu.png
 favicon: ./assets/img/vu-circle.png
 favicon_dark: ./assets/img/vu-circle.png
 
@@ -30,9 +27,18 @@ favicon_dark: ./assets/img/vu-circle.png
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
 enable_footnote: true
 
+# Auto Dark Mode
+# You may use the option to disable the automatic dark theme
+auto_dark_mode: true
+
+# Font
+# You can use this option to choose between Serif or Sans Serif fonts.
+font: "Serif" # or "Sans Serif"
+
 # Google Analytics ID
 # Please remove this if you don't use Google Analytics
-# google_analytics: UA-111540567-4
+# google_analytics: G-19TKB5SM3C
+# clustrmaps_id: CJD8XwsJhSyQ6sbsU-Gw0cNcUlbah7KW3xvHN2QlwW0
 
 # Use this project as a remote theme for GitHub Pages
 # See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
@@ -48,3 +54,4 @@ exclude:
   - README_de.md
   - LICENSE
   - minimal-light.gemspec
+  - html_source_file/

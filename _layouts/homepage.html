@@ -21,8 +21,18 @@
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
 
+    {% if site.font == "Sans Serif" %}
+    <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
+    {% else %}
+    <link rel="stylesheet" href="./assets/css/font.css">
+    {% endif %}
+    {% if site.auto_dark_mode %}
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
+    {% else %}
+    <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
+    <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
+    {% endif %}
 
   </head>
   <body>
@@ -40,15 +50,11 @@
         <br>
         {% endif %}
         {% if site.affiliation %}
-        <a href="{{ site.affiliation_link }}" rel="noopener" target="_blank" style="color:#393939">{{ site.affiliation }}</a>
+        <a href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
         <br>
         {% endif %}
         {% if site.email %}
-        <b><email>{{ site.email }}</email></b>
-        {% endif %}
-        <br>
-        {% if site.quote %}
-        <i><font color="grey" size="2">{{ site.quote }}</font></i>
+        <email>{{ site.email }}</email>
         {% endif %}
 
         <br>
@@ -56,13 +62,13 @@
         <div class="social-icons">
         {% if site.google_scholar %}
         <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
-          <i class="ai ai-google-scholar" style="font-size:1.5rem"></i>
+          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
         </a>  
         {% endif %}
 
         {% if site.cv_link %}
         <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
-          <i class="ai ai-cv" style="font-size:1.6rem;"></i>
+          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
         </a>
         {% endif %}
 
@@ -83,13 +89,6 @@
           <i class="fab fa-twitter"></i>
         </a>
         {% endif %}
-
-        {% if site.zhihu %}
-        <a style="margin: 0 0 0 0" href="{{ site.zhihu }}">
-          <i class="fab fa-zhihu"></i>
-        </a>
-        {% endif %}
-
         </div>
         <br>
 
