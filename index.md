@@ -24,4 +24,4 @@ My research is applying data science and machine learning to support HPC **Opera
 
 <br>
 
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=m&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=n&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc'></script>
