@@ -1,4 +1,19 @@
 main:
+  - title: "An Empirical Characterization of Outages and Incidents in Public Services for Large Language Models"
+    authors: <strong>Xiaoyu Chu</strong>, Sacheendra Talluri, Qingxian Lu, Alexandru Iosup
+    conference_short: "ICPE'25"
+    conference: 16th ACM/SPEC International Conference on Performance Engineering (ICPE'25)
+    pdf: https://arxiv.org/abs/2501.12469
+    code: https://github.com/atlarge-research/llm-service-analysis
+    data: https://zenodo.org/records/14018219
+    # talk: https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    doi: 
+    # image: ./assets/img/fig-oda_setup.png
+    # notes: Early Accept
+    label: 2025-icpe-llm-service-analysis
+    num: "[4]"
+
   - title: "Generic and ML Workloads in an HPC Datacenter: Node Energy, Job Failures, and Node-Job Analysis"
     authors: <strong>Xiaoyu Chu*</strong>, Daniel Hofstätter*, Shashikant Ilager, Sacheendra Talluri, Duncan Kampert, Damian Podareanu, Dmitry Duplyakin, Ivona Brandic, Alexandru Iosup (*Equal contributions)
     conference_short: "ICPADS'24"
