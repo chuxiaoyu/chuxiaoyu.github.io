@@ -3,34 +3,137 @@
   <head>
     <title>Xiaoyu Chu</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Xiaoyu's research homepage.">
-    
-    <meta name="keywords" content="Xiaoyu Chu">
-    
-    
-    <link rel="canonical" href="https://chuxiaoyu.github.io"/>
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Xiaoyu Chu">
+    <meta name="keywords" content="Xiaoyu Chu, xiaoyu chu, chu xiaoyu, chuxiaoyu">
 
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/vu-circle.png" type="image/png" />
-    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/vu-circle.png" type="image/png" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Xiaoyu Chu | Vrije University Amsterdam">
+    <meta property="og:url" content="https://chuxiaoyu.github.io">
+    <meta property="og:site_name" content="Xiaoyu Chu | Vrije University Amsterdam">
+    <meta property="og:description" content="https://chuxiaoyu.github.io">
+    <meta property="og:locale" content="default">
+    <meta property="og:image" content="./assets/img/xchu.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Xiaoyu Chu | Vrije University Amsterdam">
+    <meta name="twitter:description" content="https://chuxiaoyu.github.io">
+    <meta name="twitter:image" content="./assets/img/xchu.png">
+
+    <link rel="canonical" href="https://chuxiaoyu.github.io/"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/Illinois/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/Illinois/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/Illinois/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/Illinois/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/Illinois/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/Illinois/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/Illinois/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/Illinois/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/Illinois/apple-icon-180x180.png">
+    <link rel="icon" href="./assets/img/vu-circle.png">
+    <link rel="manifest" href="./assets/Illinois/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/Illinois/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/pub.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+
+    <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
+    
+    <script src="./assets/js/github-stars.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.js"></script>
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
+    <script type="text/javascript">
+      function toggleVis(link) {
+        var div = document.getElementById('newsmore');
+        if (div.style.display === 'none') {
+          div.style.display = 'block';
+          link.textContent = 'Show less';
+        } else {
+          div.style.display = 'none';
+          link.textContent = 'Show more';
+        }
+      }
+    </script>
 
-    
-    <link rel="stylesheet" href="./assets/css/font.css">
-    
-    
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
-    
+   <script>
+      function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "inline") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "inline";
+        
+      }
+      }
+
+      function reverseLinks() {
+    var container = document.getElementById("myLinks");
+    var links = Array.from(container.getElementsByTagName('a'));
+    container.innerHTML = '';
+    for (var i = links.length - 1; i >= 0; i--) {
+      container.appendChild(links[i]);
+    }
+  }
+   </script>
+   
+   
 
   </head>
   <body>
+    
+    <div class="topnav">
+
+      <a href=""><img width="120" src=""></a>
+
+      <div id="myLinks">
+      
+  
+    <a class="normal right" href="/teaching/">Teaching</a>
+    
+
+  
+    <a class="normal" href="/publications/">Publications</a>
+  
+
+  
+    <a class="normal" href="/">Home</a>
+  
+
+
+
+      </div>
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction();reverseLinks()">
+        <i class="fa fa-bars"></i>
+      </a>
+      
+    </div>
+    
+
+    <script src="./assets/js/vanilla-back-to-top.min.js"></script>
+    <script>addBackToTop({
+        backgroundColor: '#fff',
+        innerHTML: 'Back to Top',
+        textColor: '#333'
+      })
+    </script>
+    <style>
+        #back-to-top {
+          border: 1px solid #ccc;
+          border-radius: 0;
+          font-size: 15px;
+          width: 100px;
+          text-align: center;
+          line-height: 30px;
+          height: 30px;
+        }
+    </style>
+    
     <div class="wrapper">
       <header>
         
@@ -51,12 +154,17 @@
         
         <email>chuxiaoyu123 (at) gmail.com</email>
         
+        
+        
+        <br>
+        <br>
 
-        <br>
-        <br>
+        
+
+        
         <div class="social-icons">
         
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=eIKz6sMAAAAJ&hl=en">
+        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=eIKz6sMAAAAJ&hl=en" target="_blank">
           <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
         </a>  
         
@@ -64,28 +172,31 @@
         
 
         
-        <a style="margin: 0 5px 0 0" href="https://github.com/chuxiaoyu">
+        <a style="margin: 0 5px 0 0" href="https://github.com/chuxiaoyu" target="_blank">
           <i class="fab fa-github"></i>
         </a>
         
 
         
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/chuxiaoyu/">
+        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/chuxiaoyu/" target="_blank">
           <i class="fab fa-linkedin"></i>
         </a>
         
 
         
         </div>
+        
         <br>
 
       </header>
       <section>
 
-      <h2 id="about-me">About Me</h2>
+      <h1 id="index">Index</h1>
+
+<h2 id="about-me">About Me</h2>
 
 <p>Hi👋! I am a last year Ph.D. student at the <a href="https://atlarge-research.com/xchu/" target="_blank">Massivizing Computer Systems Group</a>, supervised by <a href="https://scholar.google.com/citations?user=7wwQ7twAAAAJ" target="_blank">Alexandru Iosup</a>. 
-My research focuses on applying data science and machine learning techniques to understand and support datacenter operations.</p>
+My research focuses on applying <strong>data science</strong> and <strong>machine learning</strong> techniques to understand and support <strong>datacenter operations</strong>.</p>
 
 <h2 id="research-interests">Research Interests</h2>
 <ul>
@@ -94,7 +205,9 @@ My research focuses on applying data science and machine learning techniques to 
   <li><strong>Datacenter Ontology</strong></li>
 </ul>
 
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
+<h1 id="publications"></h1>
+
+<h2 style="margin: 60px 0px -15px;">Selected Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?user=eIKz6sMAAAAJ&amp;hl=en" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp></h2>
 
 <div class="publications">
 <ol class="bibliography">
@@ -103,22 +216,53 @@ My research focuses on applying data science and machine learning techniques to 
 
 <li>
     
+    <h2 id="2025-hotcloudperf-fails"></h2>
+    
+<div class="pub-row">
+  <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+            <abbr class="badge">HotCloudPerf'25</abbr>
+  </div> -->
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a href="https://doi.org/10.1145/3680256.3721320">FAILS: A Framework for Automated Collection and Analysis of LLM Service Incidents</a></div>
+      <div class="author">Sándor Battaglini-Fischer, Nishanthi Srinivasan, Bálint László Szarvas, <strong>Xiaoyu Chu</strong>, Alexandru Iosup</div>
+      <div class="periodical"><em>Workshop on Hot Topics in Cloud Computing Performance (HotCloudPerf 2025)</em>
+      </div>
+    <div class="links">
+       
+      <a href="https://atlarge-research.com/pdfs/2025-hotcloudperf-fails.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      
+       
+      <a href="https://github.com/atlarge-research/FAILS" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      
+      
+       
+      <a href="https://zenodo.org/records/14018219" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Dataset</a>
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+</li>
+
+
+
+
+<li>
+    
     <h2 id="2025-icpe-llm-service-analysis"></h2>
     
-<div class="pub-row" style="margin-top: -15px; margin-bottom: -15px;">
+<div class="pub-row">
   <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    
-     
-    <abbr class="badge">ICPE'25</abbr>
-    
+    <img src="" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+            <abbr class="badge">ICPE'25</abbr>
   </div> -->
-  <div class="col-sm-9" style="position: relative; padding-right: 15px;padding-left: 20px;">
-      <div class="title">[4]
-        <a class="col-sm-9 abbr"><abbr class="badge" style="position: relative; top: 0px; left: 0px; padding-right: 5px; padding-left: 5px;">ICPE'25 </abbr></a>
-        <a href="" target="_blank">An Empirical Characterization of Outages and Incidents in Public Services for Large Language Models</a>
-      </div>
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a href="https://doi.org/10.1145/3676151.3719372">An Empirical Characterization of Outages and Incidents in Public Services for Large Language Models</a></div>
       <div class="author"><strong>Xiaoyu Chu</strong>, Sacheendra Talluri, Qingxian Lu, Alexandru Iosup</div>
-      <div class="periodical"><em>16th ACM/SPEC International Conference on Performance Engineering (ICPE'25)</em>
+      <div class="periodical"><em>ACM/SPEC International Conference on Performance Engineering (ICPE 2025)</em>
       </div>
     <div class="links">
        
@@ -127,10 +271,9 @@ My research focuses on applying data science and machine learning techniques to 
        
       <a href="https://github.com/atlarge-research/llm-service-analysis" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       
+      
        
-      <a href="https://zenodo.org/records/14018219" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Data</a>
-      
-      
+      <a href="https://zenodo.org/records/14018219" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Dataset</a>
       
       
       
@@ -140,7 +283,6 @@ My research focuses on applying data science and machine learning techniques to 
 </div>
 </li>
 
-<br />
 
 
 
@@ -148,20 +290,15 @@ My research focuses on applying data science and machine learning techniques to 
     
     <h2 id="2024-icpads-workload-chracterization"></h2>
     
-<div class="pub-row" style="margin-top: -15px; margin-bottom: -15px;">
+<div class="pub-row">
   <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    
-     
-    <abbr class="badge">ICPADS'24</abbr>
-    
+    <img src="" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+            <abbr class="badge">ICPADS'24</abbr>
   </div> -->
-  <div class="col-sm-9" style="position: relative; padding-right: 15px;padding-left: 20px;">
-      <div class="title">[3]
-        <a class="col-sm-9 abbr"><abbr class="badge" style="position: relative; top: 0px; left: 0px; padding-right: 5px; padding-left: 5px;">ICPADS'24 </abbr></a>
-        <a href="" target="_blank">Generic and ML Workloads in an HPC Datacenter: Node Energy, Job Failures, and Node-Job Analysis</a>
-      </div>
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a href="https://ieeexplore.ieee.org/document/10763608">Generic and ML Workloads in an HPC Datacenter: Node Energy, Job Failures, and Node-Job Analysis</a></div>
       <div class="author"><strong>Xiaoyu Chu*</strong>, Daniel Hofstätter*, Shashikant Ilager, Sacheendra Talluri, Duncan Kampert, Damian Podareanu, Dmitry Duplyakin, Ivona Brandic, Alexandru Iosup (*Equal contributions)</div>
-      <div class="periodical"><em>The 30th International Conference on Parallel and Distributed Systems (ICPADS 2024)</em>
+      <div class="periodical"><em>IEEE International Conference on Parallel and Distributed Systems (ICPADS 2024)</em>
       </div>
     <div class="links">
        
@@ -170,12 +307,9 @@ My research focuses on applying data science and machine learning techniques to 
        
       <a href="https://github.com/atlarge-research/2024-icpads-hpc-workload-characterization" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       
-       
-      <a href="https://zenodo.org/records/11028934" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Data</a>
       
        
-      <a href="https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Talk</a>
-      
+      <a href="https://zenodo.org/records/11028934" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Dataset</a>
       
       
       
@@ -185,183 +319,48 @@ My research focuses on applying data science and machine learning techniques to 
 </div>
 </li>
 
-<br />
 
-
-
-<li>
-    
-    <h2 id="2024-graphsys-ontology"></h2>
-    
-<div class="pub-row" style="margin-top: -15px; margin-bottom: -15px;">
-  <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    
-     
-    <abbr class="badge">GraphSys'24</abbr>
-    
-  </div> -->
-  <div class="col-sm-9" style="position: relative; padding-right: 15px;padding-left: 20px;">
-      <div class="title">[2]
-        <a class="col-sm-9 abbr"><abbr class="badge" style="position: relative; top: 0px; left: 0px; padding-right: 5px; padding-left: 5px;">GraphSys'24 </abbr></a>
-        <a href="https://dl.acm.org/doi/10.1145/3629527.3652897" target="_blank">Enabling Operational Data Analytics for Datacenters through Ontologies, Monitoring, and Simulation-based Prediction</a>
-      </div>
-      <div class="author">Shekhar Suman*, <strong>Xiaoyu Chu*</strong>, Dante Niewenhuis, Sacheendra Talluri, Tiziano De Matteis, Alexandru Iosup (*Equal contributions)</div>
-      <div class="periodical"><em>The 2nd Workshop on Serverless, Extreme-Scale, and Sustainable Graph Processing Systems (GraphSys 2024)</em>
-      </div>
-    <div class="links">
-       
-      <a href="https://atlarge-research.com/pdfs/2024-graphsys-ontology.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/chuxiaoyu/hpc-ontology-modeller" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-
-<br />
-
-
-
-<li>
-    
-    <h2 id="2023-hotcloudperf-mlfailures"></h2>
-    
-<div class="pub-row" style="margin-top: -15px; margin-bottom: -15px;">
-  <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    
-     
-    <abbr class="badge">HotCloudPerf'23</abbr>
-    
-  </div> -->
-  <div class="col-sm-9" style="position: relative; padding-right: 15px;padding-left: 20px;">
-      <div class="title">[1]
-        <a class="col-sm-9 abbr"><abbr class="badge" style="position: relative; top: 0px; left: 0px; padding-right: 5px; padding-left: 5px;">HotCloudPerf'23 </abbr></a>
-        <a href="https://dl.acm.org/doi/10.1145/3578245.3584726" target="_blank">How Do ML Jobs Fail in Datacenters? Analysis of a Long-Term Dataset from an HPC Cluster</a>
-      </div>
-      <div class="author"><strong>Xiaoyu Chu</strong>, Sacheendra Talluri, Laurens Versluis, Alexandru Iosup</div>
-      <div class="periodical"><em>The 6th Workshop on Hot Topics in Cloud Computing Performance (HotCloudPerf 2023)</em>
-      </div>
-    <div class="links">
-       
-      <a href="https://atlarge-research.com/pdfs/2023-hotcloudperf-mlfailures.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/chuxiaoyu/2023-hotcloudperf-ml-failures" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-       
-      <a href="https://zenodo.org/records/12750561" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Data</a>
-      
-       
-      <a href="https://atlarge-research.com/pdfs/20230416-ml-job-failures-hotcloudperf23-website.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Talk</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-
-<br />
 
 
 
 </ol>
 </div>
-
-<!-- <h2 id="publications" style="margin: 2px 0px -15px;">Workshop Publications</h2>
-
-<div class="publications" style="position: relative; padding-right: 15px;padding-left: 20px;">
-<ol class="bibliography">
-
-<li>
-<div class="publication"> 
-
-<h2 id="2023-hotcloudperf-mlfailures"></h2>
-[1] <strong>Xiaoyu Chu</strong>, Sacheendra Talluri, Laurens Versluis, and Alexandru Iosup. 2023. 
-<a href="https://doi.org/10.1145/3578245.3584726" target="_blank">How Do ML Jobs Fail in Datacenters? Analysis of a Long-Term Dataset from an HPC Cluster.</a> In Companion of the 2023 ACM/SPEC International Conference on Performance Engineering (ICPE'23 Companion). Association for Computing Machinery,Coimbra, Portugal, April 15-19, 2023, pp. 263–268, ACM, 2023.
-<a href="https://atlarge-research.com/pdfs/2023-hotcloudperf-mlfailures.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">[PDF]</a>
-<a href="https://github.com/chuxiaoyu/2023-hotcloudperf-ml-failures" class="btn btn-sm z-depth-0" role="button" target="_blank">[CODE]</a>
-<a href="https://zenodo.org/records/12750561" class="btn btn-sm z-depth-0" role="button" target="_blank">[DATA]</a>
-
-<h2 id="2024-graphsys-ontology"></h2>
-[1] Shekhar Suman*, <strong>Xiaoyu Chu*</strong>, Dante Niewenhuis, Sacheendra Talluri, Tiziano De Matteis, and Alexandru Iosup. 2024. 
-<a href="https://doi.org/10.1145/3629527.3652897" target="_blank">Enabling Operational Data Analytics for Datacenters through Ontologies, Monitoring, and Simulation-based Prediction.</a>  In Companion of the 15th ACM/SPEC International Conference on Performance Engineering (ICPE '24 Companion). May 7–11, 2024, London, United Kingdom. ACM, New York, NY, USA, 7 pages.
-<a href="https://atlarge-research.com/pdfs/2024-graphsys-ontology.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">[PDF]</a>
-<a href="https://github.com/chuxiaoyu/hpc-ontology-modeller" class="btn btn-sm z-depth-0" role="button" target="_blank">[CODE]</a>
-
-
-</div>
-</li>
-</ol>
-</div>
- -->
-
-<!-- <h2 id="publications" style="margin: 2px 0px -15px;">Advised&Co-advised</h2>
-
-<div class="publications" style="position: relative; padding-right: 15px;padding-left: 20px;">
-
-<div class="thesis"> 
-<strong>[Master Thesis 2023]</strong> Shekhar Suman, 'ODAbler': Design and Evaluation of an Operational Data Analytics Framework for Energy-efficient management of Workloads in a Data Centre Simulator OpenDC 
-<a href="https://atlarge-research.com/pdfs/ssuman_2023.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">[PDF]</a>
-</div>
-<div class="thesis"> 
-<strong>[Master Thesis 2023]</strong> Jianyang Gu, (Master Thesis 2023), Characterization and Modelling of Resource Usage and Energy Consumption in HPC Datacenters by Machine Learning
-<a href="https://atlarge-research.com/pdfs/gujianyang_2023.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">[PDF]</a>
-</div>
-<div class="thesis"> 
-<strong>[Master Thesis 2023]</strong> Wenjun Liang, (Master Thesis 2023), Data Characterization and Anomaly Detection for HPC Datacenters Using Machine Learning 
-<a href="https://atlarge-research.com/pdfs/liangwenjun_2023.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">[PDF]</a>
-</div>
-
-</div> -->
-
-<!-- 
-## Services
-
-<h4 style="margin:0 10px 0;">Conference Reviewers</h4>
-
-<ul style="margin:0 0 5px;">
-  <li><a href="http://cvpr2023.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2021-2023</autocolor></a></li>
-  <li><a href="http://iccv2021.thecvf.com/"><autocolor>IEEE/CVF International Conference on Computer Vision (ICCV) 2021</autocolor></a></li>
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>European Conference on Computer Vision (ECCV) 2022</autocolor></a></li>
-</ul>
-
-<h4 style="margin:0 10px 0;">Journal Reviewers</h4>
-
-<ul style="margin:0 0 20px;">
-  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</autocolor></a></li>
-  <li><a href="https://www.springer.com/journal/11263"><autocolor>International Journal of Computer Vision (IJCV)</autocolor></a></li>
-</ul>
--->
 
 <p><br /></p>
-
-<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=200&amp;t=n&amp;d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc"></script>
-
 
 
       <br>
 
       
-      <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
+
+      
+      <div style="font: 12px/1.2 Crimson Pro, serif">
+        <br>
+        <a href="https://github.com/yaoyao-liu/minimal-light" rel="noopener">This website is built based on the <a href='https://github.com/yaoyao-liu/minimal-light'>Minimal Light</a>.</a>
+      </div>
       
 
+      <br>
+      <!-- 
+      <div style="width:100px; pointer-events: none;">
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=043361&w=153&t=n&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&co=ffffff&cmo=3eb7f0&ct=043361'></script>
+      </div>
+       -->
+      
       </section>
       <footer>
+        <div style="font: 12px/1.2 Crimson Pro, serif">
+        <p>
+        <small>
         
+        
+        </small>
+        </p>
+        </div>
+        <br>
+        <br>
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
-    
   </body>
 </html>

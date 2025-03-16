@@ -2,56 +2,53 @@
 title: Xiaoyu Chu
 position: Ph.D. Student
 affiliation: Vrije University Amsterdam
+affiliation_link: https://www.vu.nl/en/
+affiliation_logo: ./assets/img/vu-circle.png
 email: chuxiaoyu123 (at) gmail.com
 
 # Search Engine Optimization (SEO)
-# The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: Xiaoyu Chu
-description: Xiaoyu's research homepage.
+keywords: Xiaoyu Chu, xiaoyu chu, chu xiaoyu, chuxiaoyu
 canonical: https://chuxiaoyu.github.io
+description: https://chuxiaoyu.github.io
 
-# Links 
-# If you don't need one of them, you may delete the corresponding line.
+# The option is used to enable the Illinois template.
+enable_hopkins_logo: false
+
+# The option is used to show the last update time.
+enable_last_update: true
+
+# Links
+link_type: icon #text/icon
 google_scholar: https://scholar.google.com/citations?user=eIKz6sMAAAAJ&hl=en
-# cv_link: assets/files/curriculum_vitae.pdf
 github_link: https://github.com/chuxiaoyu
 linkedin: https://www.linkedin.com/in/chuxiaoyu/
 
-# Images (e.g., your profile picture and your website's favicon) 
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
+# Images 
 avatar: ./assets/img/xchu.png
 favicon: ./assets/img/vu-circle.png
 favicon_dark: ./assets/img/vu-circle.png
 
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
+# Footnotes
 enable_footnote: true
+footnote: "This website is built based on the <a href='https://github.com/yaoyao-liu/minimal-light'>Minimal Light</a>."
+footnote_link: https://github.com/yaoyao-liu/minimal-light
 
-# Auto Dark Mode
-# You may use the option to disable the automatic dark theme
 auto_dark_mode: true
 
-# Font
-# You can use this option to choose between Serif or Sans Serif fonts.
-font: "Serif" # or "Sans Serif"
-
-# Google Analytics ID
-# Please remove this if you don't use Google Analytics
-# google_analytics: G-19TKB5SM3C
-# clustrmaps_id: CJD8XwsJhSyQ6sbsU-Gw0cNcUlbah7KW3xvHN2QlwW0
-
-# Use this project as a remote theme for GitHub Pages
-# See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
-remote_theme: yaoyao-liu/minimal-light
+# Analytics
+# Please remove the following lines about analytics services if you fork my project. 
+# Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
+clustrmaps_id: VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc
 
 # The following files will be removed from the generated website.
 exclude:
+  - build.sh
   - Gemfile
   - Gemfile.lock
   - README.md
-  - README_zh_Hans.md
-  - README_zh_Hant.md
-  - README_de.md
   - LICENSE
-  - minimal-light.gemspec
-  - html_source_file/
+  - CNAME
+
+markdown: kramdown
+kramdown:
+  input: GFM

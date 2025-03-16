@@ -1,0 +1,57 @@
+main:
+  - title: "FAILS: A Framework for Automated Collection and Analysis of LLM Service Incidents"
+    authors: Sándor Battaglini-Fischer, Nishanthi Srinivasan, Bálint László Szarvas, <strong>Xiaoyu Chu</strong>, Alexandru Iosup
+    conference_short: "HotCloudPerf'25"
+    conference: Workshop on Hot Topics in Cloud Computing Performance (HotCloudPerf 2025)
+    pdf: https://atlarge-research.com/pdfs/2025-hotcloudperf-fails.pdf
+    code: https://github.com/atlarge-research/FAILS
+    data: https://zenodo.org/records/14018219
+    # talk: https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf
+    doi: https://doi.org/10.1145/3680256.3721320
+    # image: ./assets/img/fig-oda_setup.png
+    # notes: Early Accept
+    label: 2025-hotcloudperf-fails
+    num: "[5]"
+
+  - title: "An Empirical Characterization of Outages and Incidents in Public Services for Large Language Models"
+    authors: <strong>Xiaoyu Chu</strong>, Sacheendra Talluri, Qingxian Lu, Alexandru Iosup
+    conference_short: "ICPE'25"
+    conference: ACM/SPEC International Conference on Performance Engineering (ICPE 2025)
+    pdf: https://arxiv.org/abs/2501.12469
+    code: https://github.com/atlarge-research/llm-service-analysis
+    data: https://zenodo.org/records/14018219
+    # talk: https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf
+    doi: https://doi.org/10.1145/3676151.3719372
+    # image: ./assets/img/fig-oda_setup.png
+    # notes: Early Accept
+    label: 2025-icpe-llm-service-analysis
+    num: "[4]"
+
+  - title: "Generic and ML Workloads in an HPC Datacenter: Node Energy, Job Failures, and Node-Job Analysis"
+    authors: <strong>Xiaoyu Chu*</strong>, Daniel Hofstätter*, Shashikant Ilager, Sacheendra Talluri, Duncan Kampert, Damian Podareanu, Dmitry Duplyakin, Ivona Brandic, Alexandru Iosup (*Equal contributions)
+    conference_short: "ICPADS'24"
+    conference: IEEE International Conference on Parallel and Distributed Systems (ICPADS 2024)
+    pdf: https://atlarge-research.com/pdfs/2024-icpads-hpc-workload-characterization.pdf
+    code: https://github.com/atlarge-research/2024-icpads-hpc-workload-characterization
+    data: https://zenodo.org/records/11028934
+    talk: https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf
+    doi: https://ieeexplore.ieee.org/document/10763608
+    # image: ./assets/img/fig-oda_setup.png
+    # notes: Early Accept
+    label: 2024-icpads-workload-chracterization
+    num: "[3]"
+  
+  # template
+  # - title: ""
+  #   authors: <strong>Xiaoyu Chu</strong>
+  #   conference_short: 
+  #   conference: 
+  #   pdf: 
+  #   code: 
+  #   data: 
+  #   page: 
+  #   bibtex: 
+  #   notes: 
+  #   image: 
+  #   label: 
+  #   num: ""
