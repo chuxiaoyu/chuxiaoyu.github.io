@@ -10,7 +10,7 @@ I presented the following talks at international conferences and professional ev
 
 <ul style="margin:0 0 5px;">
   <li>ICPE, Virtual, Toronto, Canada, May 7, 2025.</li>
-  <li>ICT.OPEN, Utrect, the Netherlands, April 16, 2025.</li>
+  <li>ICT.OPEN, Utrecht, the Netherlands, April 16, 2025.</li>
 </ul>
 
 <h4 style="margin:0 10px 0;">Generic and ML Workloads in an HPC Datacenter: Node Energy, Job Failures, and Node-Job Analysis. [<a target="_blank" href="https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf">Slide</a>]</h4>
