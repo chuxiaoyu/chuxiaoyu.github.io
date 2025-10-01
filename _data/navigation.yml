@@ -4,9 +4,12 @@ main:
   #   url: /openings/
   #   right: true 
 
+  - title: "CV"
+    url: /cv/
+    right: true
+
   - title: "Teaching"
     url: /teaching/
-    right: true
 
   # - title: "Services"
   #   url: /services/
@@ -16,9 +19,9 @@ main:
 
   #- title: "Teaching"
   #  url: ./teaching.html
-
   - title: "Publications"
     url: /publications/
 
   - title: "Home"
     url: /
+
