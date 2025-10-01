@@ -9,10 +9,10 @@ Hi👋! I am a last year Ph.D. student at the <a href="https://atlarge-research.
 My research focuses on applying **data science** and **machine learning** techniques to understand and support **datacenter operations**.
 
 ## Research Interests
-- **Operational Data Analytic**
-- **ML/LLM for System Operatoins**
+- **System Modeling**
+- **AI for System Operatoins**
+- **LLMOps and Applications**
 - **Datacenter Ontology**
-
 {% include_relative _includes/selected_publications.md %}
 
 

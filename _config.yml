@@ -25,8 +25,8 @@ linkedin: https://www.linkedin.com/in/chuxiaoyu/
 
 # Images 
 avatar: ./assets/img/xchu.png
-favicon: ./assets/img/vu-circle.png
-favicon_dark: ./assets/img/vu-circle.png
+favicon: ./assets/img/pikachu.png
+favicon_dark: ./assets/img/pikachu.png
 
 # Footnotes
 enable_footnote: true

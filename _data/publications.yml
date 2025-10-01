@@ -1,4 +1,18 @@
 main:
+  - title: "Cloud Uptime Archive: Open-Access Availability Data of Web, Cloud, and Gaming Services"
+    authors: Sacheendra Talluri, Dante Niewenhuis, <strong>Xiaoyu Chu</strong>, Jakob Kyselica, Mehmet Cetin, Alexander Balgavy, Alexandru Iosup
+    conference_short: "Preprint'25"
+    conference: Preprint (arXiv)
+    pdf: https://arxiv.org/pdf/2504.09476
+    code: https://github.com/atlarge-research/cloud-uptime-archive
+    data: https://zenodo.org/records/14712442
+    # talk: https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf
+    doi: https://arxiv.org/abs/2504.09476
+    # image: ./assets/img/fig-oda_setup.png
+    # notes: Early Accept
+    label: 2025-preprint-cloud-uptime-archive
+    num: "[6]"
+  
   - title: "FAILS: A Framework for Automated Collection and Analysis of LLM Service Incidents"
     authors: Sándor Battaglini-Fischer, Nishanthi Srinivasan, Bálint László Szarvas, <strong>Xiaoyu Chu</strong>, Alexandru Iosup
     conference_short: "HotCloudPerf'25"
@@ -17,7 +31,7 @@ main:
     authors: <strong>Xiaoyu Chu</strong>, Sacheendra Talluri, Qingxian Lu, Alexandru Iosup
     conference_short: "ICPE'25"
     conference: ACM/SPEC International Conference on Performance Engineering (ICPE 2025)
-    pdf: https://arxiv.org/abs/2501.12469
+    pdf: https://dl.acm.org/doi/10.1145/3676151.3719372
     code: https://github.com/atlarge-research/llm-service-analysis
     data: https://zenodo.org/records/14018219
     # talk: https://atlarge-research.com/pdfs/20241108-icpads24-hpc-workload.pdf
