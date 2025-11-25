@@ -460,6 +460,9 @@ footer {
   font-size: 2rem;
   color: #13294B; }
 
+.post-content {
+  color: #13294B; }
+
 .post-content p {
   line-height: 1.6;
   margin-bottom: 1rem; }

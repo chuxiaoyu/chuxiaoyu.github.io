@@ -10,9 +10,9 @@ My research focuses on applying **data science** and **machine learning** techni
 
 
 ## Research Interests
-- **System Modeling**
-- **AI for System Operatoins**
-- **LLMOps and Applications**
+- **HPC & Operational Data Analytics**
+- **AI for IT Operatoins (AIOps)**
+- **LLM Service Avaliability & Applications**
 - **Datacenter Ontology**
 {% include_relative _includes/selected_publications.md %}
 
