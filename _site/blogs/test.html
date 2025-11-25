@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Services | Xiaoyu Chu</title>
+    <title>[Pinned] Feature Post for Test 🐭 | Xiaoyu Chu</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -10,7 +10,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Xiaoyu Chu | Vrije University Amsterdam">
-    <meta property="og:url" content="https://chuxiaoyu.github.io/services/">
+    <meta property="og:url" content="https://chuxiaoyu.github.io">
     <meta property="og:site_name" content="Xiaoyu Chu | Vrije University Amsterdam">
     <meta property="og:description" content="https://chuxiaoyu.github.io">
     <meta property="og:locale" content="default">
@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="https://chuxiaoyu.github.io">
     <!-- <meta name="twitter:image" content="./assets/img/xchu.png"> -->
 
-    <link rel="canonical" href="https://chuxiaoyu.github.io/services/"/>
+    <link rel="canonical" href="https://chuxiaoyu.github.io"/>
     <link rel="apple-touch-icon" sizes="57x57" href="../assets/Illinois/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../assets/Illinois/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../assets/Illinois/apple-icon-72x72.png">
@@ -79,7 +79,7 @@
    
 
   </head>
-  <body>
+  <body class="blog-view">
     
     <div class="topnav">
 
@@ -202,69 +202,86 @@
       </header>
       <section>
 
-      <h1 id="services"></h1>
+      <div class="post-wrapper">
+  <article class="blog-post-single">
+    <h1 class="post-title">[Pinned] Feature Post for Test 🐭</h1>
+    <div class="post-content">
+      <blockquote>
+  <p>When ChatGPT came out, like many of my colleagues, I was disoriented. What surprised
+me wasn’t the model’s size or capabilities. For over a decade, the AI community
+has known that scaling up a model improves it. In 2012, the AlexNet authors
+noted in their landmark paper that: “All of our experiments suggest that our results
+can be improved simply by waiting for faster GPUs and bigger datasets to become
+available.”1, 2\</p>
+  <h2 id="test">test</h2>
+</blockquote>
 
-<h2 style="margin: 60px 0px 10px;">Services</h2>
+<p>What surprised me was the sheer number of applications this capability boost
+unlocked. I thought a small increase in model quality metrics might result in a modest
+increase in applications. Instead, it resulted in an explosion of new possibilities.
+Not only have these new AI capabilities increased the demand for AI applications,
+but they have also lowered the entry barrier for developers. It’s become so easy to get
+started with building AI applications. It’s even possible to build an application
+without writing a single line of code. This shift has transformed AI from a specialized
+discipline into a powerful development tool everyone can use.
+Even though AI adoption today seems new, it’s built upon techniques that have been
+around for a while. Papers about language modeling came out as early as the 1950s.
+Retrieval-augmented generation (RAG) applications are built upon retrieval technology
+that has powered search and recommender systems since long before the term
+RAG was coined. The best practices for deploying traditional machine learning applications—
+systematic experimentation, rigorous evaluation, relentless optimization for
+faster and cheaper models—are still the best practices for working with foundation
+model-based applications.</p>
 
-<h4 style="margin:0 10px 0;">Organization Committee</h4>
+    </div>
+  </article>
 
-<ul style="margin:0 0 5px;">
-  <li>Website Chair, <a href="https://bmvc2024.org/people/organisers/"><autocolor>The British Machine Vision Conference (BMVC)</autocolor></a> <a href="https://bmvc2022.org/people/organisers/"><autocolor>2022</autocolor></a>-<a href="https://bmvc2024.org/people/organisers/"><autocolor>2024</autocolor></a></li>
-  <li>Website Master, <a href="https://www.acmmmasia.org/2020/committee.html"><autocolor>ACM International Conference on Multimedia in Asia (MM Asia) 2020</autocolor></a></li>
-</ul>
+  <aside class="post-toc" id="post-toc">
+    <div class="post-toc-inner">
+      <h2>Table of Contents</h2>
+      <nav id="post-toc-nav"></nav>
+    </div>
+  </aside>
+</div>
 
-<h4 style="margin:0 10px 0;">Area Chairs</h4>
+<script>
+  (function() {
+    const toc = document.getElementById('post-toc');
+    const tocNav = document.getElementById('post-toc-nav');
+    if (!toc || !tocNav) return;
 
-<ul style="margin:0 0 5px;">
-  <li><a href="http://cvpr.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024-2025</autocolor></a></li>
-  <li><a href="https://eccv2024.ecva.net/"><autocolor>European Conference on Computer Vision (ECCV) 2024</autocolor></a></li>
-  <li><a href="https://neurips.cc/Conferences/2024"><autocolor>Annual Conference on Neural Information Processing Systems (NeurIPS) 2024</autocolor></a></li>
-  <li><a href="https://icml.cc/Conferences/2025"><autocolor>International Conference on Machine Learning (ICML) 2025</autocolor></a></li>
-  <li><a href="https://iclr.cc/Conferences/2025"><autocolor>International Conference on Learning Representations (ICLR) 2024-2025</autocolor></a></li>
-  <li><a href="https://aistats.org/aistats2025/"><autocolor>International Conference on Artificial Intelligence and Statistics (AISTATS) 2023-2025</autocolor></a></li>
-  <li><a href="https://www.auai.org/uai2024/"><autocolor>The Conference on Uncertainty in Artificial Intelligence (UAI) 2023-2025</autocolor></a></li>
-  <li><a href="https://2024.acmmm.org/"><autocolor>ACM International Conference on Multimedia (MM) 2024</autocolor></a></li>  
-  <li><a href="https://bmvc2024.org/"><autocolor>The British Machine Vision Conference (BMVC) 2023-2024</autocolor></a></li>
-</ul>
+    const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+    if (!headings.length) {
+      toc.style.display = 'none';
+      return;
+    }
 
-<h4 style="margin:0 10px 0;">Senior Program Committee</h4>
+    const slugify = (str) =>
+      str
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-');
 
-<ul style="margin:0 0 5px;">
-  <li><a href="https://aaai.org/Conferences/AAAI-25/"><autocolor>AAAI Conference on Artificial Intelligence (AAAI) 2025</autocolor></a></li>
-  <li><a href="https://ijcai-21.org/"><autocolor>International Joint Conference on Artificial Intelligence (IJCAI) 2021</autocolor></a></li>
-</ul>
+    const list = document.createElement('ul');
 
-<h4 style="margin:0 10px 0;">Conference Reviewers</h4>
+    headings.forEach((heading) => {
+      if (!heading.id) {
+        heading.id = slugify(heading.textContent);
+      }
+      const li = document.createElement('li');
+      li.className = heading.tagName.toLowerCase() === 'h3' ? 'toc-h3' : 'toc-h2';
+      const link = document.createElement('a');
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      li.appendChild(link);
+      list.appendChild(li);
+    });
 
-<ul style="margin:0 0 5px;">
-  <li><a href="http://cvpr2023.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2021-2023</autocolor></a></li>
-  <li><a href="http://iccv2023.thecvf.com/"><autocolor>IEEE/CVF International Conference on Computer Vision (ICCV) 2021-2023</autocolor></a></li>
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>European Conference on Computer Vision (ECCV) 2022</autocolor></a></li>
-  <li><a href="https://neurips.cc/Conferences/2023"><autocolor>Annual Conference on Neural Information Processing Systems (NeurIPS) 2020-2023</autocolor></a></li>
-  <li><a href="https://icml.cc/Conferences/2024"><autocolor>International Conference on Machine Learning (ICML) 2021-2024</autocolor></a></li>
-  <li><a href="https://iclr.cc/Conferences/2023"><autocolor>International Conference on Learning Representations (ICLR) 2022-2023</autocolor></a></li>
-  <li><a href="https://aaai.org/Conferences/AAAI-24/"><autocolor>AAAI Conference on Artificial Intelligence (AAAI) 2021-2024</autocolor></a></li>
-  <li><a href="https://ijcai-23.org/"><autocolor>International Joint Conference on Artificial Intelligence (IJCAI) 2021-2023</autocolor></a></li>
-  <li><a href="https://2023.acmmm.org/"><autocolor>ACM International Conference on Multimedia (MM) 2021-2023</autocolor></a></li>  
-  <!--
-  <li><a href="https://mmasia2021.uqcloud.net/"><autocolor>ACM MM Asia 2020-2021</autocolor></a></li>
-  <li><a href="http://www.acml-conf.org/2021/"><autocolor>ACML 2021</autocolor></a></li>  
-  -->
-</ul>
+    tocNav.appendChild(list);
+  })();
+</script>
 
-<h4 style="margin:0 10px 0;">Journal Reviewers</h4>
-
-<ul style="margin:0 0 20px;">
-  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</autocolor></a></li>
-  <li><a href="https://www.springer.com/journal/11263"><autocolor>International Journal of Computer Vision (IJCV)</autocolor></a></li>
-  <li><a href="https://signalprocessingsociety.org/publications-resources/ieee-transactions-image-processing"><autocolor>IEEE Transactions on Image Processing (TIP)</autocolor></a></li>
-  <li><a href="https://www.computer.org/csdl/journal/tk"><autocolor>IEEE Transactions on Knowledge and Data Engineering (TKDE)</autocolor></a></li>
-  <li><a href="https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia"><autocolor>IEEE Transactions on Multimedia (TMM)</autocolor></a></li>
-  <li><a href="https://ieee-cas.org/publications/ieee-transactions-circuits-and-systems-video-technology"><autocolor>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</autocolor></a></li>
-  <li><a href="https://cis.ieee.org/publications/t-neural-networks-and-learning-systems"><autocolor>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</autocolor></a></li>
-  <li><a href="https://dl.acm.org/journal/tomm"><autocolor>ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)</autocolor></a></li>
-  <li><a href="https://www.sciencedirect.com/journal/medical-image-analysis"><autocolor>Medical Image Analysis (MedIA)</autocolor></a></li>
-</ul>
 
 
       <br>

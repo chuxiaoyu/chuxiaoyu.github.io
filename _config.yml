@@ -53,3 +53,6 @@ exclude:
 markdown: kramdown
 kramdown:
   input: GFM
+
+# Use short blog URLs like /blogs/my-post
+permalink: /blogs/:slug

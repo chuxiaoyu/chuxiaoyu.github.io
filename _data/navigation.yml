@@ -10,6 +10,9 @@ main:
 
   - title: "Teaching"
     url: /teaching/
+  
+  - title: "Blogs"
+    url: /blogs/
 
   # - title: "Services"
   #   url: /services/
@@ -17,8 +20,6 @@ main:
   - title: "Talks"
     url: /talks/
 
-  #- title: "Teaching"
-  #  url: ./teaching.html
   - title: "Publications"
     url: /publications/
 

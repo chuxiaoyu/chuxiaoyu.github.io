@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div class="post-wrapper">
+  <article class="blog-post-single">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </article>
+
+  <aside class="post-toc" id="post-toc">
+    <div class="post-toc-inner">
+      <h2>Table of Contents</h2>
+      <nav id="post-toc-nav"></nav>
+    </div>
+  </aside>
+</div>
+
+<script>
+  (function() {
+    const toc = document.getElementById('post-toc');
+    const tocNav = document.getElementById('post-toc-nav');
+    if (!toc || !tocNav) return;
+
+    const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+    if (!headings.length) {
+      toc.style.display = 'none';
+      return;
+    }
+
+    const slugify = (str) =>
+      str
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-');
+
+    const list = document.createElement('ul');
+
+    headings.forEach((heading) => {
+      if (!heading.id) {
+        heading.id = slugify(heading.textContent);
+      }
+      const li = document.createElement('li');
+      li.className = heading.tagName.toLowerCase() === 'h3' ? 'toc-h3' : 'toc-h2';
+      const link = document.createElement('a');
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      li.appendChild(link);
+      list.appendChild(li);
+    });
+
+    tocNav.appendChild(list);
+  })();
+</script>
+
